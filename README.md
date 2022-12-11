@@ -21,12 +21,12 @@ http-server
 Link to access the core module is
 
 ```
-http://localhost:8080/core/index.html
+[http://localhost:8080/core/index.html] (http://localhost:8080/core/index.html)
 ```
 
 
 Link to access the Dashboard module is
 
 ```
-http://localhost:8080/dashboard/dashboard.html
+[http://localhost:8080/dashboard/dashboard.html] (http://localhost:8080/dashboard/dashboard.html)
 ```
