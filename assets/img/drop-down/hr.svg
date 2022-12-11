@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="vuesax_twotone_user-octagon" data-name="vuesax/twotone/user-octagon" transform="translate(-620 -188)">
+    <g id="user-octagon" transform="translate(620 188)">
+      <path id="Vector" d="M22.712,8.225v8.55a3.967,3.967,0,0,1-1.962,3.413l-7.425,4.287a3.954,3.954,0,0,1-3.937,0L1.962,20.188A3.937,3.937,0,0,1,0,16.775V8.225A3.967,3.967,0,0,1,1.962,4.812L9.388.525a3.954,3.954,0,0,1,3.937,0L20.75,4.812A3.952,3.952,0,0,1,22.712,8.225Z" transform="translate(3.637 2.5)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-2" data-name="Vector" d="M5.825,2.912A2.912,2.912,0,1,1,2.912,0,2.913,2.913,0,0,1,5.825,2.912Z" transform="translate(12.087 7.925)" fill="none" stroke="#09bb8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
+      <path id="Vector-3" data-name="Vector" d="M10,4.075C10,1.825,7.762,0,5,0S0,1.825,0,4.075" transform="translate(10 16.75)" fill="none" stroke="#09bb8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
+      <path id="Vector-4" data-name="Vector" d="M0,0H30V30H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

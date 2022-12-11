@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/basic.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <style>
+    .section-row.wrap.section1 {
+      width: 77%;
+      margin: 0 auto;
+    }
+    .section1 .t24 {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+    @media only screen and (min-width: 767px) {
+      .lhs{padding-top: 10rem}
+      .rhs{padding-top: 7rem}
+    }
+    @media only screen and (min-width: 701px) and (max-width: 1300px) {
+      .section1 .d-flex {
+        justify-content: center;
+      }
+      .section1{
+        flex-direction: column;
+      }
+      .section1 .lhs,.section1 .rhs {
+        width: 100%;
+      }
+      .section-row.wrap.section1 {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .section1 .t22 {
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+  @media only screen and (max-width: 700px) {
+  .section-row.wrap.section1 {
+    width: 84%;
+    text-align: center;
+}
+.section1 .d-flex {
+    margin-top: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.section1 .t22 {
+  margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+}
+  </style>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <title>Documents</title>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+    <div class="spinner">
+      <img class="spinner-img" alt="loading" src="../assets/img/spinner.gif"/>
+    </div>
+    <div id="header" class="section" w3-include-html="components/header.html"></div>
+    <div class="page-content-wrap">
+      <div class="section-row wrap section1">
+        <div class="lhs">
+          <div class="heading1">Drafting documents never looked so easy</div>
+          <div class="t22 mt-4">Create Industry-standard documents and sign with Anyone, Anywhere and any device instantly.</div>
+          <div class="d-flex">
+            <a href="javascript:void(0)" class="btn-green btn-style">Login for free</a> 
+            <a href="javascript:void(0)" class="btn-white btn-style ml-4">See Documents</a> 
+          </div>
+        </div>
+        <div class="rhs"><lottie-player src="../assets/img/draft_doc.json" background="transparent"  speed="1"  loop autoplay></lottie-player></div>
+      </div>
+      <div id="popularDocs" class="section" w3-include-html="./components/popular-documents.html"></div>
+      <div id="faq" class="section" w3-include-html="components/faq.html"></div>
+      
+    </div>
+    <div id="footer" class="section" w3-include-html="components/footer.html"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+    const baseUrl="http://ezyhostings-001-site1.dtempurl.com/api/DocManagement";
+    $("ul.nav-tabs a").click(function (e) {e.preventDefault();$(this).tab("show");});
+    $(document).ready(function () {
+      var owl = $('.testi-2');
+      owl.owlCarousel({
+        items: 2,loop: true,margin: 10,autoplay: true,autoplayTimeout: 1000,
+        autoplayHoverPause: true,dots: false,nav: false,
+        navText: [
+          '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+          '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+          0: {items: 2},576: {items: 2},768: {items: 4},1200: {items: 4},1600: {items: 4}
+        }
+      });
+      $('.play').on('click', function () {owl.trigger('play.owl.autoplay', [1000])})
+      $('.stop').on('click', function () {owl.trigger('stop.owl.autoplay')}) 
+
+      $(".accordion-toggle").mouseover(function () {
+        $(".accordion-toggle").trigger("click");
+      });
+      setTimeout(()=>{
+        renderFAQ();
+      },500)
+    });
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByClassName("section");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    includeHTML()
+    faq=[{question:"What is Wizard Legal?",answer:"What is Wizard Legal?"},
+          {question:"Who is Wizard Legal for?",answer:"What does it cost to become a user?"},
+          {question:"What does Wizard Legal offer to it’s users?",answer:"What does it cost to become a user?"},
+          {question:"What does it cost to become a user?",answer:"What does it cost to become a user?"},
+          {question:"How do you create a document on Wizard Legal?",answer:"What are e-signatures?"},
+          {question:"What are e-signatures?",answer:"What are e-signatures?"},
+          {question:"What does Wizard Legal offer to it’s users?",answer:"What does Wizard Legal offer to it’s users?"},
+          {question:"What is the legal validly of an e-signature in India?",answer:"What is the legal validly of an e-signature in India?"},
+          {question:"How do I sign a document on Wizard legal?",answer:"How do I sign a document on Wizard legal?"},
+          {question:"Who writes my legal documents at Wizard Legal?",answer:"Who writes my legal documents at Wizard Legal?"},
+          {question:"Who can read / access my documents?",answer:"Who can read / access my documents?"},
+          {question:"How safe is my data with Wizard Legal?",answer:"How safe is my data with Wizard Legal?"},
+          {question:"Is Wizard Legal a legal firm?",answer:"Is Wizard Legal a legal firm?"},
+          {question:"How long does it take to create a legal document with Wizard Legal?",answer:"How long does it take to create a legal document with Wizard Legal?"}
+    ];
+    renderFAQ=()=>{
+      let html="",i=-1;
+      for(let q of faq){
+        html+=`<div class="faq"><div class="question" data-toggle="collapse" data-target="#faq${++i}" aria-expanded="false" aria-controls="faq${i}">
+            <div class="img-wrap1"><img src="../assets/img/next.png" class="img" alt="next"></div>
+            <div class="t24">${q.question}</div>
+          </div>
+          <div class="collapse answer" id="faq${i}">
+            ${q.answer}
+          </div></div>`;
+      }
+      $(".faq-wrap").html(html)
+    }
+
+  setTimeout(()=>{
+    renderAllCategoryPopularDocs();
+  },2000)
+
+  renderAllCategoryPopularDocs=()=>{
+    const docCategories=[{"categoryID":1,"categoryName":"Human Resource","remarks":null,"mCategoryTypeID":1,image:"i2.png"},
+      {"categoryID":2,"categoryName":"Real Estate","remarks":null,"mCategoryTypeID":1,image:"i1.png"},
+      {"categoryID":3,"categoryName":"Family & Personal","remarks":null,"mCategoryTypeID":1,image:"i6.png"},
+      {"categoryID":5,"categoryName":"Freelance Agreement","remarks":null,"mCategoryTypeID":1,image:"i4.png"},
+      {"categoryID":6,"categoryName":"Marketing","remarks":null,"mCategoryTypeID":1,image:"i5.png"},
+      {"categoryID":7,"categoryName":"Business Operations","remarks":null,"mCategoryTypeID":1,image:"business.png"}]
+    let html="";
+    for(let doc of docCategories){
+      html+=`<a class="btn accordion-toggle" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+        aria-expanded="false" onclick="getDocumentsOfCategory(${doc.categoryID});" aria-controls="multiCollapseExample1"><img src="../assets/img/${doc.image}"
+      alt=""> ${doc.categoryName}</a>`;
+    }
+    $("#categoryListLhs").html(html);
+    console.log(html);
+    getDocumentsOfCategory(docCategories[0].categoryID);
+  }
+
+  getDocumentsOfCategory=(categoryId)=>{
+    $.ajax({
+      url: "http://ezyhostings-001-site1.dtempurl.com/api/DocManagement/GetDocumentDropDownData/"+categoryId,
+      type: 'GET',
+      success: function (resposnse) {let html="",counter=0;
+        for(let item of resposnse.data){
+          const dateModified=item.lastUpdatedDate!=null?item.lastUpdatedDate:"";
+          item.tag = item.tag.split('.')[0];
+          html+=`<div class="doc">
+            <div class="left-container">
+              <i class="fa fa-folder-o" aria-hidden="true"></i>
+                <p>${item.tag}</p>
+            </div>
+            <a href="document-transit.html?docid=${item.id}&docname=${item.tag}&lastmodified=${item.lastUpdatedDate}"><button type="button" class=" btn-style1">Create</button></a>
+            </div>`;
+        }
+        $("#listOfDocumentsRhs").html(html)
+      }, error: function (err) { alert(err);}
+    });
+  }
+  </script>
+</body>
+</html>

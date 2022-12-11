@@ -1,0 +1,224 @@
+<style>
+  .billing-page .b1 {
+    height: 114px;
+    background: rgba(193, 229, 185, 0.38);
+    border-radius: 9px;
+  }
+
+  .billing-page .header1 {
+    display: flex;
+    align-items: center;
+  }
+
+  .billing-page button.btn.btn-white {
+    padding: 16px 25px;
+    top: 45px;
+    background: #FFFFFF;
+    border: 1px solid #0ABC8A;
+  }
+
+  .billing-page .header1 button.btn.btn-white {
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+
+  .billing-page .box1 .r2 {
+    display: flex;
+    margin: 4rem auto 2rem 0;
+  }
+
+  .r2 .b1 {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 2rem;
+    width: 14rem;
+  }
+
+  .billing-page .line1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .billing-page nav.nav1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .billing-page .box {
+    margin-bottom: 2rem;
+  }
+
+  .billing-page .row.r3 {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .billing-page .row.r3,
+  .row.r4,
+  .row.r5,
+  .row.r6 {
+    height: 8rem;
+    align-items: center;
+  }
+
+  .billing-page .row .t20 {
+    margin-bottom: 1rem;
+  }
+
+  .billing-page .d-flex.df1 {
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .billing-page .df1 .t14.lb {
+    width: 30%;
+  }
+
+  .billing-page .rb input.input-text-style {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .billing-page .df1 .rb {
+    display: flex;
+    width: 45%;
+    align-items: center;
+  }
+</style>
+<div class="tabs-wrap billing-page">
+  <div class="box">
+    <div class="t25 text-left black"><b>Billing</b></div>
+    <hr class="hr1" />
+  </div>
+  <nav class="nav1">
+    <div class="nav nav-tabs" id="nav-teams-tabs" role="tablist">
+      <button class="nav-link active t20" id="nav-esign-tab" data-toggle="tab" data-target="#nav-esign" type="button"
+        role="tab" aria-controls="nav-esign" aria-selected="true">Esign package</button>
+      <button class="nav-link t20" id="nav-business-tab" data-toggle="tab" data-target="#nav-business" type="button"
+        role="tab" aria-controls="nav-business" aria-selected="false">Business package</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tab-contents">
+    <div class="tab-pane fade show active" id="nav-esign" role="tabpanel" aria-labelledby="nav-esign-tab">
+      <div class="box box1">
+        <div class="header1">
+          <div class="t25 black"><b>Current plan</b></div>
+          <button class="btn btn-white">Change plan</button>
+          <div class="toaster error">Your trial expires on Jul 24, 2022.</div>
+        </div>
+        <hr class="hr1" />
+        <div class="t20 cs1">Business Monthly</div>
+        <div class="r2">
+          <div class="t18">Payment</div>
+          <div class="b1">
+            <div class="t25 green-text">Free Plan</div>
+            <div class="t14 mt-4">1 User</div>
+          </div>
+          <button class="btn btn-green">Save with anual plan</button>
+        </div>
+        <div class="r3 d-flex">
+          <button class="btn btn-red ml-auto">Cancel your subscription</button>
+        </div>
+        <hr class="line1 cs2">
+        <div class="t16">*Plus any applicable taxes</div>
+      </div>
+      <div class="box box2">
+        <div class="t24 black"><b>User licenses</b></div>
+        <hr class="line1">
+        <div class="row r3">
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">Standard</div>
+            <div class="t14">All Wizard legal features available
+              within your current plan.</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">All licenses in use</div>
+            <div class="t14">1 of 1 license activated</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <button class="btn btn-green">Manage</button>
+          </div>
+        </div>
+        <div class="row r4">
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">Guest</div>
+            <div class="t14">Access and download only
+              shared documents in read-only mode.</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">20 remaining</div>
+            <div class="t14">0 of 20 licenses activated</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+          </div>
+        </div>
+      </div>
+      <div class="box box3">
+        <div class="t24 black"><b>Documents</b></div>
+        <hr class="line1">
+        <div class="row r3">
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">Monthly Limit</div>
+            <div class="t14">Documents created via Wizard legal</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t20"><span class="t20">Free plan</span>
+              <span class="t20 green-text ml-4">500 Doc</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t14">Monthly limit</div>
+          </div>
+        </div>
+        <div class="row r4">
+          <div class="col-md-4 col-sm-12">
+            <div class="t20">Storage</div>
+            <div class="t14">Document used storage</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t25">60 Days / Free plan</div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="t25">E-sign 20 / 30</div>
+          </div>
+        </div>
+      </div>
+      <div class="box box4">
+        <div class="t25">Billing information</div>
+        <hr class="line1" />
+        <div class="d-flex df1">
+          <div class="t14 lb">Send receipts to</div>
+          <div class="t18 rb">akhilsugunan1995@gmail.com</div>
+        </div>
+        <div class="d-flex df1">
+          <div class="t14 lb">Send receipts to</div>
+          <div class="rb">
+            <input class="input-text-style" placeholder="email" />
+            <img src="../assets/img/dashboard/" alt="rhs">
+          </div>
+        </div>
+        <div class="d-flex df1">
+          <div class="t14 lb">Account owner</div>
+          <div class="rb">
+            <input class="input-text-style" placeholder="email" />
+            <img src="../assets/img/dashboard/" alt="rhs">
+          </div>
+        </div>
+        <hr class="line1" />
+        <div class="d-flex">
+          <button class="btn btn-cancel mr-4">Cancel your subscription</button>
+          <button class="btn btn-green ml-4">Add payment method</button>
+        </div>
+      </div>
+      <div class="box box5">
+        <div class="t25"><b>Invoices history</b></div>
+        <hr class="line1" />
+        <div class="t14">You have no invoices yet</div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade show" id="nav-business" role="tabpanel" aria-labelledby="nav-busines-tab">
+
+  </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="vuesax_twotone_monitor-mobbile" data-name="vuesax/twotone/monitor-mobbile" transform="translate(-556 -190)">
+    <g id="monitor-mobbile" transform="translate(556 190)">
+      <path id="Vector" d="M23.333,42.058H12.279C2.45,42.058,0,39.608,0,29.779v-17.5C0,2.45,2.45,0,12.279,0H42.992c9.829,0,12.279,2.45,12.279,12.279" transform="translate(5.833 7.379)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-2" data-name="Vector" d="M0,13.183V0" transform="translate(29.167 49.437)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-3" data-name="Vector" d="M0,0H23.333" transform="translate(5.833 37.771)" fill="none" stroke="#09bb8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+      <path id="Vector-4" data-name="Vector" d="M0,0H9.508" transform="translate(19.658 62.621)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-5" data-name="Vector" d="M27.621,8.633V25.288c0,6.913-1.721,8.633-8.633,8.633H8.633C1.721,33.921,0,32.2,0,25.288V8.633C0,1.721,1.721,0,8.633,0H18.988C25.9,0,27.621,1.721,27.621,8.633Z" transform="translate(36.546 28.7)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-6" data-name="Vector" d="M.495.5H2.531" transform="translate(48.843 52.729)" fill="none" stroke="#5d5d5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+      <path id="Vector-7" data-name="Vector" d="M0,0H70V70H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

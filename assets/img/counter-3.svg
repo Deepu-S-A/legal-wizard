@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="143.656" height="135.114" viewBox="0 0 143.656 135.114">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_76" data-name="Rectangle 76" width="121.196" height="121.196" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_76-2" data-name="Rectangle 76" width="110.485" height="110.485" fill="none" stroke="#a8fff1" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_507" data-name="Group 507" transform="translate(-706.156 -9666.386)">
+    <g id="Group_352" data-name="Group 352" transform="translate(706.156 9666.386)" opacity="0.14">
+      <g id="Group_328" data-name="Group 328">
+        <g id="Group_327" data-name="Group 327" clip-path="url(#clip-path)">
+          <path id="Path_1082" data-name="Path 1082" d="M143.548,60.6A60.6,60.6,0,1,1,82.95,0a60.6,60.6,0,0,1,60.6,60.6" transform="translate(-22.352)" fill="#a8fff1"/>
+        </g>
+      </g>
+    </g>
+    <g id="vuesax_twotone_profile-tick" data-name="vuesax/twotone/profile-tick" transform="translate(419.222 9427.451)">
+      <g id="profile-tick" transform="translate(300 252)">
+        <path id="Vector" d="M0,6.021l6.021,6.021L18.062,0" transform="translate(57.198 69.437)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" opacity="0.4"/>
+        <path id="Vector-2" data-name="Vector" d="M18.221,35.135a7.2,7.2,0,0,0-1.307,0,17.567,17.567,0,1,1,1.307,0Z" transform="translate(29.945 7.922)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" opacity="0.4"/>
+        <path id="Vector-3" data-name="Vector" d="M27.034,34.184c-7.209,0-14.379-1.822-19.845-5.466C-2.4,22.3-2.4,11.844,7.189,5.466c10.893-7.288,28.757-7.288,39.65,0" transform="translate(20.459 52.207)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+        <path id="Vector-4" data-name="Vector" d="M0,0H95.065V95.065H0Z" transform="translate(95.065 95.065) rotate(180)" fill="none" opacity="0"/>
+      </g>
+    </g>
+    <g id="Group_353" data-name="Group 353" transform="translate(739.327 9691.015)" opacity="0.14">
+      <g id="Group_328-2" data-name="Group 328">
+        <g id="Group_327-2" data-name="Group 327" clip-path="url(#clip-path-2)">
+          <path id="Path_1082-2" data-name="Path 1082" d="M129.226,53.437A53.437,53.437,0,1,1,75.789,0a53.437,53.437,0,0,1,53.437,53.437" transform="translate(-22.352 1.18)" fill="none" stroke="#a8fff1" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

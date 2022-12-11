@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/dashboard/definitions.css">
+  <link rel="stylesheet" href="../assets/css/dashboard/dashboard.css">
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <title>Home</title>
+</head>
+
+<body>
+  <div id="header" class="section" w3-include-html="db-header.html"></div>
+  <div class="container-fluid dashboard-container base-container">
+    <div class="row">
+      <div class="col-md-2 col-sm-12 lhs-home">
+        <div class="links-wrap">
+          <div class="link active" data-page="home.html">
+            <div class="db-nav-icon home">
+              <img src="../assets/img/dashboard/icons/home.png" alt="" class="Home" />
+            </div>
+            <div class="t20">Dashboard</div>
+          </div>
+          <div class="link" data-page="mydocument.html">
+            <div class="db-nav-icon mydocument">
+              <img src="../assets/img/dashboard/icons/document.png" alt="" class="Home" />
+            </div>
+            <div class="t20">My document</div>
+          </div>
+          <div class="link" data-page="users.html">
+            <div class="db-nav-icon users">
+              <img src="../assets/img/dashboard/icons/users.png" alt="" class="Home" />
+            </div>
+            <div class="t20">Users</div>
+            <div class="upgrade-small-notification">Upgrade</div>
+          </div>
+          <div class="link" data-page="business.html">
+            <div class="db-nav-icon business">
+              <img src="../assets/img/dashboard/icons/business.png" alt="" class="Home" />
+            </div>
+            <div class="t20">Business</div>
+          </div>
+          <div class="link" data-page="settings.html">
+            <div class="db-nav-icon settings">
+              <img src="../assets/img/dashboard/icons/settings.png" alt="" class="Home" />
+            </div>
+            <div class="t20">Settings</div>
+          </div>
+        </div>
+        <div class="contactus-wrap">
+          <div class="t16">Contact us now</div>
+          <button class="btn btn-green btn-md">Help</button>
+          <img src="../assets/img/dashboard/db/contactus-avatar.png" alt="rhs" class="contactus-avatar">
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-12 rhs-db">
+        <div class="route-container" id="route-container">
+
+        </div>
+      </div>
+    </div>
+    <div class="section" w3-include-html="limit-notification-modal.html"></div>
+    <div class="section" w3-include-html="upgrade-plan-modal.html"></div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js"></script>
+<script>
+  const componentsPath = './components/';
+  const routeContainer = document.getElementById('route-container');
+
+  const mydocumentsData = [
+    { name: 'The Argon reseach Global 1111111 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', signers: 1, status: 'Completed', type: 'esigned' },
+    { name: 'The Argon reseach Global 2222222 transaction', documentId: '999999999999', date: '9th May', time: '9:45 PM', signers: 5, status: 'Out for signature', pending: 2, type: 'esigned' },
+    { name: 'The Argon reseach Global 3333333 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', signers: 1, status: 'Completed', type: 'esigned' },
+    { name: 'The Argon reseach Global 4444444 transaction', documentId: '999999999999', date: '9th May', time: '9:45 PM', signers: 5, status: 'Out for signature', pending: 2, type: 'drafted' },
+    { name: 'The Argon reseach Global 5555555 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', signers: 1, status: 'Completed', type: 'drafted' },
+    { name: 'The Argon reseach Global 6666666 transaction', documentId: '999999999999', date: '9th May', time: '9:45 PM', signers: 5, status: 'Out for signature', pending: 2, type: 'uploaded' },
+    { name: 'The Argon reseach Global 7777777 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', signers: 1, status: 'Completed', type: 'uploaded' },
+    { name: 'The Argon reseach Global 8888888 transaction', documentId: '999999999999', date: '9th May', time: '9:45 PM', signers: 5, status: 'Out for signature', pending: 2, type: 'uploaded' }
+  ];
+
+  getFileContents = async (element, name) => {
+    let file = componentsPath + name;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) { element.innerHTML = this.responseText }
+        if (this.status == 404) { element.innerHTML = "Page not found."; }
+        element.removeAttribute("w3-include-html");
+      }
+    }
+    xhttp.open("GET", file, true);
+    await xhttp.send();
+    setTimeout(function () {
+      switch (name) {
+        case 'home.html': renderHomePageData(); break;
+        case 'mydocument.html': categorizeMydocumentsData(mydocumentsData); break;
+        case 'users.html': renderUsersPage(); break
+        case 'settings.html': renderSettingsHtml(); break;
+      }
+    }, 1000);
+    return;
+  }
+
+  categorizeMydocumentsData = (data) => {
+    $('.db-mydocs .docsCounts').html(data.length + 'Records');
+    renderMydocumentsData(data.filter(el => el.type == 'esigned'), '#esignedDocTbody');
+    renderMydocumentsData(data.filter(el => el.type == 'drafted'), '#draftedDocTbody');
+    renderMydocumentsData(data.filter(el => el.type == 'uploaded'), '#uploadedDocTbody');
+  }
+
+  planTypeChanged = (ele) => {
+    if ($(ele).prop("checked") == true) {
+      $("#businessBoxesWrap").show();
+      $("#eSignatureBoxesWrap").hide();
+      $("#subscriptionTypeWrap").hide();
+    }
+    else if ($(ele).prop("checked") == false) {
+      $("#businessBoxesWrap").hide();
+      $("#eSignatureBoxesWrap").show();
+      $("#subscriptionTypeWrap").show();
+    }
+  }
+
+  const renderUsersPage = () => {
+    const users = [
+      { name: 'Deepu S A', email: 'deepusa1988@gmail.com', userid: 'u1', dp: 'avatar.png' },
+      { name: 'Akhil', email: 'deepusa1988@gmail.com', userid: 'u2', dp: 'avatar.png' },
+      { name: 'Jeswin', email: 'deepusa1988@gmail.com', userid: 'u3', dp: 'avatar.png' }
+    ];
+    let html = '';
+    const imgPath = "../assets/img/dashboard/db/"
+    for (let user of users) {
+      html += `<div class="user box">
+        <div class="dp"><img src="${imgPath}${user.dp}"/></div>
+        <div class="t16"><b>${user.name}</b></div>
+        <div class="t14">${user.email}</div>  
+      </div>`;
+    }
+    $('.users-wrap').html(html);
+  }
+
+  const renderSettingsHtml = () => {
+    $(document).on('click', '.setting', function () {
+      let page = $(this).attr('data-view');
+      let settingsViewContainer = document.getElementById('settingsContainer');
+      getFileContents(settingsViewContainer, 'settings/' + page);
+      $('.setting').removeClass('active');
+      $(this).addClass('active');
+      setTimeout(() => {
+        renderSettingsPageData(page);
+      }, 1000);
+    });
+    $('.setting.info').trigger('click');
+  }
+
+  const renderSettingsPageData = (page) => {
+    switch (page) {
+      case 'teams.html': renderSettingsTeamsTableData(); break;
+    }
+  }
+
+  const addNewUser = () => {
+    $('#upgradeNotificationModal').modal('show')
+  }
+
+  const renderSettingsTeamsTableData = () => {
+    const esignTable = [
+      { name: 'User1', role: 'Admin ( Owner )', lisence: 'Standard' },
+      { name: 'User2', role: 'Admin ( Owner )', lisence: 'Standard' },
+      { name: 'User3', role: 'Admin ( Owner )', lisence: 'Standard' }
+    ];
+    const roleData = `<div class="dropdown-menu user-role">
+    <a class="dropdown-item" href="#">Role 1</a>
+    <a class="dropdown-item" href="#">Role 2</a>
+  </div>`;
+    let html = '';
+    for (let i = 0; i < esignTable.length; i++) {
+      html += `<tr data-row=esignSettingsRow"${i}">
+        <td>
+          <div class="form-group form-check input-style-wrap">
+            <input type="checkbox" class="form-check-input" id="selectrow${i}">
+            <label class="form-check-label grey-text" for="selectrow${i}"></label>
+          </div>
+        </td>
+        <td class="ddn-item input-style-wrap">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">${esignTable[i].role}</button>
+            ${roleData}
+          </div>  
+        </td>
+        <td class="t16">${esignTable[i].lisence}</td> 
+        <td></td> 
+      </tr>`;
+    }
+    console.log(html);
+    $('#esignTeamsTbody').html(html);
+  }
+
+  const renderMydocumentsData = (tableData, selector) => {
+    let html = '', i = 0;
+    for (let row of tableData) {
+      const signerClass = row.signers <= 3 ? 'signers-wrap' : 'extra';
+      const signerLength = row.signers >= 3 ? 3 : row.signers;
+      let signers = `<div class="${signerClass}">`;
+      for (let k = 0; k < signerLength; k++) {
+        signers += '<img src="../assets/img/dashboard/db/signed-icon.png" alt="dots" class="signer"/>';
+      } signers += '</div>';
+
+      const statusClass = row.status == 'Completed' ? 'success' : 'fail';
+      const percentage = statusClass == 'success' ? '100%' : ((row.signers - row.pending) / row.signers) * 100 + '%';
+      let statusHtml = `<div class="status-wrap"><div class="status-text d-flex"><div class="${statusClass}">`;
+      if (row.status == 'Completed') {
+        statusHtml += `Completed</div><div class="t12">${row.signers} signed</div></div>`;
+      } else {
+        statusHtml += `Out for signature</div> <div class="t12">${row.signers - row.pending}/${row.signers} signed</div></div>`;
+      }
+      statusHtml += `<div class="progress w-100" style="height: 10px;">
+  <div class="progress-bar ${statusClass}" role="progressbar" style="width: ${percentage}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>`;
+      html += `<tr>
+        <td>
+          <div class="t14">${row.name}</div>
+          <div class="desc">Document ID : ${row.documentId}</div>
+        </td>
+        <td>
+          <div class="t14">${row.date}</div>
+          <div class="desc">Document ID : ${row.time}</div>
+        </td>
+        <td>
+          ${signers}
+        </td>
+        <td class="threedots">
+          <div class="status-column">
+            ${statusHtml}
+            <button class="btn btn-green btn-small ml-4 mr-4">View</button>
+            <img src="../assets/img/three-dots.png" alt="dots" class="threedots-img">
+            <div class="options">
+              <div class="option">option1</div>
+              <div class="option">option2</div>
+              <div class="option">option3</div>
+            </div>
+          </div>
+        </td>
+      </tr>`;
+    }
+    $(selector).html(html);
+  }
+
+  //HOME PAGE FUNCTIONALITIES STARTS
+  const renderHomePageData = () => {
+    drawDonoughtChart();
+    renderDbHomeTable();
+    renderBarCharts();
+  }
+  const renderBarCharts = () => {
+    const documentationData = [
+      { 'month': 'Jan', count: 30 }, { 'month': 'Feb', count: 50 }, { 'month': 'Mar', count: 70 }, { 'month': 'Apr', count: 20 }
+    ];
+    const esignData = [
+      { 'month': 'Jan', count: 10 }, { 'month': 'Feb', count: 100 }, { 'month': 'Mar', count: 20 }, { 'month': 'Apr', count: 50 }
+    ];
+    const unit = 75;
+    renderChart('#documentationBarChart', documentationData, unit);
+    renderChart('#esignBarChart', esignData, unit);
+  }
+  const renderChart = (selector, data, baseUnit) => {
+    let html = '';
+    for (let item of data) {
+      let percentage = (item.count / baseUnit) * 100;
+      html += `<div class="column-wrap"><div class="fullbar"><div class="bar" style="height:${percentage}px"></div></div><div class="month t12">${item.month}</div></div>`;
+    }
+    $(selector).html(html);
+  }
+  const renderDbHomeTable = () => {
+    const tableData = [
+      { name: 'The Argon reseach Global 2022_243 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', status: 'Draft' },
+      { name: 'The Argon reseach Global 2022_243 transaction', documentId: '999999999999', date: '9th May', time: '9:45 PM', status: 'Draft' }
+    ];
+    let html = '', i = 0;
+    for (let row of tableData) {
+      html += `<tr>
+        <th>
+          <div class="form-group form-check input-style-wrap">
+            <input type="checkbox" class="form-check-input" id="selectrow${++i}">
+            <label class="form-check-label grey-text" for="selectrow${i}"></label>
+          </div>
+        </th>
+        <td>
+          <div class="t14">${row.name}</div>
+          <div class="desc">Document ID : ${row.documentId}</div>
+        </td>
+        <td><button class="btn btn-green btn-small">View</button></td>
+        <td>
+          <div class="t14">${row.date}</div>
+          <div class="desc">Document ID : ${row.time}</div>
+        </td>
+        <td>
+          <div class="t14">${row.status}</div>
+        </td>
+        <td class="threedots">
+          <img src="../assets/img/three-dots.png" alt="dots" class="threedots-img">
+          <div class="db-home-options">
+            <div class="db-home-option">option1</div>
+            <div class="db-home-option">option2</div>
+            <div class="db-home-option">option3</div>
+          </div>
+        </td>
+      </tr>`;
+    }
+    let documentsProgressBar = document.getElementById('documentsProgressBar');
+    let documentsProgressBarEl = new ProgressBar.Circle(documentsProgressBar, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 100,
+      color: '#FED2B9',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+    documentsProgressBarEl.animate(0.7);
+    let storageProgressBar = document.getElementById('storageProgressBar');
+    let storageProgressBarEl = new ProgressBar.Circle(storageProgressBar, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 100,
+      color: '#19C194',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+    storageProgressBarEl.animate(0.5);
+    $('#dbHomeTable').html(html);
+    $('.threedots-img').click(function () {
+      $(this).next().toggle();
+    });
+    $('.db-home-option').click(function () {
+      $(this).closest('.db-home-options').hide();
+    });
+  }
+
+  const drawDonoughtChart = () => {
+    const data = {
+      labels: [
+        'Documents',
+        'Esign',
+        'Storage'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [200, 50, 100],
+        backgroundColor: [
+          'rgb(60, 186, 146)',
+          'rgb(230, 200, 190)',
+          'rgb(250, 94, 97)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+    const config = {
+      type: 'doughnut',
+      data: data,
+      options: {
+        //maintainAspectRatio:false,
+        plugins: {
+          legend: {
+            position: 'bottom', maxWidth: 15, align: 'center',
+            labels: {
+              boxWidth: 20,
+              usePointStyle: true,
+              pointStyle: 'circle'
+            }
+          }
+        }
+      }
+    };
+    let donoughtChart = new Chart(document.getElementById('donoughtChart'), config);
+  }
+  //HOME PAGE FUNCTIONALITIES ENDS
+
+  function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByClassName("section");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        getFileContents(elmnt, file);
+      }
+    }
+  }
+  includeHTML();
+
+  $(document).ready(function () {
+    init();
+    $('.link').click(function () {
+      const pageTobeLoaded = $(this).attr('data-page');
+      getFileContents(routeContainer, pageTobeLoaded);
+      $('.link').removeClass('active');
+      $(this).addClass('active');
+    })
+  });
+
+  init = () => {
+    getFileContents(routeContainer, 'home.html');
+    $("#planType").on("change", function () {
+      planTypeChanged(this);
+    });
+    $(document).on("change", "#selectAllDbHome", function () {
+      $("#db-home-table").find('input').prop('checked', $("#selectAllDbHome").prop('checked'))
+    });
+    $(document).on("click", ".mydocuments-search-btn", function () {
+      categorizeMydocumentsData(mydocumentsData.filter(el => el.name.includes($('.mydocuments-search-text').val())));
+    });
+  }
+</script>
+
+</html>

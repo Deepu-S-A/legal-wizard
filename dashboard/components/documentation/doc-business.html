@@ -1,0 +1,65 @@
+<style>
+  .doc-business-page .lhs {
+    width: 60%;
+    padding-right: 2rem;
+  }
+
+  .doc-business-page .rhs {
+    width: 40%;
+    padding-left: 2rem;
+  }
+
+  .doc-business-page .selectedDoc {
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+  }
+
+  .doc-business-page .selectedDocs .cs3 {
+    font-size: 3.5rem;
+    color: #888FA7;
+  }
+
+  .doc-business-page .selectableTemplatesInfo.box1 {
+    margin-top: 2rem;
+  }
+
+  .doc-business-page .selectedTemplates {
+    margin-top: 2rem;
+  }
+  .transparent-overlay{
+    display: none;
+  }
+  .doc-business-page.blur .transparent-overlay{display: block;}
+</style>
+<div class="doc-business-page">
+  <div class="transparent-overlay"></div>
+  <div class="fdc-m">
+    <div class="lhs" id="docsWrap">
+
+    </div>
+    <div class="rhs">
+      <div class="selectableTemplatesInfo box1">
+        <div class="d-flex align-items-center">
+          <div class="t25">Selected templates</div>
+          <div class="cs3 ml-auto">
+            <span id="selectedTemplateCount"></span>
+            /
+            <span id="availableTemplatesMaxCount"></span>
+          </div>
+        </div>
+        <hr class="line1">
+        <div class="r1 d-flex align-items-center">
+          <div class="t20 grey-text" id="remainingTemplatesInfo"></div>
+          <button class="btn btn-orange ml-auto">Add more documents</button>
+        </div>
+      </div>
+      <div class="selectedTemplates box1">
+        <div class="t25">Selected templates</div>
+        <hr class="line1">
+        <div id="selectedDocs"></div>
+      </div>
+    </div>
+  </div>
+</div>

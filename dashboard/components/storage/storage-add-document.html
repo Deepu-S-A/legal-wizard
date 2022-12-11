@@ -1,0 +1,249 @@
+<style>
+  .esign-make-document-page .green-doted-box {
+    background: rgba(0, 125, 90, 0.05);
+    border: 2px dashed rgba(0, 170, 122, 0.47);
+    border-radius: 20px;
+    text-align: center;
+    padding: 5rem 0;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #esignMakeDocFile {
+    display: none;
+  }
+
+  .esign-make-document-page .cs {
+    background: #FFFFFF;
+    /* Box DRP */
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+
+  .esign-make-document-page .icons-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .esign-make-document-page .cs10 {
+    width: 70%;
+    margin: 2rem auto 4rem auto;
+  }
+
+  .esign-make-document-page .cs10 .t30 {
+    margin-bottom: 1rem;
+  }
+
+  .esign-make-document-page .dnd-img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .esign-make-document-page .file-name-wrap {
+    position: relative;
+  }
+
+  .esign-make-document-page .text-input-style1 {
+    height: 50px;
+    background: #F8FAFB;
+    border: 1px solid #F5F5F5;
+    border-radius: 20px;
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .esign-make-document-page .dnd-wrap {
+    height: 18.5rem;
+    background: rgba(0, 125, 90, 0.05);
+    border: 2px dashed rgba(0, 125, 90, 0.25);
+    border-radius: 22px;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .esign-make-document-page .storage-page2{
+    display: none
+  }
+  .esign-make-document-page .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.esign-make-document-page input.selected-file-name {
+    width: 100%;
+}
+
+.esign-make-document-page img.ei {
+    position: absolute;
+    right: 3rem;
+    top: 0.75rem;
+    cursor: pointer;
+}
+
+.esign-make-document-page img.di {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    cursor: pointer;
+}
+
+.esign-make-document-page input.selected-file-name:focus {
+    outline: none;
+}
+.storage-page2 .box.b1{
+  height: 26rem;
+    width: 60%;
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 20px;
+    margin: 3rem auto 0 auto;
+}
+.storage-page input.input-style-text.txt1.cs2 {
+    height: 65px;
+    background: #F8FAFB;
+    border: 1px solid #F5F5F5;
+    border-radius: 20px;
+    margin: 4rem 0;
+}
+.storage-page .w-100.cs3 {
+    width: 100%!important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.storage-page .text-center.css7 {
+    display: flex;
+    justify-content: center;
+}
+
+.storage-page .css5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.storage-page .css7 .w {
+    display: flex;
+    margin-right: 1.5rem;
+    align-items: center;
+}
+
+.storage-page .modal .t25.black {
+    margin: 1rem 0;
+}
+
+.storage-page .w .img {
+    margin-right: 0.5rem;
+}
+
+.storage-page hr.css6 {
+    margin: 3rem 0;
+}
+.css4 {
+  padding-top: 2rem;
+}
+.storage-page3{
+  display: none;
+}
+</style>
+<div class="page-wrap esign-make-document-page storage-page">
+  <div class="storage-page1">
+    <div class="cs10">
+      <div class="t30">Add documents</div>
+      <div class="t20">Upload your document for safekeeping and more on wizard legal</div>
+    </div>
+    <div class="green-doted-box">
+      <div class="t20">Drag your file here to upload</div>
+      <div class="dnd-img">
+        <img src="../assets/img/dashboard/dnd.png" alt="" class="dnd" />
+      </div>
+      <div class="t20">Or</div>
+      <div class="btn-wrap">
+        <button class="btn btn-green" onclick="$('#esignMakeDocFile').trigger('click')">Choose file</button>
+        <input type="file" class="btn btn-green" id="esignMakeDocFile" />
+      </div>
+      <div class="t16">Maximum file size : <span class="green-text">5MB</span></div>
+      <div class="icons-wrap">
+        <div class="cs">
+          <img src="../assets/img/dashboard/google-drive.png" alt="" class="gd" />
+        </div>
+        <div class="cs">
+          <img src="../assets/img/dashboard/dropbox.png" alt="" class="gd" />
+        </div>
+        <div class="cs">
+          <img src="../assets/img/dashboard/onedrive.png" alt="" class="gd" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="storage-page2 text-center">
+    <div class="w-100">
+      <img src="../assets/img/dashboard/large-tick.png" alt=""/>
+    </div>
+    <div class="t30 cs1">Document successfully uploaded </div>
+    <div class="box b1 text-center">
+      <div class="t25 text-center">We need your name in order to continue. This name will be used in the document.</div>
+      <input class="input-style-text txt1 cs2">
+      <div class="w-100 cs3">
+        <button class="btn btn-green" onclick="$('.storage-page2').hide();$('.storage-page3').show();">Done</button>
+      </div>
+    </div>
+  </div>
+  <div class="storage-page3">
+    <div class="hd1 text-right">
+      <button class="btn btn-orange" data-toggle="modal" data-target="#addSignatureModal">Action</button>
+    </div>
+    <div class="doc-wrap"></div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="addSignatureModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="m-header d-flex">
+        <img src="../assets/img/wizard-logo.png" alt="close" class="ml-auto mr-auto">
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal">
+      </div>
+      <div class="modal-body">
+        <div class="text-center css4">
+          <img src="../assets/img/dashboard/logo3.png" alt="">
+          <div class="t25 black"><b>Show as where you want signature</b></div>
+          <div class="t18">You can add boxes for signature, initials, date and more.</div>
+        </div>
+        <div class="css5">
+          <button type="button" class="btn btn-green" data-dismiss="modal">Add signature boxes</button>
+        </div>
+        <hr class="css6">
+        <div class="text-center css7">
+          <div class="w w1">
+            <div class="img"><img src="../assets/img/dashboard/finger-scan.png" alt=""></div>
+            <div class="t18">E sign</div>
+          </div>
+          <div class="w w1">
+            <div class="img"><img src="../assets/img/dashboard/clipboard-import.svg" alt=""></div>
+            <div class="t18">Share document</div>
+          </div>
+          <div class="w w1">
+            <div class="img"><img src="../assets/img/dashboard/email.png" alt=""></div>
+            <div class="t18">Email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

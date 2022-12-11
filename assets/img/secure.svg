@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="112.561" viewBox="0 0 118 112.561">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_76" data-name="Rectangle 76" width="93.667" height="93.667" fill="none" stroke="#a8fff1" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_76-2" data-name="Rectangle 76" width="102.747" height="102.747" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_361" data-name="Group 361" transform="translate(-1195 -7926)">
+    <g id="Group_353" data-name="Group 353" transform="translate(1219.333 7944.895)" opacity="0.14">
+      <g id="Group_328" data-name="Group 328">
+        <g id="Group_327" data-name="Group 327" clip-path="url(#clip-path)">
+          <path id="Path_1082" data-name="Path 1082" d="M112.957,45.3A45.3,45.3,0,1,1,67.655,0a45.3,45.3,0,0,1,45.3,45.3" transform="translate(-22.352 1)" fill="none" stroke="#a8fff1" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_352" data-name="Group 352" transform="translate(1195 7926)" opacity="0.14">
+      <g id="Group_328-2" data-name="Group 328">
+        <g id="Group_327-2" data-name="Group 327" clip-path="url(#clip-path-2)">
+          <path id="Path_1082-2" data-name="Path 1082" d="M125.1,51.374A51.374,51.374,0,1,1,73.726,0,51.374,51.374,0,0,1,125.1,51.374" transform="translate(-22.352)" fill="#a8fff1"/>
+        </g>
+      </g>
+    </g>
+    <g id="vuesax_twotone_document-cloud" data-name="vuesax/twotone/document-cloud" transform="translate(598 7761)">
+      <g id="document-cloud" transform="translate(620 188)">
+        <g id="Group" transform="translate(4.675 4.675)">
+          <path id="Vector" d="M28.053,0H16.364C4.675,0,0,4.675,0,16.364V30.391C0,42.079,4.675,46.755,16.364,46.755" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <path id="Vector-2" data-name="Vector" d="M0,0V7.013" transform="translate(46.755 18.702)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <path id="Vector-3" data-name="Vector" d="M18.7,18.7H9.351C2.338,18.7,0,16.364,0,9.351V0Z" transform="translate(28.053)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <path id="Vector-4" data-name="Vector" d="M4.12,10.091a4.379,4.379,0,0,0,0,8.743h13A6.326,6.326,0,0,0,21.373,17.2,6.243,6.243,0,0,0,18.1,6.467C16.277-4.5.427-.336,4.167,10.114" transform="translate(28.047 32.596)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+        <path id="Vector-5" data-name="Vector" d="M0,0H56.106V56.106H0Z" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

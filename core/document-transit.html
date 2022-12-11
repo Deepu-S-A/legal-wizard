@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/basic.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <script src="https://kit.fontawesome.com/bd5298b8b8.js"></script>
+  <title>wizard</title>
+  <style>
+    .row.transit-wrap {
+      padding-top: 10%;
+      width: 80%;
+      margin: 0 auto;
+    }
+    img.i1 {
+      width: 4vw;
+    }
+    img.i2 {
+      width: 3vw;
+    }
+    .info2-wrap {
+      display: flex;
+      margin: 2.5vw 0;
+    }
+    img.i3 {
+      width: 2vw;
+      margin-right: 0.5vw;
+    }
+    .how-doesit-work {
+      background: rgb(241, 253, 247);
+      padding: 2.5vw 2.5vw 4vw 2.5vw;
+      border-radius: 3rem;
+    }
+    .item1 .info {
+      margin-left: 1.5vw;
+    }
+    .t2 {
+      color: #444;
+      font-size: 1.25vw;
+    }
+    .t3 {
+      color: #444;
+      font-size: 0.75vw;
+      margin-top: 2%;
+    }
+    .item1.d-flex {
+      margin-top: 1rem;
+    }
+    .t1,
+    .t4,
+    .t8 {
+      color: rgb(23, 159, 109);
+      font-size: 1.4vw;
+      font-weight: bold;
+      margin-bottom: 4vw;
+    }
+    .t8,
+    .t4 {
+      font-size: 1.5vw;
+    }
+    .doc-preview-wrap {
+      -webkit-box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      -moz-box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      padding: 1.5vw;
+      border-radius: 2vw;
+      margin-bottom: 6vw;
+    }
+    .doc-preview {
+      height: 40rem;
+      overflow: hidden;
+      zoom: 0.5;
+      padding: 3rem;
+      border: 1px solid #000;
+      border-radius: 3rem;
+    }
+    @media screen and (min-width:700px) {
+      .lhs {
+        width: 40%;
+        padding: 0 1vw;
+      }
+      .rhs {
+        width: 60%;
+        padding: 0 2vw;
+      }
+    }
+    .doc-name.txt3 {
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .t5 {
+      font-weight: bold;
+      color: #444;
+      font-size: 1.2vw;
+      height: 2rem;
+    }
+    .t6 {
+      font-size: 0.9vw;
+      color: #444;
+    }
+    .info2 .info {
+      margin-left: 1vw;
+    }
+    .info2-wrap.mt-4 {
+      margin-bottom: 1vw;
+    }
+    .info2.d-flex {
+      margin-right: 2vw;
+    }
+    .eligible {
+      background: rgb(226, 246, 240);
+      align-items: center;
+      padding: 1vw 1.2vw;
+      border-radius: 1vw;
+      display: none;
+      display: flex;
+    }
+    .eligible .t7 {
+      color: rgb(23, 159, 109);
+    }
+
+    .not-eligible .t7 {
+      color: rgb(184, 184, 184)
+    }
+
+    .not-eligible {
+      background: rgb(246, 246, 246);
+      align-items: center;
+      display: flex;
+      padding: 1vw 1.2vw;
+      border-radius: 1vw;
+    }
+    .filloutDocumentBtn {
+      height: 4vw;
+      padding: 0 3.5vw;
+    }
+    .summary-wrap {
+      -webkit-box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      -moz-box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      box-shadow: 0px -1px 24px 14px rgba(235, 255, 251, 1);
+      padding: 3vw 3vw;
+    margin-top: 7vw;
+    border-radius: 2vw;
+    }
+    img.hw2-img {
+    width: 3.5vw;
+}
+.item1.d-flex.hw2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.hwi {
+    min-width: 4vw;
+}
+  </style>
+</head>
+
+<body class="landing-wrapper">
+  <div id="header" class="section" w3-include-html="components/header.html"></div>
+  <div class="row fd-c-m transit-wrap">
+    <div class="lhs">
+      <div class="doc-preview-wrap">
+        <div class="doc-name txt3"></div>
+        <div class="doc-preview"></div>
+      </div>
+      <div class="how-doesit-work">
+        <div class="t1">How does it work ?</div>
+        <div class="f-wrap">
+          <div class="item1 d-flex">
+            <div class="hwi"><img src="../assets/img/hw1.png" class="i1" /></div>
+            <div class="info">
+              <div class="t2">Choose this template</div>
+              <div class="t3">Start by clicking on "fill out the template"</div>
+            </div>
+          </div>
+          <div class="item1 d-flex hw2">
+            <div class="hwi"><img src="../assets/img/hw2.png" class="hw2-img" /></div>
+            <div class="info">
+              <div class="t2">Complete the document</div>
+              <div class="t3">Answer a few questions and your document is created automatically</div>
+            </div>
+          </div>
+          <div class="item1 d-flex">
+            <div class="hwi"><img src="../assets/img/hw3.png" class="i1" /></div>
+            <div class="info">
+              <div class="t2">Save - print</div>
+              <div class="t3">Your document is ready !. You will recieve it in DOC and PDF formats. You will be able to
+                modify it. </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="s1">
+        <div class="t4 doc-name mb-4"></div>
+        <hr />
+        <div class="info2-wrap">
+          <div class="info2 d-flex">
+            <div><img src="../assets/img/last-modified.png" class="i2" /></div>
+            <div class="info">
+              <div class="t5">Last revision</div>
+              <div class="t6 lastUpdated">6-08-2022</div>
+            </div>
+          </div>
+          <div class="info2 d-flex">
+            <div><img src="../assets/img/formats.png" class="i2" /></div>
+            <div class="info">
+              <div class="t5">Formats</div>
+              <div class="t6">DOC and PDF</div>
+            </div>
+          </div>
+          <div class="info2 d-flex">
+            <div><img src="../assets/img/size.png" class="i2" /></div>
+            <div class="info">
+              <div class="t5">Size</div>
+              <div class="t6">Some pages</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="eligible mr-4">
+            <div><img src="../assets/img/sign.png" class="i3" /></div>
+            <div class="t7">Eligible for Esignature</div>
+          </div>
+          <div class="not-eligible mr-4">
+            <div><img src="../assets/img/sign-fade.png" class="i3" /></div>
+            <div class="t7">Not eligible for Esignature</div>
+          </div>
+          <button type="button" class="btn-style btn-green ml-4 filloutDocumentBtn">Fill out template</button>
+        </div>
+      </div>
+
+      <div class="summary-wrap">
+        <div class="t8 doc-name"></div>
+        <div class="summary"></div>
+      </div>
+    </div>
+  </div>
+  <div id="popularDocs" class="section" w3-include-html="./components/popular-documents.html"></div>
+  <div id="faq" class="section" w3-include-html="components/faq.html"></div>
+  <div id="footer" class="section" w3-include-html="components/footer.html"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    const baseUrl = "http://ezyhostings-001-site1.dtempurl.com/api/DocManagement";
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByClassName("section");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    includeHTML();
+    let params;
+    $(document).ready(function () {
+      $('.carousel').carousel()
+      setTimeout(() => {
+        params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+        getDocumentSummary();
+        renderFAQ();
+        renderAllCategoryPopularDocs();
+      }, 1000);
+      $(document).on("click", ".faq", function () {
+        $(this).toggleClass("open")
+      });
+      $(document).on('click', '.filloutDocumentBtn', () => {
+        location.href = `document-create.html?docid=${params.docid}&docname=${params.docname}`;
+      });
+    });
+
+    renderFAQ = () => {
+      let html = "", i = -1;
+      for (let q of faq) {
+        html += `<div class="faq"><div class="question" data-toggle="collapse" data-target="#faq${++i}" aria-expanded="false" aria-controls="faq${i}">
+            <div class="img-wrap1"><img src="../assets/img/next.png" class="img" alt="next"></div>
+            <div class="t24">${q.question}</div>
+          </div>
+          <div class="collapse answer" id="faq${i}">
+            ${q.answer}
+          </div></div>`;
+      }
+      $(".faq-wrap").html(html)
+    }
+
+    faq = [{ question: "What is Wizard Legal?", answer: "What is Wizard Legal?" },
+    { question: "Who is Wizard Legal for?", answer: "What does it cost to become a user?" },
+    { question: "What does Wizard Legal offer to it’s users?", answer: "What does it cost to become a user?" },
+    { question: "What does it cost to become a user?", answer: "What does it cost to become a user?" },
+    { question: "How do you create a document on Wizard Legal?", answer: "What are e-signatures?" },
+    { question: "What are e-signatures?", answer: "What are e-signatures?" },
+    { question: "What does Wizard Legal offer to it’s users?", answer: "What does Wizard Legal offer to it’s users?" },
+    { question: "What is the legal validly of an e-signature in India?", answer: "What is the legal validly of an e-signature in India?" },
+    { question: "How do I sign a document on Wizard legal?", answer: "How do I sign a document on Wizard legal?" },
+    { question: "Who writes my legal documents at Wizard Legal?", answer: "Who writes my legal documents at Wizard Legal?" },
+    { question: "Who can read / access my documents?", answer: "Who can read / access my documents?" },
+    { question: "How safe is my data with Wizard Legal?", answer: "How safe is my data with Wizard Legal?" },
+    { question: "Is Wizard Legal a legal firm?", answer: "Is Wizard Legal a legal firm?" },
+    { question: "How long does it take to create a legal document with Wizard Legal?", answer: "How long does it take to create a legal document with Wizard Legal?" }
+    ];
+
+    renderAllCategoryPopularDocs = () => {
+      const docCategories = [
+        { "categoryID": 1, "categoryName": "Human Resource", "remarks": null, "mCategoryTypeID": 1, image: "i2.png" },
+        { "categoryID": 2, "categoryName": "Real Estate", "remarks": null, "mCategoryTypeID": 1, image: "i1.png" },
+        { "categoryID": 3, "categoryName": "Family & Personal", "remarks": null, "mCategoryTypeID": 1, image: "i6.png" },
+        { "categoryID": 5, "categoryName": "Freelance Agreement", "remarks": null, "mCategoryTypeID": 1, image: "i4.png" },
+        { "categoryID": 6, "categoryName": "Marketing", "remarks": null, "mCategoryTypeID": 1, image: "i5.png" },
+        { "categoryID": 7, "categoryName": "Business Operations", "remarks": null, "mCategoryTypeID": 1, image: "business.png" }
+      ];
+      let html = "";
+      for (let doc of docCategories) {
+        html += `<a class="btn accordion-toggle" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+        aria-expanded="false" onclick="getDocumentsOfCategory(${doc.categoryID});" aria-controls="multiCollapseExample1"><img src="../assets/img/${doc.image}"
+      alt=""> ${doc.categoryName}</a>`;
+      }
+      $("#categoryListLhs").html(html);
+      setTimeout(() => {
+        $(".btn.accordion-toggle").first().trigger("click");
+      }, 500)
+    }
+
+    getDocumentsOfCategory = (categoryId) => {
+      $.ajax({
+        url: "http://ezyhostings-001-site1.dtempurl.com/api/DocManagement/GetDocumentDropDownData/" + categoryId,
+        type: 'GET',
+        success: function (resposnse) {
+          let html = "", counter = 0;
+          for (let item of resposnse.data) {
+            item.tag = item.tag.split('.')[0];
+            const dateModified = item.lastUpdatedDate != null ? item.lastUpdatedDate : "";
+            html += `<div class="doc">
+            <div class="left-container">
+              <i class="fa fa-folder-o" aria-hidden="true"></i>
+                <p>${item.tag}</p>
+            </div>
+            <a href="document-transit.html?docid=${item.id}&docname=${item.tag}&lastmodified=${item.lastUpdatedDate}"><button type="button" class=" btn-style1">Create</button></a>
+            </div>`;
+          }
+          $("#listOfDocumentsRhs").html(html)
+        }, error: function (err) { alert(err); }
+      });
+    }
+
+    getDocumentSummary = () => {
+      const Url = baseUrl + "/DocumentMappingByDocumentID/" + params.docid;
+      if (params.docname) {
+        $('.doc-name').html(params.docname);
+        $('.lastUpdated').html(params.lastmodified);
+      }
+      $.ajax({
+        url: Url,
+        type: 'GET',
+        success: function (response) {
+          console.log(response);
+          if (response.data) {
+            const mappingJson = JSON.parse(response.data.mappingJson);
+            $('.doc-preview').html(mappingJson.docAsHtml);
+            $('.summary').html(mappingJson.summaryPage);
+            if (mappingJson.eSignatureEnabled) {
+              $('.not-eligible').hide();
+              $('.eligible').show();
+            } else {
+              $('.eligible').hide();
+              $('.not-eligible').show();
+            }
+            $('.summary').append(`<button type="button" class="btn-style btn-green ml-auto filloutDocumentBtn">Fill out template</button>`);
+          }
+          else alert('Couldnot load Data !');
+        },
+        error: function (err) { alert(err); $(".spinner").hide() },
+        complete: function () {
+          $(".spinner").hide();
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

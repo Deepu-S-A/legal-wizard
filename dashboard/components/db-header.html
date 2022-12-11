@@ -1,0 +1,48 @@
+<style>
+    .db-header {
+        display: flex;
+        align-items: center;
+        height: 6rem;
+        padding: 0 3%;
+    }
+
+    .notification-bell {
+        position: relative;
+        margin: 0 2rem;
+        cursor: pointer;
+    }
+
+    .notification-count {
+        position: absolute;
+        top: -8px;
+        left: 11px;
+        width: 20px;
+        height: 20px;
+        background: rgb(220, 34, 40);
+        border-radius: 8px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-rhs.d-flex.ml-auto {
+        align-items: center;
+    }
+
+    .db-header .t20 {
+        margin-right: 1.5rem;
+    }
+</style>
+<header class="db-header" onclick="location.href='dashboard.html'">
+    <div class="logo-c"><img src="../assets/img/wizard-logo.png" class="img-fluid logo" alt=""></div>
+    <div class="header-rhs d-flex ml-auto">
+        <button class="btn btn-green btn-md">Upgrade</button>
+        <div class="notification-bell">
+            <img src="../assets/img/dashboard/db/bell.png" class="bell" alt="">
+            <div class="notification-count">2</div>
+        </div>
+        <div class="t20">Deepu S A</div>
+        <div class="avatar-wrap"><img src="../assets/img/dashboard/db/avatar.png" class="avatar" alt=""></div>
+    </div>
+</header>

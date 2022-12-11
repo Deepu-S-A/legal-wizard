@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290.088" height="315" viewBox="0 0 290.088 315">
+  <g id="Group_596" data-name="Group 596" transform="translate(-391 -10211)">
+    <circle id="Ellipse_1351" data-name="Ellipse 1351" cx="111.5" cy="111.5" r="111.5" transform="translate(458.088 10303)" fill="#09bb8b" opacity="0.06"/>
+    <g id="vuesax_twotone_quote-up" data-name="vuesax/twotone/quote-up" transform="translate(391 10211)" opacity="0.54">
+      <g id="quote-up" transform="translate(0 0)">
+        <g id="Group_99" data-name="Group 99" transform="translate(23.164 37.99)" opacity="0.4">
+          <path id="Vector" d="M0,0H67.177C84.9,0,97.059,13.436,97.059,29.882v37.3c0,16.447-12.162,29.882-29.882,29.882H29.882A29.955,29.955,0,0,1,0,67.178Z" transform="translate(0 105.05)" fill="none" stroke="#09bb8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+          <path id="Vector-2" data-name="Vector" d="M0,105.05C0,34.978,13.088,23.4,52.468,0" fill="none" stroke="#09bb8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+        </g>
+        <g id="Group" transform="translate(157.866 37.99)">
+          <path id="Vector-3" data-name="Vector" d="M0,0H67.177C84.9,0,97.059,13.436,97.059,29.882v37.3c0,16.447-12.162,29.882-29.882,29.882H29.882A29.955,29.955,0,0,1,0,67.178Z" transform="translate(0 105.05)" fill="none" stroke="#bed7ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+          <path id="Vector-4" data-name="Vector" d="M0,105.05C0,34.978,13.088,23.4,52.467,0" fill="none" stroke="#bed7ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+        </g>
+        <path id="Vector-5" data-name="Vector" d="M0,0H277.974V277.974H0Z" transform="translate(277.974 277.974) rotate(180)" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

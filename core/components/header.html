@@ -1,0 +1,187 @@
+<style>
+    .countriesDdn img {width: 2rem !important;}
+    header{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    top:0;
+}
+header img.img-fluid {
+    width: 10.5vw;
+}
+header ul li a{
+    font-size: 1vw;
+}
+header .navbar-nav .nav-link {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #5D5D5D !important;
+}
+header li.nav-item {
+      width: auto;
+    padding: 0 1vw;
+    margin: 0 !important;
+  }
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #ffffff !important;
+    }
+header .dropdown:hover .dropdown-menu{
+    background-color:white;
+    display: block;
+    margin-top: 0;
+    padding-right: 10px;
+}
+header .dropdown-item{
+    padding-right: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+header .dropdown-menu{
+    left: -100px;
+}
+header .navbar-light .navbar-nav .nav-link:hover{
+    color: #000;
+}
+header .dropdown-item:active {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
+header .dropdown-menu{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: none;
+}
+header .dropdown i{
+    color: #99a4a1;
+    font-weight: 900;
+    font-size: 19px;
+}
+header .dropdown-item:focus, .dropdown-item:hover{
+    background-color: white;
+}
+header .dropdown-menu::before{
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff;
+    display: block;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -9px;
+    right: 14px;
+    z-index: -1;
+}
+header .dropdown-item img{
+    width: 10%;
+    margin-right: 15px;
+}
+header .dropdown-menu{
+    z-index: 100;
+} 
+
+header .container-fluid {
+    padding: 0 10%;
+    padding-top: 8px;
+}
+
+div#navbarSupportedContent {margin-top: 1rem;}
+
+.btn-wp1.ml-auto {
+  display: flex;
+}
+header .dropdown-toggle::after {
+    display: none;
+}
+header .btn-style{
+  height: 2.8rem;
+    padding: 0 1.2vw;
+    font-size: 1vw;
+    border-radius: 10px !important;
+}
+@media only screen and (max-width: 700px) {
+  .navbar-light .navbar-toggler {
+    margin-left: auto;
+  }
+}
+@media only screen and (max-width: 999px) {
+img.img-fluid {
+    width: 130px !important;
+}
+header ul li a {
+    font-size: 14px;
+    line-height: 16px;
+}
+.btn-style {
+    padding: 0rem 1rem !important;
+    font-size: 15px !important;
+    height: 2rem !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+}
+@media only screen and (min-width: 800px) {
+  .navbar-brand {
+    margin-right: 0rem !important; 
+}
+  header .container-fluid {
+    padding: 0;
+    width: 80%;}
+    header ul.navbar-nav {
+      margin-left: 8vw;
+    margin-right: 1vw;
+    flex-grow: 100;
+    justify-content: space-between;
+    }
+  header .collapse .btn-wp1 {
+    margin-left: 1vw !important;
+}
+.navbar-expand-lg .navbar-nav .nav-link {    padding: 0 !important;
+    margin: 0 0;
+    font-size: 1vw;}
+}
+</style>
+<header>
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html"><img src="../assets/img/wizard-logo.png" class="img-fluid" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="documents.html" role="button">
+              Documents
+            </a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="business.html">For Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signature.html">E Signature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+              <img src="../assets/img/India.png" class="mr-2 w-auto nav-link" alt="India">
+          </li>
+        </ul>
+        <div class="btn-wp1 ml-auto">
+          <a href="login.html" class="btn-white btn-style">Login</a> 
+          <a href="login.html" class="btn-green btn-style ml-3">Sign in</a> 
+        </div>
+      </div>
+    </nav>
+  </div>
+  </header>

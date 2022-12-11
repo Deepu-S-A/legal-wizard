@@ -1,0 +1,125 @@
+<style>
+  .signature-box {
+    height: 183px;
+    background: rgba(0, 125, 90, 0.05);
+    border: 2px dashed #00AA7A;
+    border-radius: 16px;
+  }
+
+  .info-page img.avatar {
+    width: 12.5vw;
+  }
+
+  .info-page .avatar {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-page .personal .t25 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-page .personal .item.dfc img {
+    width: 15px;
+    margin-right: 1rem;
+  }
+
+  .info-page .personal .item.dfc {
+    justify-content: start;
+    margin-bottom: 1rem;
+  }
+
+  .delete-wrap .t25.black {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+</style>
+<div class="row info-page">
+  <div class="col sm-12  col-md-8">
+    <div class="box personal-info">
+      <div class="t30">Edit Personal information</div>
+      <hr class="hr1" />
+      <div class="row">
+        <div class="col sm-6">
+          <div class="form-group input-style-item">
+            <label for="fname">First name</label>
+            <input type="text" class="form-control" id="fname" placeholder="First name">
+          </div>
+          <div class="form-group input-style-item">
+            <label for="email">Email id</label>
+            <input type="text" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group input-style-item">
+            <label for="piAddress">Address</label>
+            <textarea id="piAddress" placeholder="Address"></textarea>
+          </div>
+        </div>
+        <div class="col sm-6">
+          <div class="form-group input-style-item">
+            <label for="lname">Last name</label>
+            <input type="text" class="form-control" id="lname" placeholder="Last name">
+          </div>
+          <div class="form-group input-style-item">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" placeholder="Phone">
+          </div>
+          <div class="form-group input-style-item">
+            <label for="zip">Zip code</label>
+            <input type="text" class="form-control" id="zip" placeholder="Zip code">
+          </div>
+        </div>
+      </div>
+      <hr class="hr1" />
+      <div class="row">
+        <div class="col sm-6">
+          <div class="form-group input-style-item">
+            <label for="fname">Interface language</label>
+            <div class="info">This setting will update the display language.</div>
+            <input type="text" class="form-control" readonly id="language" placeholder="English">
+          </div>
+          <div class="form-group input-style-item">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="password">
+            <input type="password" class="form-control mt-3" id="confirmPassword" placeholder="confirm password">
+            <button class="btn btn-orange mt-4">Change password</button>
+          </div>
+        </div>
+        <div class="col sm-6">
+          <div class="form-group input-style-item">
+            <label for="fname">Signature</label>
+            <div class="signature-box"></div>
+            <button class="btn btn-green mt-4">Set up signature</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col sm-12  col-md-4">
+    <div class="box personal">
+      <div class="avatar"><img src="../assets/img/dashboard/db/avatar.png" class="avatar" alt=""></div>
+      <div class="t25">Jeswin Jose</div>
+      <div class="item dfc">
+        <img src="../assets/img/dashboard/db/avatar.png" class="em" alt="email">
+        <span class="t16">jeswinjose123@gmail.com</span>
+      </div>
+      <div class="item dfc">
+        <img src="../assets/img/dashboard/db/avatar.png" class="em" alt="email">
+        <span class="t16">123456 87945</span>
+      </div>
+      <div class="item dfc">
+        <img src="../assets/img/dashboard/db/avatar.png" class="em" alt="email">
+        <span class="t16">123456 87945</span>
+      </div>
+    </div>
+
+    <div class="box delete-wrap">
+      <div class="danger"><img src="../assets/img/dashboard/avatar-big.png" class="danger" alt=""></div>
+      <div class="t25 black"><b>Delete your files</b></div>
+      <div class="info-text">If delete your data fully please follow the below conditions and proceed to delate your all
+        data. Please read carefully and do the delete process.</div>
+      <button class="btn btn-red mt-2">Delete all data</button>
+    </div>
+  </div>
+</div>

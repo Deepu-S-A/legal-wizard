@@ -1,0 +1,57 @@
+.rhs-img{
+    height: 100vh;
+    width: 100%;
+}
+.lhs{
+    background: rgb(246,246,246);
+}
+.view2,.view3{display: none;}
+.cards{margin-top: 2rem;}
+.cardItem{
+    display: flex;
+    background: #fff;
+    align-items: center;
+    padding: 1rem 10%;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 119px;
+}
+.cardItem .t25{margin-left: 1rem;}
+.cardItem.active{
+background: #0ABC8A;
+}
+.cardItem.active .t25{color: #fff !important;}
+.lhs-content-wrap {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 4rem;
+}
+img.step-widget {
+    margin: 3rem 0 3rem 0;
+}
+.view2 .cardItem{height: 80px;}
+.col-sm-12.col-md-5.rhs{
+    background: url(/assets/img/dashboard/tellus/rhs.png) 0 0 no-repeat;
+    background-size: cover;
+}
+.btn{height: 64px;}
+.view1 img,.view2 img,.view3 img {
+    cursor: pointer;
+}
+.view2 .cardItem img.step-widget {
+    width: 35px;
+    height: 35px;
+}
+.view3 .ddn-item.input-style-wrap {
+    margin-bottom: 4rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cs4 {
+    width: 71%;
+    margin: 0 auto;
+}
+.sourceOtherWrap{display: none;}

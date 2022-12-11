@@ -1,0 +1,71 @@
+<div class="lightgreen-panel rating1">
+    <div class="img-wrap1">
+      <div class="img1"><img src="../assets/img/rating-green1.png" class="" alt="rating"></div>
+      <div class="rating">4.5/5 rating</div>
+      <div class="img2"><img src="../assets/img/stars1.png" class="" alt="stars"></div>
+    </div>
+    <div class="hline line1"></div>
+    <div class="txt-wrap1 ">
+      <div class="t22">"To bring this home, studies have found that approximately 92% of people will read customer
+        testimonials when considering a purchase, and an additional 88% state they trust online reviews just as much as
+        they believe a recommendation from a friend or family member. "</div>
+      <div class="t22 bold">Peter Parker | Company CEO</div>
+    </div>
+  </div>
+  <style>
+      .lightgreen-panel.rating1 {
+        width: 80%;
+    margin: 2rem auto 0 auto;
+    padding: 4rem 9.5%;
+    display: flex;
+    border-radius: 3.5rem;
+    margin-bottom: 9rem;
+}
+.hline.line1 {margin: 0 4rem;}
+.lightgreen-panel.rating1 .rating {text-align: center;margin: 1rem 0 1rem 0;}
+.lightgreen-panel.rating1 .img2 {text-align: center;}
+.lightgreen-panel.rating1 .txt-wrap1 {padding-top: 1rem;}
+.rating1 .t22 {
+    margin-top: 1.5rem;
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+  .lightgreen-panel.rating1 {
+    padding: 3.5rem 10%;
+  }
+  .rating1 .txt1 {
+    font-size: 18px;
+  }
+  .rating1 .txt2 {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 701px) and (max-width: 1300px) {
+.lightgreen-panel.rating1 {
+    padding: 3.5rem 10%;
+    flex-direction: column;
+    text-align: center;
+}
+.lightgreen-panel.rating1 .hline.line1 {
+    display: none;
+}
+}
+
+@media only screen and (max-width: 700px){
+    .lightgreen-panel.rating1 {
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    .rating1 .hline.line1 {
+        display: none;
+    }
+
+    .rating1 .txt1 {
+        color: #5D5D5D;
+        font-size: 16px;
+        line-height: 1.5rem;
+    }
+    .rating1 .txt2{color: #444444;font-family: psBold;font-size: 22px;margin-top: 1rem;}
+}
+  </style>

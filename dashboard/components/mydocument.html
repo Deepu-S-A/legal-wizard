@@ -1,0 +1,201 @@
+<style>
+  .db-mydocs .filter,
+  .db-mydocs .sort {
+    margin: 0 1.5rem;
+  }
+
+  .db-mydocs .heading-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .db-mydocs .heading-row .lhs {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+
+  .db-mydocs .heading-row .rhs {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+  }
+
+  .db-mydocs .heading-row .btn-green {
+    margin-left: auto;
+  }
+
+  .db-mydocs .heading-row .btn-white {
+    margin-right: 1.5rem;
+  }
+
+  .db-mydocs .input-search-box {
+    margin-left: auto;
+    width: 50%;
+  }
+
+  .db-mydocs .signer {
+    width: 40px;
+    margin-right: -2px;
+  }
+
+  .db-mydocs #nav-tabContent {
+    padding-top: 3rem;
+  }
+
+  .db-mydocs .status-wrap {
+    width: 50%;
+  }
+
+  .db-mydocs .status-wrap .t12 {
+    margin-left: auto;
+    color: #888FA7;
+  }
+
+  .db-mydocs .progress-bar {
+    background: #05bb8a;
+  }
+
+  .db-mydocs .status-text.d-flex {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .db-mydocs tbody tr {
+    height: 108px;
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 22px;
+  }
+
+  .db-mydocs .status-column {
+    display: flex;
+    align-items: center;
+  }
+
+  .db-mydocs .tabs-wrap {
+    background: #fff;
+    padding: 2rem 4rem;
+    margin-top: 2rem;
+    border-radius: 20px;
+  }
+
+  .db-mydocs tbody tr td {
+    padding-top: 2rem;
+  }
+
+  .db-mydocs .action-btn {
+    height: 50px;
+    width: 50px;
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+
+  .db-mydocs .action-btn img {
+    width: 30px;
+    height: 26px;
+  }
+
+  .db-mydocs .rhs .action-btn:last-child {
+    margin: 0 21px;
+  }
+
+  .db-mydocs .rhs .action-btn {
+    margin: 0 10px;
+  }
+
+  .db-mydocs .rhs button.btn.btn-white {
+    margin-left: 10px;
+  }
+
+  .db-mydocs div#nav-tabContent {
+    padding-top: 2rem;
+  }
+</style>
+<div class="db-mydocs">
+  <div class="heading-row">
+    <div class="lhs">
+      <div class="t20"><b>Documents</b> <span class="t16">(<span class="t16 docsCounts"></span>)</span></div>
+      <div class="input-search-box">
+        <input class="input-style-text mydocuments-search-text" placeholder="Search exercises..." />
+        <div class="search-box mydocuments-search-btn"></div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="action-btn">
+        <img src="../assets/img/dashboard/db/filter.png" alt="rhs" class="filter">
+      </div>
+      <div class="action-btn">
+        <img src="../assets/img/dashboard/db/sort.svg" alt="rhs" class="sort">
+      </div>
+      <button class="btn btn-white">Download</button>
+      <button class="btn btn-green">New documents</button>
+    </div>
+  </div>
+  <div class="tabs-wrap">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active t20" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button"
+          role="tab" aria-controls="nav-home" aria-selected="true">Esigned document</button>
+        <button class="nav-link t20" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button"
+          role="tab" aria-controls="nav-profile" aria-selected="false">Drafted documents</button>
+        <button class="nav-link t20" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button"
+          role="tab" aria-controls="nav-contact" aria-selected="false">Uploaded documents</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Document name</th>
+              <th scope="col">Created on</th>
+              <th scope="col">Signers</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="esignedDocTbody">
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade show" role="tabpanel" aria-labelledby="nav-home-tab">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Document name</th>
+                <th scope="col">Created on</th>
+                <th scope="col">Signers</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="draftedDocTbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="tab-pane fade show" role="tabpanel" aria-labelledby="nav-home-tab">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Document name</th>
+                <th scope="col">Created on</th>
+                <th scope="col">Signers</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="uploadedDocTbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

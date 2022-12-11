@@ -1,0 +1,55 @@
+<style>
+    .branding-page .cs1 {
+        margin-top: 2rem;
+    }
+
+    .branding-page .cs2 {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .branding-page .signature-box {
+        height: 183px;
+        background: rgba(0, 125, 90, 0.05);
+        border: 2px dashed #00AA7A;
+        border-radius: 16px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="branding-page box">
+    <div class="t30 cs1">Branding</div>
+    <hr class="hr1" />
+    <div class="t20 cs2">Company logo</div>
+
+    <div class="logo-box signature-box">
+        <label for="green-text">Upload logo or drop the file here</label>
+        <div class="t20">Or</div>
+        <button class="btn btn-green mt-4">Choose File</button>
+    </div>
+    <div class="row branding-details-wrap">
+        <div class="col sm-6">
+            <div class="form-group input-style-item">
+                <label for="cname">Company name</label>
+                <input type="text" class="form-control" id="cname" placeholder="Company name">
+            </div>
+            <div class="form-group input-style-item">
+                <label for="piAddress">Email signature</label>
+                <textarea id="signature" placeholder="Email signature"></textarea>
+            </div>
+        </div>
+        <div class="col sm-6">
+            <div class="form-group input-style-item">
+                <label for="cname">Company name</label>
+                <input type="text" class="form-control" id="cname" placeholder="Company name">
+            </div>
+            <div class="form-group input-style-item">
+                <label for="redirection">Redirection page</label>
+                <input type="text" class="form-control" id="redirection" placeholder="Redirection url">
+            </div>
+        </div>
+    </div>
+</div>

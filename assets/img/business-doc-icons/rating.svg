@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="99.596" height="107.156" viewBox="0 0 99.596 107.156">
+  <g id="Group_537" data-name="Group 537" transform="translate(2 2)">
+    <g id="Group">
+      <path id="Vector" d="M57.358,0h-23.9C9.56,0,0,9.56,0,33.459V62.137C0,86.037,9.56,95.6,33.459,95.6" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <path id="Vector-2" data-name="Vector" d="M0,0V14.339" transform="translate(95.596 38.238)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <path id="Vector-3" data-name="Vector" d="M38.238,38.238H19.119C4.78,38.238,0,33.459,0,19.119V0Z" transform="translate(57.358)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g id="vuesax_twotone_star" data-name="vuesax/twotone/star" transform="translate(43.018 52.578)">
+      <g id="star" transform="translate(0 0)">
+        <path id="Vector-4" data-name="Vector" d="M25.7,3.138l3.856,7.711a4.761,4.761,0,0,0,3.111,2.3l6.988,1.161c4.469.745,5.521,3.987,2.3,7.186L36.517,26.93a4.757,4.757,0,0,0-1.139,3.965l1.555,6.726c1.227,5.324-1.6,7.383-6.309,4.6l-6.55-3.878a4.736,4.736,0,0,0-4.338,0l-6.55,3.878c-4.688,2.782-7.536.7-6.309-4.6l1.555-6.726A4.757,4.757,0,0,0,7.293,26.93L1.86,21.5c-3.2-3.2-2.169-6.441,2.3-7.186l6.988-1.161a4.771,4.771,0,0,0,3.089-2.3l3.856-7.711C20.2-1.046,23.614-1.046,25.7,3.138Z" transform="translate(4.384 4.551)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        <path id="Vector-5" data-name="Vector" d="M0,0H52.578V52.578H0Z" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

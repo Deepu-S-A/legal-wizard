@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="143.656" height="135.114" viewBox="0 0 143.656 135.114">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_76" data-name="Rectangle 76" width="110.485" height="110.485" fill="none" stroke="#a8fff1" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_76-2" data-name="Rectangle 76" width="121.196" height="121.196" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_504" data-name="Group 504" transform="translate(-426.971 -9661.886)">
+    <g id="vuesax_twotone_document-cloud" data-name="vuesax/twotone/document-cloud" transform="translate(444.708 9674.919)">
+      <g id="document-cloud" transform="translate(0 0)">
+        <g id="Group" transform="translate(7.144 7.144)">
+          <path id="Vector" d="M42.861,0H25C7.144,0,0,7.144,0,25V46.433c0,17.859,7.144,25,25,25" transform="translate(0)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          <path id="Vector-2" data-name="Vector" d="M0,0V10.715" transform="translate(71.436 28.574)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          <path id="Vector-3" data-name="Vector" d="M28.574,28.574H14.287C3.572,28.574,0,25,0,14.287V0Z" transform="translate(42.862)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+        </g>
+        <path id="Vector-4" data-name="Vector" d="M6.3,15.418c-8.394.607-8.394,12.751,0,13.358H26.154a9.666,9.666,0,0,0,6.5-2.5c5.893-5.143,2.75-15.43-5-16.395C24.869-6.87.652-.513,6.367,15.453" transform="translate(42.853 49.803)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" opacity="0.4"/>
+        <path id="Vector-5" data-name="Vector" d="M0,0H85.723V85.723H0Z" fill="none" opacity="0"/>
+      </g>
+    </g>
+    <g id="Group_353" data-name="Group 353" transform="translate(460.142 9686.515)" opacity="0.14">
+      <g id="Group_328" data-name="Group 328">
+        <g id="Group_327" data-name="Group 327" clip-path="url(#clip-path)">
+          <path id="Path_1082" data-name="Path 1082" d="M129.226,53.437A53.437,53.437,0,1,1,75.789,0a53.437,53.437,0,0,1,53.437,53.437" transform="translate(-22.352 1.18)" fill="none" stroke="#a8fff1" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_352" data-name="Group 352" transform="translate(426.971 9661.886)" opacity="0.14">
+      <g id="Group_328-2" data-name="Group 328">
+        <g id="Group_327-2" data-name="Group 327" clip-path="url(#clip-path-2)">
+          <path id="Path_1082-2" data-name="Path 1082" d="M143.548,60.6A60.6,60.6,0,1,1,82.95,0a60.6,60.6,0,0,1,60.6,60.6" transform="translate(-22.352)" fill="#a8fff1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

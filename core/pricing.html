@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/basic.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <title>Pricing</title>
+  <style>
+    section.pricing-wrap {
+      padding-top: 10rem;
+    }
+
+    .green-box {
+      border-radius: 40px 40px 0px 0px;
+      background: #fff;
+    }
+
+    .green-box .head {
+      height: 80px;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .green-box .heading2 {
+      text-align: center;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: #08AD80;
+      margin-right: 1rem;
+    }
+
+    .green-box .rw {
+      text-align: center;
+      align-items: center;
+    }
+
+    .green-box .t24 {
+      text-align: center;
+    }
+
+    .green-box .c1 {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    .green-box .c1 .t20 {
+      text-align: left;
+    }
+
+    .head1 {
+      background: #7dddcf;
+    }
+
+    .head2 {
+      background: #04bea3;
+    }
+
+    .head3 {
+      background: #09BB8B;
+    }
+
+    .box-content {
+      border: 1px solid #04bea3;
+      padding: 3rem 2rem;
+      height: 32rem;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .number-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .green-box * {
+      color: #626366;
+    }
+
+    .number-input,
+    .number-input * {
+      box-sizing: border-box;
+    }
+
+    .number-input button {
+      outline: none;
+      -webkit-appearance: none;
+      font-size: 25px;
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      background: #08AD80;
+      border: none;
+      color: #fff;
+    }
+
+    .number-input input[type=number] {
+      max-width: 3rem;
+      padding: 0.5rem;
+      font-size: 20px;
+      height: 3rem;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #08AD80;
+    }
+
+    .c3 {
+      height: 21.5rem;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+      text-align: center;
+    }
+
+    .pricing-chart-wrap {
+      width: 92%;
+      margin: 3rem auto 0 auto;
+      background: #f9fcfb;
+      padding: 1rem 5rem 3rem 5rem;
+      border-radius: 4rem;
+    }
+
+    .col .column {
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .name-col {
+      text-align: left !important;
+      justify-content: flex-start !important;
+    }
+
+    .colm {
+      background: #fff;
+      width: 100%;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .colm * {
+      color: #626366
+    }
+
+    .colm.name,
+    .row .purple-col:first-child .bg-white .colm {
+      justify-content: flex-start;
+    }
+
+    .purple-col .tick {
+      height: 24px;
+      background: none;
+    }
+
+    .name-col {
+      padding-left: 0 !important;
+    }
+
+    .name-col .name {
+      padding-left: 1rem !important;
+      font-weight: bold;
+    }
+
+    .bg-white {
+      height: 5rem;
+    }
+
+    div#basicFeatures .row:last-child .col {
+      height: 5rem;
+      background: #fff;
+    }
+
+    .box-content .btn-green {
+      color: white;
+    }
+
+
+    /*switch styles*/
+
+    div.btn-container {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    div.btn-container i {
+      display: inline-block;
+      position: relative;
+      top: -9px;
+    }
+
+    .btn-color-mode-switch {
+      display: inline-block;
+      margin: 0px;
+      position: relative;
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+      margin: 0px;
+      width: 15.5rem;
+      height: 3.1rem;
+      background: #F0F3F2;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: block;
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+      content: attr(data-on);
+      position: absolute;
+      font-size: 1.2rem;
+      font-weight: 500;
+      top: 8px;
+      right: 20px;
+      color: #5D5D5D;
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+      content: attr(data-off);
+      width: 7.5rem;
+      height: 45px;
+      background: #74B9FF;
+      font-size: 1.2rem;
+      border-radius: 26px;
+      position: absolute;
+      left: 2px;
+      color: #fff;
+      top: 2px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0px 0px 6px -2px #111;
+      padding: 5px 0px;
+    }
+
+    .btn-color-mode-switch>.alert {
+      display: none;
+      background: #FF9800;
+      border: none;
+      color: #fff;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"] {
+      cursor: pointer;
+      width: 50px;
+      height: 25px;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      margin: 0px;
+    }
+
+    .toggle-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 90%;
+      margin: 3rem auto 1.5rem auto;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+      background: #F0F3F2;
+      color: #5D5D5D;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+      content: attr(data-on);
+      left: 128px;
+      background: #74B9FF;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+      content: attr(data-off);
+      right: auto;
+      left: 36px;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+      display: block;
+    }
+
+    /*planType switch*/
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType {
+      height: 72px;
+      width: 26rem;
+      border-radius: 40px;
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:after {
+      background: #09BB8B;
+      width: 12rem;
+      height: 56px;
+      top: 9px;
+      left: 7px;
+      font-size: 25px;
+      padding-top: 7px;
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:before {
+      font-size: 24px;
+      top: 18px;
+      right: 32px;
+    }
+
+    .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner.planType:after {
+      left: 218px;
+      background: #09BB8B;
+    }
+
+    .box22 .box-content {
+      padding: 1.5rem 1rem;
+    }
+
+    .t12 {
+      font-size: 12px;
+      color: #626366;
+      text-align: center;
+    }
+
+    .grey {
+      color: #AEAEAE
+    }
+
+    .css2 {
+      color: #08AD80;
+      text-align: center;
+      margin-top: -16px;
+    }
+
+    .css3.t12.grey {
+      margin-top: 12px;
+    }
+
+    .strike {
+      font-size: 18px;
+    }
+
+    button.plus {
+      border-radius: 0px 14px 14px 0px;
+    }
+
+    button.minus {
+      border-radius: 14px 0px 0px 14px;
+    }
+
+    .btn-style.btn-green:hover {
+      color: #626366;
+    }
+
+    #basicFeatures .row:first-child .colm {
+      padding-top: 3rem;
+      height: 7rem;
+    }
+
+    .head3 {
+      background: #0bad80;
+    }
+
+    .purple-col .colm {
+      background: #fafbff;
+      width: 100%;
+    }
+
+    .green-box .btn-style {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    @media only screen and (min-width: 900px) and (max-width:1400px) {
+      .box-content .btn-style {
+        width: 90%;
+        font-size: 16px;
+        height: 3rem;
+        padding: 0 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+
+      #basicFeatures,
+      #specialFeatures {
+        display: none;
+      }
+
+      .green-box {
+        margin-top: 3rem;
+      }
+
+      .toggle-btn-container {
+        margin: 0rem auto 2rem auto;
+      }
+
+      .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:after {
+        top: 9px;
+        font-size: 18px;
+        padding-top: 14px;
+      }
+
+      .pricing-chart-wrap {
+        padding: 1rem 2rem 3rem 2rem;
+      }
+
+      .green-box .btn-style {
+        width: 82%;
+      }
+
+      .c3 {
+        height: 16.5rem;
+      }
+
+      .box-content {
+        height: 26rem;
+      }
+
+      .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType {
+        width: 23rem;
+      }
+
+      .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:before {
+        font-size: 18px;
+        top: 23px;
+        right: 32px;
+      }
+    }
+
+    @media only screen and (min-width: 701px) and (max-width: 1300px) {
+      .box-content {
+        padding: 3rem 0.5rem;
+      }
+
+      .dot {
+        display: none;
+      }
+
+      .green-box .c2 .t20 {
+        text-align: left;
+      }
+
+      .green-box .head {
+        font-size: 22px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body class="container-fluid">
+  <script type="text/javascript" src="../assets/img/chart1.json"></script>
+  <div class="spinner">
+    <img class="spinner-img" alt="loading" src="../assets/img/spinner.gif" />
+  </div>
+  <div id="header" class="section" w3-include-html="components/header.html"></div>
+  <section class="page-content-wrap">
+    <!--<lottie-player src="../assets/img/chart1.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>-->
+    <div class="text-green text-center t20">PRICING</div>
+    <div class="heading2 mt-4 pl-4 text-center mb-4 pb-4">Transparent pricing for you</div>
+    <div class="toggle-btn-container justify-content-center">
+      <div class="btn-container">
+        <label class="planType switch btn-color-mode-switch">
+          <input type="checkbox" name="planType" id="planType" value="1">
+          <label for="planType" data-on="For Business" data-off="E Signature"
+            class="planType btn-color-mode-switch-inner"></label>
+        </label>
+      </div>
+    </div>
+
+    <div class="pricing-chart-wrap page-content-wrap">
+      <div class="toggle-btn-container mt-4 pt-4" id="subscriptionTypeWrap">
+        <div class="btn-container">
+          <label class="switch btn-color-mode-switch">
+            <input type="checkbox" name="subscriptionType" id="subscriptionType" value="1">
+            <label for="subscriptionType" data-on="Monthly" data-off="Annual"
+              class="btn-color-mode-switch-inner"></label>
+          </label>
+        </div>
+      </div>
+      <div class="row" id="eSignatureBoxesWrap">
+        <div class="col-sm-6 col-md-3">
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box1 green-box">
+            <div class="head head1">Basic</div>
+            <div class="box-content">
+              <div class="c3">
+                <div class="heading2 hd1">₹499</div>
+                <div class="t24">Monthly</div>
+                <div class="d-flex c1 rw">
+                  <div class="dot"></div>
+                  <div class="t20">20 Aadhaar/Bio Signature</div>
+                </div>
+                <div class="d-flex c2 rw">
+                  <div class="dot"></div>
+                  <div class="t20">90 days Storage</div>
+                </div>
+              </div>
+              <div class="btn-style btn-white">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box2 green-box">
+            <div class="head head2">Corporate</div>
+            <div class="box-content">
+              <div class="heading2 hd2">₹1399</div>
+              <div class="t24">Monthly</div>
+              <div class="d-flex c1 rw">
+                <div class="dot"></div>
+                <div class="t20">20 Aadhaar/Bio Signature</div>
+              </div>
+              <div class="d-flex c2 rw">
+                <div class="dot"></div>
+                <div class="t20">90 days Storage</div>
+              </div>
+              <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                  class="minus">-</button>
+                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+              </div>
+              <div class="t20 mt-3 text-center">No. of Users</div>
+              <div class="btn-style btn-green">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box3 green-box">
+            <div class="head head3">Advance</div>
+            <div class="box-content">
+              <div class="c3">
+                <div class="heading2 hd3">₹799</div>
+                <div class="t24">Monthly</div>
+                <div class="d-flex c1 rw">
+                  <div class="dot"></div>
+                  <div class="t20">20 Aadhaar/Bio Signature</div>
+                </div>
+                <div class="d-flex c2 rw">
+                  <div class="dot"></div>
+                  <div class="t20">90 days Storage</div>
+                </div>
+              </div>
+              <div class="btn-style btn-white">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="businessBoxesWrap">
+        <div class="col-sm-6 col-md-3">
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box1 green-box">
+            <div class="head head1">Basic</div>
+            <div class="box-content">
+              <div class="c3">
+                <div class="heading2">₹4999</div>
+                <div class="t24 pb-4 mb-4">Monthly</div>
+                <div class="d-flex c1 rw">
+                  <div class="dot-wrap">
+                    <div class="dot"></div>
+                  </div>
+                  <div class="t20">5 unwanted downloadable documents</div>
+                </div>
+                <div class="d-flex c1 rw">
+                  <div class="dot"></div>
+                  <div class="t20">10 free E-sign</div>
+                </div>
+                <div class="d-flex c2 rw">
+                  <div class="dot"></div>
+                  <div class="t20">90 days storage</div>
+                </div>
+              </div>
+              <div class="btn-style btn-white">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box2 box22 green-box">
+            <div class="head head2">Corporate</div>
+            <div class="box-content">
+              <div class="t20 strike">₹100000</div>
+              <div class="heading2">₹30000<span class="ml-2 t12">Yearly</span></div>
+              <div class="css2">₹2500<span class="ml-1 t12">Monthly</span></div>
+              <div class="css3 t12 grey">Billed Annualy</div>
+              <div class="d-flex c1 rw">
+                <div class="dot-wrap">
+                  <div class="dot"></div>
+                </div>
+                <div class="t20">25 unwanted downloadable documents</div>
+              </div>
+              <div class="d-flex c1 rw">
+                <div class="dot"></div>
+                <div class="t20">100 free E-sign</div>
+              </div>
+              <div class="d-flex c2 rw pb-4">
+                <div class="dot-wrap">
+                  <div class="dot"></div>
+                </div>
+                <div class="t20">545 days Storage</div>
+              </div>
+              <div class="btn-style btn-green">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="box3 green-box">
+            <div class="head head2">Advance</div>
+            <div class="box-content">
+              <div class="c3">
+                <div class="heading2">₹14,999</div>
+                <div class="t24 pb-4 mb-4">6 Monthly</div>
+                <div class="d-flex c1 rw">
+                  <div class="dot-wrap">
+                    <div class="dot"></div>
+                  </div>
+                  <div class="t20">15 unwanted downloadable documents</div>
+                </div>
+                <div class="d-flex c1 rw">
+                  <div class="dot"></div>
+                  <div class="t20">40 free E-sign</div>
+                </div>
+                <div class="d-flex c2 rw">
+                  <div class="dot"></div>
+                  <div class="t20">365 days Storage</div>
+                </div>
+              </div>
+              <div class="btn-style btn-white">Subscribe Now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="basicFeatures">
+      </div>
+      <div id="specialFeatures">
+      </div>
+    </div>
+  </section>
+  <div id="rating1" class="section" w3-include-html="components/rating1.html"></div>
+  <div id="faq" class="section" w3-include-html="components/faq.html"></div>
+  <div id="footer" class="section" w3-include-html="components/footer.html"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByClassName("section");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    includeHTML()
+    const baseUrl = "http://ezyhostings-001-site1.dtempurl.com/api/DocManagement";
+    $("ul.nav-tabs a").click(function (e) { e.preventDefault(); $(this).tab("show"); });
+    $(document).ready(function () {
+      var owl = $('.testi-2');
+      owl.owlCarousel({
+        items: 2, loop: true, margin: 10, autoplay: true, autoplayTimeout: 1000,
+        autoplayHoverPause: true, dots: false, nav: false,
+        navText: [
+          '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+          '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+          0: { items: 2 }, 576: { items: 2 }, 768: { items: 4 }, 1200: { items: 4 }, 1600: { items: 4 }
+        }
+      });
+      $('.play').on('click', function () { owl.trigger('play.owl.autoplay', [1000]) })
+      $('.stop').on('click', function () { owl.trigger('stop.owl.autoplay') })
+    })
+    $(document).ready(function () {
+      $(".accordion-toggle").mouseover(function () {
+        $(".accordion-toggle").trigger("click");
+      });
+      setTimeout(() => {
+        renderFAQ();
+      }, 1000);
+      renderTable(basicFeatures, "basicFeatures");
+      renderFeaturesTable(specialFeatures, "specialFeatures");
+      $("#planType").on("change", function () {
+        planTypeChanged(this);
+      })
+      $("#subscriptionType").on("change", function () {
+        subscriptionTypeChanged(this);
+      })
+      $("#businessBoxesWrap").hide();
+      $("#eSignatureBoxesWrap").show();
+      $("#subscriptionTypeWrap").show();
+    });
+
+    function subscriptionTypeChanged(ele) {
+      if ($(ele).prop("checked") == true) {
+        $(".hd1").html("₹299");
+        $(".hd2").html("₹1199");
+        $(".hd3").html("₹599");
+      }
+      else if ($(ele).prop("checked") == false) {
+        $(".hd1").html("₹499");
+        $(".hd2").html("₹1399");
+        $(".hd3").html("₹799");
+      }
+    }
+
+    function planTypeChanged(ele) {
+      if ($(ele).prop("checked") == true) {
+        $("#businessBoxesWrap").show();
+        $("#eSignatureBoxesWrap").hide();
+        $("#subscriptionTypeWrap").hide();
+      }
+      else if ($(ele).prop("checked") == false) {
+        $("#businessBoxesWrap").hide();
+        $("#eSignatureBoxesWrap").show();
+        $("#subscriptionTypeWrap").show();
+
+      }
+      //subscriptionTypeChanged($("#subscriptionType"));
+    }
+    basicFeatures = [
+      { name: "No. of unwanted downloadable documents", col1: "5", col2: "25", col3: "15" },
+      { name: "No. of free E-sign", col1: "10", col2: "100", col3: "40" },
+      { name: "No. of days storage", col1: "90", col2: "545", col3: "365" },
+    ];
+    specialFeatures = [
+      { name: "Multi page signing", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Automate", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Smart dashboard", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Advanced signature", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Biometric signature", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "User role & permission", col1: "", col2: "tick", col3: "" },
+      { name: "SSO login", col1: "", col2: "tick", col3: "" },
+      { name: "Industry grade encription", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Customized report", col1: "", col2: "tick", col3: "" },
+      { name: "Custom Email", col1: "", col2: "tick", col3: "" },
+      { name: "Custom VRC", col1: "", col2: "tick", col3: "" },
+      { name: "PDF & Word format", col1: "tick", col2: "tick", col3: "tick" },
+      { name: "Google Authetication", col1: "", col2: "tick", col3: "" }
+    ];
+    renderTable = (data, element) => {
+      let html = '';
+      for (let item of data) {
+        html += `<div class="row"><div class="col-sm-6 col-md-3 col name-col"><div class="colm name">${item.name}</div></div>
+        <div class="col-sm-6 col-md-3 col"><div class="colm">${item.col1}</div></div>
+        <div class="col-sm-6 col-md-3 col"><div class="colm">${item.col2}</div></div>
+        <div class="col-sm-6 col-md-3 col"><div class="colm">${item.col3}</div></div></div>`;
+      }
+      document.getElementById(element).innerHTML = html;
+    }
+    renderFeaturesTable = (data, element) => {
+      let html = '';
+      for (let item of data) {
+        html += `<div class="row"><div class="col-sm-6 col-md-3 col purple-col name-col"><div class="bg-white"><div class="colm"><div class="name">${item.name}</div></div></div></div>
+        <div class="col-sm-6 col-md-3 col purple-col"><div class="bg-white"><div class="colm"><div class="${item.col1}"></div></div></div></div>
+        <div class="col-sm-6 col-md-3 col purple-col"><div class="bg-white"><div class="colm"><div class="${item.col2}"></div></div></div></div>
+        <div class="col-sm-6 col-md-3 col purple-col"><div class="bg-white"><div class="colm"><div class="${item.col3}"></div></div></div></div></div>`;
+      }
+      document.getElementById(element).innerHTML = html;
+    }
+
+    faq = [{ question: "What is Wizard Legal?", answer: "What is Wizard Legal?" },
+    { question: "Who is Wizard Legal for?", answer: "What does it cost to become a user?" },
+    { question: "What does Wizard Legal offer to it’s users?", answer: "What does it cost to become a user?" },
+    { question: "What does it cost to become a user?", answer: "What does it cost to become a user?" },
+    { question: "How do you create a document on Wizard Legal?", answer: "What are e-signatures?" },
+    { question: "What are e-signatures?", answer: "What are e-signatures?" },
+    { question: "What does Wizard Legal offer to it’s users?", answer: "What does Wizard Legal offer to it’s users?" },
+    { question: "What is the legal validly of an e-signature in India?", answer: "What is the legal validly of an e-signature in India?" },
+    { question: "How do I sign a document on Wizard legal?", answer: "How do I sign a document on Wizard legal?" },
+    { question: "Who writes my legal documents at Wizard Legal?", answer: "Who writes my legal documents at Wizard Legal?" },
+    { question: "Who can read / access my documents?", answer: "Who can read / access my documents?" },
+    { question: "How safe is my data with Wizard Legal?", answer: "How safe is my data with Wizard Legal?" },
+    { question: "Is Wizard Legal a legal firm?", answer: "Is Wizard Legal a legal firm?" },
+    { question: "How long does it take to create a legal document with Wizard Legal?", answer: "How long does it take to create a legal document with Wizard Legal?" }
+    ];
+    renderFAQ = () => {
+      let html = "", i = -1;
+      for (let q of faq) {
+        html += `<div class="faq"><div class="question" data-toggle="collapse" data-target="#faq${++i}" aria-expanded="false" aria-controls="faq${i}">
+            <div class="img-wrap1"><img src="../assets/img/next.png" class="img" alt="next"></div>
+            <div class="t24">${q.question}</div>
+          </div>
+          <div class="collapse answer" id="faq${i}">
+            ${q.answer}
+          </div></div>`;
+      }
+      $(".faq-wrap").html(html)
+    }
+  </script>
+</body>
+
+</html>

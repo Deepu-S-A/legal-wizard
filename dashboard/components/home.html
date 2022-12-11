@@ -1,0 +1,316 @@
+<style>
+  .db-home .banner {
+    height: 197px;
+    background: #0ABC8A;
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.06);
+    border-radius: 22px;
+    padding: 1rem 2rem;
+  }
+
+  .segments-wrap {
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  .segment {
+    height: 162px;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 22px;
+    background: #fff url(/assets/img/dashboard/db/arrow.png) 90% 84% no-repeat;
+    width: 100%;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    ;
+  }
+
+  .segment.sgmt2 {
+    margin: 0 2rem;
+  }
+
+  #donoughtChart {
+    width: 230px !important;
+    height: 230px !important;
+    margin: 0 auto;
+  }
+
+  .donought-chart-wrap {
+    height: 400px;
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 22px;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .db-home .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .db-home .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .db-home .user-info img {
+    margin-left: 1rem;
+  }
+
+  .db-home .txt1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .db-home .progress.circle {
+    height: 166px;
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 22px;
+    width: 48%;
+    padding: 2rem;
+  }
+
+  .db-home .progress-wrap {
+    display: flex;
+    margin-top: 2rem;
+
+  }
+
+  .db-home .progress-number {
+    left: 13%;
+    top: 5.5rem;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .db-home .progress.orange {
+    margin-right: 2rem;
+  }
+
+  .db-home .progress .rhs {
+    margin-left: 11%;
+    margin-top: 2rem;
+  }
+
+  .db-home .progress .rhs .t20 {
+    margin-bottom: 2rem;
+  }
+
+  .db-home .progress .btn {
+    height: 40px;
+  }
+
+  .db-home .progress.orange .btn.btn-small {
+    background: #FED2B9 !important;
+  }
+
+  .db-home .barchart {
+    display: flex;
+    width: 60%;
+  }
+
+  .db-home .barchart .column-wrap {
+    margin-right: 10px;
+  }
+
+  .db-home .fullbar {
+    height: 150px;
+    position: relative;
+    min-width: 25px;
+  }
+
+  .db-home .bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .db-home .documentationBarChart .bar {
+    background: linear-gradient(180deg, #0ABC8A 0%, #77F1D0 100%);
+  }
+
+  .db-home .esignBarChart .bar {
+    background: linear-gradient(180deg, #ECAD81 0%, #FED2B9 100%);
+  }
+
+  .bar-chart-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .db-home .bar-chart-wrap .text-wrap1 {
+    width: 40%;
+  }
+
+  .bar-chart-section {
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    padding: 2.2rem 2rem;
+    border-radius: 22px;
+  }
+
+  .bar-chart-wrap .t12 {
+    color: #888FA7;
+    margin-bottom: 1rem;
+  }
+
+  .db-home .t16.cs1 {
+    margin-top: 2rem;
+  }
+
+  .db-home .seperation {
+    margin-top: 1rem;
+  }
+
+  .db-home table thead {
+    height: 40px;
+    background: rgba(10, 188, 138, 0.1);
+    border-radius: 10px;
+  }
+
+  .db-home .nav-link-page.segment .t20 {
+    margin-top: 1.1rem;
+  }
+
+  .db-home .donought-chart-wrap .user-info {
+    justify-content: flex-start;
+  }
+
+  .db-home .donought-chart-wrap .user-info .t20 {
+    margin-left: 1rem;
+  }
+
+  .db-home img.group-banner-img {
+    position: absolute;
+    right: 20px;
+    top: -15px;
+  }
+
+  .db-home .table tr *:first-child {
+    margin-right: 2rem;
+  }
+
+  .db-home .table td,
+  .db-home .table th {
+    padding: 2rem 1rem 1rem 0;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .banner-wrap {
+    position: relative;
+  }
+
+  .banner .txt-wrap {
+    width: 70%;
+  }
+</style>
+<div class="db-home">
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <div class="banner-wrap">
+        <div class="banner">
+          <div class="txt-wrap">
+            <div class="t35 white">Welcome to Wizard legal</div>
+            <div class="t20 white mt-4">10,000 + Freelancers, professionals, lawyers, and entrepreneurs are using wizard
+              legal for their legal documentation.</div>
+          </div>
+        </div>
+        <img src="../assets/img/dashboard/Group.png" alt=" " class="group-banner-img" />
+      </div>
+      <div class="segments-wrap">
+        <div class="nav-link-page segment" data-page="documentation.html" onclick="location.href='documentation.html'">
+          <img src="../assets/img/dashboard/documentation-main.png" alt="" />
+          <div class="t20"><b>Documentation</b></div>
+        </div>
+        <div class="nav-link-page segment sgmt2" data-page="esign.html" onclick="location.href='esign.html'">
+          <img src="../assets/img/dashboard/esign-main.png" alt="" />
+          <div class="t20"><b>E-Sign</b></div>
+        </div>
+        <div class="nav-link-page segment" data-page="storage.html" onclick="location.href='storage.html'">
+          <img src="../assets/img/dashboard/storage-main.png" alt="" />
+          <div class="t20"><b>Storage</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <div class="donought-chart-wrap">
+        <div class="user-info">
+          <div class="avatar-wrap"><img src="../assets/img/dashboard/db/avatar.png" class="avatar" alt=""></div>
+          <div class="t20">Deepu S A</div>
+        </div>
+        <canvas id="donoughtChart" width="120" height="110">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 t20 black txt1"><b>My Recent documents</b></div>
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <div class="table-wrap">
+        <table class="table" id="db-home-table">
+          <thead>
+            <tr>
+              <th scope="col">
+                <div class="form-group form-check input-style-wrap">
+                  <input type="checkbox" class="form-check-input" id="selectAllDbHome">
+                  <label class="form-check-label grey-text tnc" for="selectAllDbHome"></label>
+                </div>
+              </th>
+              <th>Name</th>
+              <th></th>
+              <th scope="col t14">Created on</th>
+              <th scope="col">Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="dbHomeTable">
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="progress-wrap">
+        <div class="progress orange circle">
+          <div class="circular-progressbar documents" id="documentsProgressBar">
+          </div>
+          <div class="progress-number">75 %</div>
+          <div class="rhs">
+            <div class="t20"><b>Document created</b></div>
+            <button class="btn btn-small btn-green">Top-up</button>
+          </div>
+        </div>
+        <div class="progress green circle">
+          <div class="circular-progressbar storage" id="storageProgressBar">
+          </div>
+          <div class="progress-number">50 %</div>
+          <div class="rhs">
+            <div class="t20"><b>Storage used</b></div>
+            <button class="btn btn-small btn-green">Top-up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12 bar-chart-section">
+      <div class="t20"><b>Document Statistics</b></div>
+      <div class="t16 cs1">Statistics</div>
+      <div class="bar-chart-wrap">
+        <div class="text-wrap1">
+          <div class="t12">Documentation</div>
+          <div class="t16">236</div>
+        </div>
+        <div class="documentationBarChart barchart" id="documentationBarChart"></div>
+      </div>
+      <hr class="seperation" />
+      <div class="bar-chart-wrap">
+        <div class="text-wrap1">
+          <div class="t12">Esign</div>
+          <div class="t16">236</div>
+        </div>
+        <div class="esignBarChart barchart" id="esignBarChart"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,151 @@
+<style>
+  .account .col1{width: 38%;
+height: 298px;
+background: #0EAD69;
+border-radius: 20px;
+padding: 2rem;}
+.account .col2,.account .col3{width: 29%;}
+.account .col2{margin-left: 2%;margin-right: 2%;}
+.account .box1{width: 100%;
+height: 143px;
+background: #FFFFFF;
+border: 1px solid #E7E7E7;
+padding: 1.2rem 1.2rem;
+border-radius: 20px;}
+.account .t39{margin-bottom: 1rem;margin-top: 1rem;
+  font-size: 39px;
+line-height: 47px;
+color: #FFFFFF;
+}
+.account .btn-s1{display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 15px;
+height: 22.15px;
+background: #F8E16C;
+border-radius: 14px;}
+.account .btn-s2{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 15px 15px;
+height: 31.47px;
+color: #0EAD69;
+background: #FFFFFF;
+border-radius: 16px;
+margin-top: 2rem;
+}
+.account .t47{font-size: 42px;margin-left: auto;}
+.account .rw1{
+    margin: 1.5rem 0 1.5rem 0;
+}
+.account .row2 .t16{
+  color: #808080;margin-bottom: 1rem;
+}
+.account .row2 .item {
+    margin-bottom: 2.5rem;
+}
+.account .b2,.account .b4{margin-top: 1.5rem;}
+</style>
+<div class="tabs-wrap account box">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab-account" role="tablist">
+      <button class="nav-link active t20" id="nav-esign-tab" data-toggle="tab" data-target="#nav-esign" type="button"
+        role="tab" aria-controls="nav-esign" aria-selected="true">Esign</button>
+      <button class="nav-link t20" id="nav-documentation-tab" data-toggle="tab" data-target="#nav-documentation"
+        type="button" role="tab" aria-controls="nav-documentation" aria-selected="false">Documentation</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent-account">
+    <div class="tab-pane fade show active" id="nav-esign" role="tabpanel" aria-labelledby="nav-esign-tab">
+      <div class="dfc justify-content-start rw1">
+        <div class="t20 mr-4">Subscription Details</div>
+        <div class="line1"></div>
+      </div>
+      <div class="fdc-m">
+        <div class="col1">
+          <div class="r1 dfc justify-content-start">
+            <div class="t35 white">Individual</div>
+            <button class="btn-s1 ml-auto">View details</button>
+          </div>
+          <div class="t39">₹1256</div>
+          <div class="t18 white">Your plan expires on 18/06/2022</div>
+          <button class="btn-s2" data-toggle="modal" data-target="#upgradePlanModal">Upgrade plan</button>
+        </div>
+        <div class="col2">
+          <div class="box1 b1">
+            <div class="r1 dfc justify-content-start">
+              <img src="../assets/img/dashboard/db/doc.png" class="doc" alt="doc">
+              <div class="t47">
+                <span class="green">1</span><span class="black">/3</span>
+              </div>
+            </div>
+            <div class="t20">Documents created</div>
+          </div>
+          <div class="box1 b2">
+            <div class="r1 dfc justify-content-start">
+              <img src="../assets/img/dashboard/db/users.png" class="doc" alt="doc">
+              <div class="t47">
+                <span class="green">1</span><span class="black">/3</span>
+              </div>
+            </div>
+            <div class="t20">Users Added</div>
+          </div>
+        </div>
+        <div class="col3">
+          <div class="box1 b3">
+            <div class="r1 dfc justify-content-start">
+              <img src="../assets/img/dashboard/db/sign.png" class="doc" alt="doc">
+              <div class="t47">
+                <span class="green">1</span><span class="black">/3</span>
+              </div>
+            </div>
+            <div class="t20">Aadhaar signatures used</div>
+          </div>
+          <div class="box1 b4">
+            <div class="r1 dfc justify-content-start">
+              <img src="../assets/img/dashboard/db/cloud.png" class="doc" alt="doc">
+              <div class="t47">
+                <span class="black">360</span><span class="t20 ml-4">Days</span>
+              </div>
+            </div>
+            <div class="t20">Documents created</div>
+          </div>
+        </div>
+      </div>
+      <div class="dfc justify-content-start rw1">
+        <div class="t20 mr-4">Personal information</div>
+        <div class="line1"></div>
+      </div>
+      <div class="row2 row align-items-center">
+        <div class="col-sm-12 col-md-4">
+          <img src="../assets/img/dashboard/avatar-big.png" class="avatar-big" alt="doc">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="item">
+            <div class="t16">Full name</div>
+            <div class="t18">Jeswin Jose</div>
+          </div>
+          <div class="item">
+            <div class="t16">Email</div>
+            <div class="t18">jeswinjose123@gmail.com</div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="item">
+            <div class="t16">Role</div>
+            <div class="t18">Application admin</div>
+          </div>
+          <div class="item">
+            <div class="t16">Phone</div>
+            <div class="t18">+91 1212435 345345</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade show active" id="nav-documentation" role="tabpanel"
+      aria-labelledby="nav-documentaion-tab"></div>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/dashboard/tellus.css">
+  <link rel="stylesheet" href="../assets/css/dashboard/definitions.css">
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <title>Tell us about yourself</title>
+</head>
+
+<body>
+  <div class="container-fluid tellus-container base-container">
+    <div class="row">
+      <div class="col-sm-12 col-md-7 lhs p-0">
+        <div class="lhs-content-wrap">
+          <div class="top">
+            <div class="t50">Tell us about yourself</div>
+            <div class="t30">And well personalize your experience</div>
+          </div>
+          <div class="views-wrap">
+            <div class="view view1">
+              <img src="../assets/img/dashboard/tellus/1.png" alt="rhs" class="step-widget">
+              <div class="t25">How will you mainly use Wizard Legal?</div>
+              <div class="cards">
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/tellus/pu.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">Personal use</div>
+                </div>
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/tellus/aw.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">At work where I am employed</div>
+                </div>
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/tellus/mob.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">My own business</div>
+                </div>
+              </div>
+              <div class="d-flex">
+                <img src="../assets/img/dashboard/tellus/next.png" alt="Next" class="next btn-nav ml-auto"
+                  data-next="view2">
+              </div>
+            </div>
+            <div class="view view2">
+              <img src="../assets/img/dashboard/tellus/2.png" alt="rhs" class="step-widget">
+              <div class="t25">How will you mainly use Wizard Legal?</div>
+              <div class="cards cards2">
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/icons/document.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">Create Legal documents ( forms,contracts etc)</div>
+                </div>
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/edit-icon.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">E signatures</div>
+                </div>
+                <div class="cardItem">
+                  <img src="../assets/img/dashboard/icons/document-text.png" alt="rhs" class="step-widget">
+                  <div class="t25 black">Document magement</div>
+                </div>
+              </div>
+              <div class="d-flex">
+                <img src="../assets/img/dashboard/tellus/back.png" alt="Back" class="back btn-nav ml-0"
+                  data-next="view1">
+                <img src="../assets/img/dashboard/tellus/next.png" alt="Next" class="next btn-nav ml-auto"
+                  data-next="view3">
+              </div>
+            </div>
+            <div class="view view3">
+              <img src="../assets/img/dashboard/tellus/3.png" alt="rhs" class="step-widget">
+              <div class="ddn-item input-style-wrap">
+                <div class="t20">Which profession/ Industry you work in?</div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Human Resource
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+              <div class="ddn-item input-style-wrap">
+                <div class="t20">How did you hear about Wizard Legal?</div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Linkedin
+                  </button>
+                  <div class="dropdown-menu informationSourceDdn">
+                    <a class="dropdown-item" href="#">Social Media</a>
+                    <a class="dropdown-item" href="#">Email</a>
+                    <a class="dropdown-item" href="#">Friends</a>
+                    <a class="dropdown-item" href="#">Other</a>
+                  </div>
+                </div>
+              </div>
+              <div class="ddn-item form-group input-style-wrap sourceOtherWrap">
+                <div class="t20">Enter the source of information</div>
+                <input type="text" class="form-control" id="sourceOther" placeholder="input your email in here" aria-describedby="emailHelp">
+                <small class="form-text text-muted hidden">Enter the source of information</small>
+              </div>
+              <div class="cs4">
+                <button type="button" class="btn btn-primary btn-green w-100" onclick="location.href='dashboard.html'">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-5 rhs p-0">
+        <div class="rhs-img"></div>
+        <!--<img src="../assets/img/dashboard/tellus/rhs.png" alt="rhs" class="rhs-img">-->
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.btn-nav').click(function () {
+      $('.view').hide();
+      $('.' + $(this).attr('data-next')).show();
+    });
+    $('.cardItem').click(function(){
+      $('.cardItem').removeClass('active');
+      $(this).toggleClass('active');
+    });
+    $('.informationSourceDdn').find('.dropdown-item').click(function(){
+      const text = $(this).html();
+      $('.sourceOtherWrap').hide();
+      if(text === 'Other') {
+        $('.sourceOtherWrap').show();
+      }
+    });
+
+    $('.dropdown-menu').find('.dropdown-item').click(function(){
+      const text = $(this).html();
+      $(this).closest('.dropdown').find('.dropdown-toggle').html(text);
+    });
+  })
+</script>
+
+</html>

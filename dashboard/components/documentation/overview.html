@@ -1,0 +1,74 @@
+<style>
+  .overview-page .completed-docs-wrap,
+  .overview-page .inprogress-docs-wrap,
+
+  .overview-page .suggestions-docs-wrap {
+    margin-top: 1.5rem;
+  }
+
+  .overview-page .completed-doc-boxes {
+    display: none;
+  }
+
+  .overview-page .box-style1 {
+    height: 6.75rem;
+    background: #FFFFFF;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 22px;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    padding: 1.5rem 1.5rem;
+    cursor: pointer;
+  }
+
+  .overview-page .suggestion-box {
+    height: 5rem;
+  }
+
+  .overview-page .box1.cs2 {
+    margin-top: 4rem;
+  }
+
+  .inprogress-box .rhs1.ml-4 {
+    flex-grow: 1;
+  }
+</style>
+<div class="overview-page">
+  <div class="t30">OverView</div>
+  <hr class="line1" />
+  <div class="row cs1">
+    <div class="col-sm-12 col-md-6">
+      <div class="t25">Your completed documents</div>
+      <div class="completed-docs-wrap mt-4">
+        <div class="box1 b1 d-flex no-completed-items-wrap">
+          <div class="lhs1">
+            <img src="../assets/img/dashboard/icons/no-items.png" alt="No Items">
+          </div>
+          <div class="rhs1 ml-4">
+            <div class="t20">You don’t have any document completed</div>
+            <div class="t18 d-flex  mt-2">
+              <div class="green-text mr-2">Select a document to get started</div>
+              <img src="../assets/img/dashboard/icons/right-arrow-green.png" alt="No Items">
+            </div>
+          </div>
+        </div>
+        <div class="completed-doc-boxes">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="t25">In Progress</div>
+      <div class="inprogress-docs-wrap box1">
+
+      </div>
+    </div>
+  </div>
+  <div class="box1 cs2">
+    <div class="t30">Suggested For You</div>
+    <hr class="line1" />
+    <div class="suggestions-docs-wrap row">
+
+    </div>
+  </div>
+</div>

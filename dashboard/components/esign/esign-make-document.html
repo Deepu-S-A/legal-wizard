@@ -1,0 +1,699 @@
+<style>
+  .esign-make-document-page .green-doted-box {
+    background: rgba(0, 125, 90, 0.05);
+    border: 2px dashed rgba(0, 170, 122, 0.47);
+    border-radius: 20px;
+    text-align: center;
+    padding: 5rem 0;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #esignMakeDocFile {
+    display: none;
+  }
+
+  .esign-make-document-page .cs {
+    background: #FFFFFF;
+    /* Box DRP */
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+
+  .esign-make-document-page .icons-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .esign-make-document-page .cs10 {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding-left: 4rem;
+  }
+
+  .esign-make-document-page .cs10 .t30 {
+    margin-bottom: 1rem;
+  }
+
+  .esign-make-document-page .dnd-img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .esign-make-document-page .file-name-wrap {
+    position: relative;
+  }
+
+  .esign-make-document-page .text-input-style1 {
+    height: 50px;
+    background: #F8FAFB;
+    border: 1px solid #F5F5F5;
+    border-radius: 20px;
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .esign-make-document-page .dnd-wrap {
+    height: 18.5rem;
+    background: rgba(0, 125, 90, 0.05);
+    border: 2px dashed rgba(0, 125, 90, 0.25);
+    border-radius: 22px;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .esign-make-document-page .esign-make-doc-page2{
+    display: none
+  }
+  .esign-make-document-page .esign-make-doc-page1{
+    display: block
+  }
+  .esign-make-document-page .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.esign-make-document-page div#nav-tabContent {
+    padding-top: 2rem;
+}
+
+.esign-make-document-page #nav-tabContent .t18.black+.t14 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2rem;
+}
+.esign-make-document-page input.selected-file-name {
+    width: 100%;
+}
+
+.esign-make-document-page img.ei {
+    position: absolute;
+    right: 3rem;
+    top: 0.75rem;
+    cursor: pointer;
+}
+
+.esign-make-document-page img.di {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    cursor: pointer;
+}
+
+.esign-make-document-page input.selected-file-name:focus {
+    outline: none;
+}
+.esign-make-doc-page2 .textarea-style{
+  height: 216px;
+background: #F8FAFB;
+border: 1px solid #F5F5F5;
+border-radius: 20px;
+width: 100%;
+    margin-top: 1rem;
+
+}
+.esign-make-doc-page2 .t14.cs11 {
+    margin-top: 1rem;
+}
+
+.esign-make-doc-page2 .t14.cs12 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.esign-make-doc-page2 .log {
+    height: 84px;
+    border-radius: 22px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    padding-left: 1.5rem
+}
+.esign-make-doc-page2 .log:nth-child(even) {
+    background: rgba(10, 188, 138, 0.09);
+}
+.log-img img {
+    width: 36px;
+    margin-right: 1rem;
+}
+
+.log-info * {
+    color: #808080;
+}
+
+.log-info .t14 {
+    margin-top: 0.5rem;
+}
+div.btn-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  div.btn-container i {
+    display: inline-block;
+    position: relative;
+    top: -9px;
+  }
+
+  .btn-color-mode-switch {
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+    margin: 0px;
+    width: 15.5rem;
+    height: 3.1rem;
+    background: #F0F3F2;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 500;
+    top: 8px;
+    right: 20px;
+    color: #5D5D5D;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 7.5rem;
+    height: 45px;
+    background: #FBC02D;
+    font-size: 1.2rem;
+    border-radius: 26px;
+    position: absolute;
+    left: 8px;
+    color: #fff;
+    top: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+  }
+
+  .btn-color-mode-switch>.alert {
+    display: none;
+    background: #FF9800;
+    border: none;
+    color: #fff;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
+  }
+
+  .toggle-btn-container {
+margin-top: 1.5rem;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+    background: #0dc191;
+    color: #5D5D5D;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 128px;
+    background: #FBC02D;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 36px;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+    display: block;
+  }
+
+  /*planType switch*/
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType {
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: 40px;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:after {
+    background: #afc9c2;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:before {
+    font-size: 24px;
+    top: 18px;
+    right: 32px;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner.planType:after {
+    left: 5.5rem;
+    background: #09BB8B;
+    border: 3px solid #FBFDFF;
+box-shadow: -4px 1px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .form-item-row .t18 {
+    margin-bottom: 1rem;
+}
+
+input.input-text-style {
+    width: 100%;
+}
+
+.form-item-row {
+    margin-top: 2rem;
+}
+.ddn-item.input-style-wrap {
+    margin-bottom: 4rem;
+    margin-left: auto;
+}
+.form-item-row .t18 {
+    margin-bottom: 1rem;
+}
+
+input.input-text-style {
+    width: 100%;
+}
+
+.form-item-row {
+    margin-top: 2rem;
+}
+
+.input-items-wrap {
+    display: flex;
+}
+
+.input-style-wrap button.btn.btn-secondary.dropdown-toggle {
+  display: flex;
+    align-items: center;
+    height: 3rem;
+    background: #f8fafb;
+    width: 100%;
+    margin-top: 0;
+}
+
+.input-items-wrap input.input-text-style {
+    width: 60%;
+    margin-right: 1rem;
+}
+#buySignatureModal .t25.black {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#buySignatureModal .m-footer.text-center {
+    margin-top: 3rem;
+}
+.inputWidget{position: relative;display: flex;height: 3rem;}
+.inputWidget .minus{
+  border-radius: 47px 0px 0px 47px;
+}
+.inputWidget .plus {
+    border-radius: 0 47px 47px 0;
+}
+.inputWidget .minus,.inputWidget .plus {
+  width: 3rem;
+    height: 3rem;
+    background: #E7E7E7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.countHolder {
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  font-size: 20px;
+  color: #292D32;
+}
+.bg-lightyellow{
+  height: 5.1rem;
+  text-align: center;
+  background: #FFF8D7;
+  border-radius: 11px;
+  color: #808080;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.btn-green.proceed {
+  height: 3.5rem;
+  margin-bottom: 2rem;
+}
+.item {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.item .col1 {
+  width: 50%;
+}
+
+.item .col3 {
+  margin-left: auto;
+}
+.t20.grey.cs16 {
+  color: #888FA7;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+#billingSummaryModal .billing-page2{
+  display: none;
+}
+#billingSummaryModal .btns-wrap3 {
+  margin-top: 2rem;
+  display: flex;
+}
+</style>
+<div class="page-wrap esign-make-document-page box">
+  <div class="esign-make-doc-page1">
+    <div class="cs10">
+      <div class="t30">Add documents for Esign</div>
+      <div class="t20">Upload your document for safekeeping and more on wizard legal</div>
+    </div>
+    <div class="green-doted-box">
+      <div class="t20">Drag your file here to upload</div>
+      <div class="dnd-img">
+        <img src="../assets/img/dashboard/dnd.png" alt="" class="dnd" />
+      </div>
+      <div class="t20">Or</div>
+      <div class="btn-wrap">
+        <button class="btn btn-green" onclick="$('#esignMakeDocFile').trigger('click')">Choose file</button>
+        <input type="file" class="btn btn-green" id="esignMakeDocFile" />
+      </div>
+      <div class="t16">Mxm file size : <span class="green-text">5MB</span></div>
+      <div class="icons-wrap">
+        <div class="cs">
+          <img src="../assets/img/dashboard/google-drive.png" alt="" class="gd" />
+        </div>
+        <div class="cs">
+          <img src="../assets/img/dashboard/dropbox.png" alt="" class="gd" />
+        </div>
+        <div class="cs">
+          <img src="../assets/img/dashboard/onedrive.png" alt="" class="gd" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="esign-make-doc-page2">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="lhs">
+          <div class="file-name-wrap">
+            <input class="selected-file-name text-input-style1">
+            <img src="../assets/img/dashboard/edit-icon.png" alt="" class="ei" />
+            <img src="../assets/img/dashboard/delete-icon.png" alt="" class="di" />
+          </div>
+          <div class="file-info-wrap">
+            <div class="file-name-display"></div>
+            <div class="file-content">
+              The document content after converting to HTML from the API will be displayed here
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 rhs">
+        <div class="rhs">
+          <div class="tabs-wrap">
+            <nav>
+              <div class="nav nav-tabs" id="make-doc-tabs-wrap" role="tablist">
+                <button class="nav-link active t20" id="nav-stakeholders-tab" data-toggle="tab"
+                  data-target="#nav-stakeholders" type="button" role="tab" aria-controls="nav-stakeholders"
+                  aria-selected="true">Stakeholders</button>
+                <button class="nav-link t20" id="nav-settings-tab" data-toggle="tab" data-target="#nav-settings"
+                  type="button" role="tab" aria-controls="nav-settings" aria-selected="false">Settings</button>
+                <button class="nav-link t20" id="nav-activelogs-tab" data-toggle="tab" data-target="#nav-activelogs"
+                  type="button" role="tab" aria-controls="nav-activelogs" aria-selected="false">Active Logs</button>
+                <button class="nav-link t20" id="nav-mailtracking-tab" data-toggle="tab" data-target="#nav-mailtracking"
+                  type="button" role="tab" aria-controls="nav-mailtracking" aria-selected="false">Mail Tracking</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-stakeholders" role="tabpanel"
+                aria-labelledby="nav-stakeholders-tab">
+                <div class="t18 black">Digital SIgnature</div>
+                <div class="t14">We use the term ‘Digital Signature’ to mean either Aadhaar Based Electronic Signature
+                  of a Dongle based ‘Digital Signature Certificate’ which are recognized by Information Technology Act,
+                  2000 as equivalent to handwritten signatures.</div>
+                <div class="dnd-wrap mb-4">
+                  <img src="../assets/img/dashboard/addsigner.png" alt="" class="addsigner-img mb-3 ml-auto mr-auto" />
+                  <button class="btn btn-green ml-auto mr-auto mt-4" data-toggle="modal" data-target="#addSignerModal">Add signer</button>
+                </div>
+                <div class="btns-wrap2 d-flex mt-4">
+                  <button class="btn btn-cancel br-26">Back</button>
+                  <button class="btn btn-green ml-auto mr-auto">Save changes</button>
+                  <button class="btn btn-green br-26">Next</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">
+                <div class="t18"><b>Email Settings</b></div>
+                <div class="t14 cs11">The signed copy will be sent to all the stakeholders added in the workflow.</div>
+                <div class="t14 cs12">In addition to the above stakeholders, the Signed copy shall be sent to</div>
+                <input class="text-input-style1 cs13">
+                <div class="t14 cs11">Description</div>
+                <textarea class="textarea-style"></textarea>
+              </div>
+              <div class="tab-pane fade" id="nav-activelogs" role="tabpanel" aria-labelledby="nav-activelogs-tab">
+
+              </div>
+              <div class="tab-pane fade" id="nav-mailtracking" role="tabpanel" aria-labelledby="nav-mailtracking-tab">
+                <div class="t18 black"><b>Mail tracking</b></div>
+                <div class="t18 grey mt-4">A notification will be recived when recipient open this email</div>
+                <div class="toggle-btn-container">
+                  <div class="btn-container">
+                    <label class="planType switch btn-color-mode-switch">
+                      <input type="checkbox" name="planType" id="planType" value="1">
+                      <label for="planType" data-on="" data-off=""
+                        class="planType btn-color-mode-switch-inner"></label>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="addSignerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="m-header"><div class="t22">Add stakeholder details</div>
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal">
+      </div>
+      <div class="modal-body limit-modal-body">
+        <div class="form-item-row">
+          <div class="t18">Name as per adhaar&nbsp;<span class="red">*</span></div>
+          <input class="input-text-style" placeholder="Enter email....">
+        </div>
+        <div class="form-item-row">
+          <div class="t18">Email&nbsp;<span class="red">*</span></div>
+          <div class="input-items-wrap">
+            <input class="input-text-style" placeholder="Enter email address....">
+            <div class="ddn-item input-style-wrap">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                  Signer
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-footer text-center">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-green" data-dismiss="modal" data-toggle="modal" data-target="#buySignatureModal">Upgrade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="buySignatureModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="m-header">
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal">
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <img src="../assets/img/dashboard/signature-icon.png" alt="">
+          <div class="t25 black"><b>Buy Signature</b></div>
+          <div class="t18">Please upgrade your plan to add users.</div>
+        </div>
+        <div class="m-footer text-center">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-green" data-toggle="modal" data-target="#topupPlanModal">Upgrade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="topupPlanModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="m-header"><div class="t22"></div>
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal">
+      </div>
+      <div class="modal-body">
+        <div class="cs15">
+          <div class="t30 black text-center"><b>Top-Up Your Plan</b></div>
+          <div class="t20 grey cs16 text-center">Get more Esign and document by topping up or upgrading your plan</div>
+        </div>
+        <div class="item">
+          <div class="col1">
+            <div class="t25 black">Esignature</div>
+            <div class="t14 pricePerSign mt-2 mb-2">₹19.00 per signature</div>
+            <div class="t14">Minimum quantity : 5</div>
+          </div>
+          <div class="col2 inputWidget">
+            <div class="minus" onclick="minusEsignCount()"><img src="../assets/img/dashboard/icons/minus.png"></div>
+            <div id="esignatureCount" class="countHolder esignatureCount">5</div>
+            <div class="plus" onclick="plusEsignCount()"><img src="../assets/img/dashboard/icons/plus.png"></div>
+          </div>
+          <div class="col3 t25 black esignatureProce">₹150.00</div>
+        </div>
+        <div class="item cs17">
+          <div class="col1">
+            <div class="t25 black">Business Documents</div>
+            <div class="t14 pricePerDoc mt-2 mb-2">₹25.00 per signature</div>
+            <div class="t14">Minimum quantity : 5</div>
+          </div>
+          <div class="col2 inputWidget">
+            <div class="minus" onclick="minusDocCount()"><img src="../assets/img/dashboard/icons/minus.png"></div>
+            <div id="docCount" class="countHolder docCount">5</div>
+            <div class="plus" onclick="plusDocCount()"><img src="../assets/img/dashboard/icons/plus.png"></div>
+          </div>
+          <div class="col3 t25 black esignatureProce">₹2500.00</div>
+        </div>
+        <div class="bg-lightyellow">Get as many free esign and document ( min top-up of 3 )</div>
+        <button class="btn btn-green w-100 proceed" data-dismiss="modal" data-toggle="modal" data-target="#billingSummaryModal">Proceed to pay ₹440.00  </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="billingSummaryModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="m-header"><div class="t22 billing-modal-text">Billing Informations</div>
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal" onclick="$('.billing-page2').hide();$('.billing-page1').show();$('.billing-modal-text').html('Billing informations');">
+      </div>
+      <div class="modal-body">
+        <div class="billing-page1">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-item-row">
+                <div class="t18">Customer/ company name&nbsp;<span class="red">*</span></div>
+                <input class="input-text-style" placeholder="" id="customer-name"/>
+              </div>
+              <div class="form-item-row">
+                <div class="t18">City</div>
+                <input class="input-text-style" placeholder="" id="city"/>
+              </div>
+              <div class="form-item-row">
+                <div class="t18">State</div>
+                <input class="input-text-style" placeholder="" id="state"/>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-item-row">
+                <div class="t18">Pincode</div>
+                <input class="input-text-style" placeholder="" id="pincode"/>
+              </div>
+              <div class="form-item-row">
+                <div class="t18">Street address</div>
+                <input class="input-text-style" placeholder="" id="address"/>
+              </div>
+              <div class="form-item-row">
+                <div class="t18">Country</div>
+                <input class="input-text-style" placeholder="" id="country"/>
+              </div>
+            </div>
+          </div>
+          <div class="btns-wrap3">
+            <button class="btn btn-green w-100 proceed" onclick="$('.billing-page1').hide();$('.billing-page2').show();$('.billing-modal-text').html('Payment summery')">Next</button>
+          </div>
+        </div>
+        <div class="billing-page2">
+        <div class="item">
+          <div class="col1">
+            <div class="t25 black">Esignature</div>
+            <div class="t14 pricePerSign mt-2 mb-2">₹19.00 per signature</div>
+            <div class="t14">Minimum quantity : 5</div>
+          </div>
+          <div class="col2 inputWidget">
+            <div class="minus" onclick="minusEsignCount()"><img src="../assets/img/dashboard/icons/minus.png"></div>
+            <div id="esignatureCount" class="countHolder esignatureCount">5</div>
+            <div class="plus" onclick="plusEsignCount()"><img src="../assets/img/dashboard/icons/plus.png"></div>
+          </div>
+          <div class="col3 t25 black esignatureProce">₹150.00</div>
+        </div>
+        <div class="item cs17">
+          <div class="col1">
+            <div class="t25 black">Business Documents</div>
+            <div class="t14 pricePerDoc mt-2 mb-2">₹25.00 per signature</div>
+            <div class="t14">Minimum quantity : 5</div>
+          </div>
+          <div class="col2 inputWidget">
+            <div class="minus" onclick="minusDocCount()"><img src="../assets/img/dashboard/icons/minus.png"></div>
+            <div id="docCount" class="countHolder docCount">5</div>
+            <div class="plus" onclick="plusDocCount()"><img src="../assets/img/dashboard/icons/plus.png"></div>
+          </div>
+          <div class="col3 t25 black esignatureProce">₹2500.00</div>
+        </div>
+        <div class="btns-wrap3">
+          <button class="btn btn-cancel mr-4 w-100 proceed" data-dismiss="modal" onclick="$('.billing-page2').hide();$('.billing-page1').show();$('.billing-modal-text').html('Billing informations')">Cancel</button>
+          <button class="btn btn-green w-100 proceed ml-4" data-dismiss="modal" onclick="$('.billing-page2').hide();$('.billing-page1').show();$('.billing-modal-text').html('Billing informations')">Pay now</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

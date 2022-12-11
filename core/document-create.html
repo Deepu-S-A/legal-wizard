@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/basic.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <style>
+    .view-container{padding-top: 1rem;}
+    .scroll-section {height: 540px;overflow-y: scroll;position: relative;border-radius: 1.5rem;padding: 1.5rem; }
+    input:focus {border: 1px solid #000;}
+    span.input-wrap.answered {text-decoration: underline;margin: 0 8px;background: #c0ffc0;}
+    #updateDocument{margin-bottom: 2rem;}#questionInput{width: 100%;}
+    img.info{width: 22px;cursor: pointer;}
+    span.input-wrap.active,.dq-text-wrap.active,.dynamic-section2.active {background: rgb(241, 210, 125);}
+    .dynamicContentDropdownWrap {height: 3rem;position: relative;}
+    .dynamic-field-section.active {background: #ccc;}
+    .df-answer-set {margin-bottom: 2rem;border: 1px solid #ccc;padding: 1rem;}
+    .preview header,.preview .hidden-in-preview{display: none;}
+    .preview .view-container{padding-top: 1rem;}
+    .preview .container{max-width: 100%;}
+    div#desc {
+    background: #ccf1dd;
+    margin-top: 8px;
+    padding: 7px 2px 2px 8px;
+    border-radius: 11px;
+}
+.sample-document {
+  padding: 1rem 0 1rem 0;
+    width: 100%;
+}
+.progress-container .btn-green {height: 2.8rem;
+  color: #fff !important;
+    border-radius: 25px;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    border: 1px solid #0cbb8b;}
+.preview .sample-document {padding: 0% 0%;}
+.extra-options{display: flex;flex-direction: column;}
+.questionInput,.subQuestionInput {
+  border: 1px solid #0cbb8b;
+  height: 2.8rem;
+  border-radius: 20px;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+div#question {
+  font-size: 18px;
+  color: #444444;
+  line-height: 22px;
+}
+.sample-document-2 {
+  background: #F9FCFB;
+  border-radius: 4rem;
+  width: 92% !important;
+  margin: 5rem auto 0 auto !important;
+  overflow: hidden;
+}
+.btn-p {
+  background: url(assets/img/btn-prev-icon.png) 8px 6px #0cbb8b no-repeat !important;
+  padding-left: 3rem !important;
+}
+.btn-n{
+  padding-right: 2rem !important;
+  background: url(assets/img/btn-next-icon.png) 94% 6px #0cbb8b no-repeat !important;
+}
+#selectedDynamicFields,#selectedDynamicOption {
+    width: 100%;
+    background: #0cbb8b;
+    border: 1px solid #0cbb8b;
+    border-radius: 1rem;
+    height: 2.5rem;
+}
+@media only screen and (max-width: 700px){
+  .sample-document-2 {
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .container{
+    max-width: 80% !important;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+  .sample-document {
+    padding: 2rem 0 1rem 0;
+  }
+  #docContainer{
+    height: 670px;
+  }
+}
+  </style>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/gif" sizes="16x16">
+  <title>Document Edit</title>
+  <style>
+  </style>
+</head>
+<body>
+  <div class="spinner">
+    <img class="spinner-img" alt="loading" src="../assets/img/spinner.gif"/>
+  </div>
+  <div id="header" class="section" w3-include-html="components/header.html"></div>
+  <section class="sample-document inner-banner sample-document-2">
+    <div class="container">
+      <div class="mt-2 t18 bold green" id="documentTitle">Create Document</div>
+      <div class="row view-container">
+        <div class="col-lg-4 col-12">
+          <div class="progress-container">
+            
+            <div class="progress-det mt-2 mb-2">
+              <div class="t24">Progress</div>
+              <div class="t20 green" id="progressText">0%</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+            <section class="question-conatiner" id="questionConatiner">
+              <div class="w-100 mb-3 mt-2">
+                <div id="question"></div>
+                <!--<div class="desc-wrap" id="desc" >
+                </div>-->
+              </div>
+              <div class="input-section" id="inputSection">
+              </div>
+              <div class="subQuestions" id="subQuestionSection">
+              </div>
+            </section>
+              <div class="w-100 d-flex mb-2">
+                <button type="button" class="btn-green btn-p" onclick="renderPreviousQuestion();">Previous</button>
+                <button type="button" class="btn-green ml-2 mr-0 btn-n"  onclick="renderNextQuestion();updateProgress('')">Next</button>
+              </div>
+              
+              <div class="mt-4 pt-4 hidden-in-preview extra-options">
+                <a href="javascript:void(0)" style="text-decoration: underline;text-align: center;margin-top: 8px;">Save and continue later</a>
+                <a href="javascript:void(0)" style="text-decoration: underline;text-align: center;margin-top: 8px;"  data-toggle="modal" data-target="#customiseInfoModal">Customize this template</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-12">
+          <div class="scroll-section .scrollable-element" id="docContainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="customiseInfoModal" tabindex="-1" aria-labelledby="customiseInfoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><b>HOW TO CUSTOMISE THE TEMPLATE</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Use the form on the left to fill in the template.</p>
+
+          <p class="mt-4">
+            The document is written according to your responses - clauses are added or removed, paragraphs are customised, words are changed, etc.</p>
+            
+          <p class="mt-4">At the end, you will immediately receive the document in Word and PDF formats. You can then open the Word document to modify it and reuse it however you wish.</p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alertNotification" tabindex="-1" aria-labelledby="alertNotificationLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="alertNotificationLabel">Notification</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="txt" id="alertText">We already have a saved configuration for this document.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $("ul.nav-tabs a").click(function (e) {e.preventDefault();$(this).tab("show");});
+    $(document).ready(function () {
+      var owl = $('.testi-2');
+      owl.owlCarousel({
+        items: 2,loop: true,margin: 10,autoplay: true,autoplayTimeout: 1000,
+        autoplayHoverPause: true,dots: false,nav: false,
+        navText: [
+          '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+          '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+          0: {items: 2},576: {items: 2},768: {items: 4},1200: {items: 4},1600: {items: 4}
+        }
+      });
+      $('.play').on('click', function () {owl.trigger('play.owl.autoplay', [1000])})
+      $('.stop').on('click', function () {owl.trigger('stop.owl.autoplay')})
+    })
+    $(document).ready(function () {
+      $(".accordion-toggle").mouseover(function () {
+        $(".accordion-toggle").trigger("click");
+      });
+    });
+  </script>
+  <script>
+    const baseUrl="http://ezyhostings-001-site1.dtempurl.com/api/DocManagement";
+    let questionsList, quesionIndex=0,questionCount=0,answeredCount=0,visitedCount=0;
+    let mode="normal",selectedOptionName="",progress=0;
+    updateDocWithDynamicOption=(optionIndex)=>{
+      $("#subQuestionSection").html("");
+      const question=questionsList[quesionIndex];
+      const selector=question.section;
+      const selectedOption=question.options[optionIndex];
+      selectedOptionName=selectedOption.name;
+      $("."+selector).find(".dt").hide();
+      $("."+selector).find(".dt"+optionIndex).show();
+      if(selectedOption.subQuestions.length>0){
+        let subQuestions=selectedOption.subQuestions;
+        for(let i=0;i<subQuestions.length;i++){
+          let questionObj=subQuestions[i];
+          let html=`<div class="txt mb-2">${questionObj.question}</div>`;
+          let placeholder=questionObj.sampleAnswer&&questionObj.sampleAnswer!=""?'Eg:'+questionObj.sampleAnswer:"";
+          if(questionObj.inputType=="Textarea")
+            html+=`<textarea placeholder="`+placeholder+`" input-ref="${questionObj.inputs[i]}" class="questionInput-textarea subQuestionInput"></textarea>`;
+          else if(questionObj.inputType=="Amount")
+            html+='<input placeholder="'+placeholder+'" type="number" class="subQuestionInput amount" id="subQuestionInput"/>';  
+          else
+            html+='<input placeholder="'+placeholder+'" input-ref="'+questionObj.inputs[i]+'" type="'+questionObj.inputType+'" class="subQuestionInput"/>';  
+          $("#subQuestionSection").append(html)
+          for(let input of questionObj.inputs){
+            $(input).addClass("active")
+          }
+        }
+      }updateProgress(selectedOptionName)
+    }
+    initAndBindEvents=()=>{
+      $(document).on("click", ".dynamicContentSelect", function () {
+        updateDocWithDynamicOption(parseInt($(this).attr("data-rel")));
+        $("#selectedDynamicOption").html(selectedOptionName);
+      });
+      $(document).on("change", ".dynamicContentOption", function () {
+        updateDocWithDynamicOption($(".dynamicContentOption").index($(this)));
+      });
+      $(document).on("change", ".singleOption", function () {
+        if($(this).is(":checked")) {
+          updateDocWithDynamicOption(0)
+        }else{
+          const selector=questionsList[quesionIndex].section;
+          $("."+selector).find(".dt").hide();
+          $("#subQuestionSection").html("");
+        }
+      });
+      $(document).on("click", ".dynamicFieldsSelect", function () {
+        const question=questionsList[quesionIndex];
+        const count=parseInt($(this).html());
+        let wrap=$("."+question.section).closest('.df-section');
+        let element=$(wrap).find("."+question.section).first().clone();
+        $(wrap).html("");
+        for(let i=1;i<=count;i++){
+          $(wrap).append($(element).clone())
+        }
+        $("#selectedDynamicFields").html(count);
+        let html='<div class="df-answers-wrap">';
+        for(let i=0;i<count;i++){
+          html+=`<div class="mt-3 df-answer-set df-answer-set${i}"+><div class="label-txt">Enter answer for set ${i+1}</div>`;
+          for(let dfQuestion of question.fieldQuestions){
+            if(dfQuestion.desc!=""){
+              html+=`<div class="desc-w">${dfQuestion.desc}</div>`;
+            }
+            html+=`<div class="input-w mt-2"><input data-rel="${dfQuestion.field}" data-index="${i}" placeholder="${dfQuestion.question}" type="text" class="questionDfInput"/></div>`;
+            
+          }
+          html+='</div>';
+        }
+        html+=`<div class="btn-w"><button type="button" class="btn btn-primary" onclick="saveDynamicfieldAnswers(${count})">Save Answers</button></div></div>`;
+        $(".df-qa-wrap").html(html);
+      });
+      
+      $(document).on("keydown","#questionInput",function search(e) {
+        if(e.keyCode == 13) updateDocumentWithAnswer($(this).hasClass("amount"))
+      });
+      $(document).on("keydown",".questionDfInput",function search(e) {
+        if(e.keyCode == 13) {
+          let answer=$(this).val();
+          if($(this).hasClass("amount"))
+            answer=isNaN(answer)?answer:`${answer} (${inWords(answer)})`;
+          $($(this).attr("data-rel")).eq($(this).attr("data-index")).html(answer);
+        }
+      });
+      $(document).on("change","#questionInput[type='Date']",function search(e) {
+        updateDocumentWithAnswer()
+      });
+      $(document).on("keydown",".subQuestionInput",function search(e) {
+        if(e.keyCode == 13) updateDocWithAnsToSubQuestion($(this).attr("input-ref"),$(this).val(),$(this).hasClass("amount"))
+      });
+      $(document).on("change",".subQuestionInput[type='Date']",function search(e) {
+        updateDocWithAnsToSubQuestion($(this).attr("input-ref"),$(this).val())
+      });
+      getDocAndQuestions();
+    }
+    updateDocWithAnsToSubQuestion=(ref,val,isAmountInput)=>{
+      $(".subQuestionInput").each(function(){
+        let answer=$(this).val();
+        if(isAmountInput)
+          answer=isNaN(answer)?answer:`${answer} (${inWords(answer)})`;
+        $(ref).html(answer)
+      });
+    }
+    saveDynamicfieldAnswers=(count)=>{
+      const question=questionsList[quesionIndex];
+      const dfQuestions=question.fieldQuestions;
+      let section=question.section;
+      let qaFullSet=[];
+      $(".df-answer-set").each(function(i){
+        $(this).find('input').each(function(j){
+          let answer=$(this).val();
+          answer=isNaN(answer)?answer:`${answer} (${inWords(answer)})`;
+          $(`.${section}:eq(${i})`).find($(this).attr("data-rel")).html(answer);
+        })
+      })
+      updateProgress(qaFullSet)
+    }
+    
+    getDocAndQuestions=()=>{
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+      });
+      mode = params.mode?params.mode:"normal";
+      $('body').addClass(mode);
+      if(mode=="preview"){
+        const docConfig=localStorage.getItem("docConfig");
+        if(docConfig!=null)
+          initValues(JSON.parse(docConfig)); 
+      }else{
+        const Url = baseUrl+"/DocumentMappingByDocumentID/"+params.docid;
+        $(".spinner").show();
+        if(params.docname){
+          $("#documentTitle").html(params.docname);
+        }
+        $.ajax({
+          url: Url,
+          type: 'GET',
+          success: function (response) {
+            //$('#docContainer').html(resposnse.data.htmlString);
+            quesionIndex=0;
+            if(response.data)
+              initValues(response.data);
+            else alert('Couldnot load Data !');
+          }, error: function (err) { alert(err);$(".spinner").hide() },
+          complete:function(){$(".spinner").hide();}
+        });
+      }
+    }
+
+    initValues=(resposnse)=>{
+      const mappingJson=JSON.parse(resposnse.mappingJson);
+      $("#docContainer").html(mappingJson.docAsHtml);
+      $(".dynamic-field-section").each(function(i){
+        $(this).wrap(`<div class="df-section"></div>`)
+      });
+      questionsList=mappingJson.questionsList;
+      questionCount=questionsList.length;
+      if(questionsList.length>0)
+        renderQuestion(quesionIndex); 
+      else
+        alert("Questions for this Document is not configured !");   
+      console.log(mappingJson.questionsList);
+      $(".spinner").hide();
+    }
+    const a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+    const b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+    currency="Rupees";
+    inWords = (num) => {
+      if ((num = num.toString()).length > 9) return 'overflow';
+      n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+      if (!n) return; var str = '';
+      str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+      str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+      str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+      str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+      str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + currency : '';
+      return str;
+    }
+    updateDocumentWithAnswer=(isAmountInput)=>{
+      let answer=$("#questionInput").val();
+      if(isAmountInput)
+        answer=isNaN(answer)?answer:`${answer} ( ${inWords(answer)})`;
+      if(answer!=""){
+        let inputs=questionsList[quesionIndex].inputs;      
+        for(let input of inputs){
+          $(input).html(answer)
+          $(input).css("text-decoration","none")
+        }
+        updateProgress(answer);renderNextQuestion()
+      }
+    }
+    updateProgress=(answer)=>{
+      let obj = questionsList[quesionIndex];
+      if(progress < 100) {
+        if(!obj.answered){
+          obj.answered=true;
+          ++answeredCount;
+        }   
+        if(!obj.visted || quesionIndex == questionsList.length-1) {
+          progress=parseInt(((++visitedCount)/questionCount)*100)
+          $("#progressText").html(progress+"%")
+          $("#progressBar").css("width",progress+"%")
+          obj.visted = true;
+        } 
+      } 
+    }
+    renderNextQuestion=()=>{
+      if(quesionIndex<questionCount-1){
+        renderQuestion(++quesionIndex)
+      }
+    }
+    renderPreviousQuestion=()=>{
+      if(quesionIndex>0)renderQuestion(--quesionIndex)
+    }
+    renderQuestion=(index)=>{
+      let questionObj=questionsList[index];
+      if(!questionObj['visted']) {
+        questionObj['visted']=false;
+      }
+      $("#subQuestionSection").html("");
+      let qDescHtml = `<div class="question-info" data-toggle="tooltip" data-placement="top"></div>`;
+      $("#questionInput").val("");
+      $("#docContainer").find(".active").removeClass("active");
+      $("#question").html(questionObj.question);
+      if(questionObj.desc!=""&&questionObj.desc!="<p><br></p>"){
+        $("#question").append(qDescHtml);
+        $('.question-info').attr('title', questionObj.desc);
+        //$("#desc").html(questionObj.desc).show();
+      }
+      else
+        $("#desc").html("").hide();
+      let html="",i=0;
+      if(questionObj.dynamicContent){
+        if(questionObj.dynamicType=="text"){
+          if(questionObj.inputType=="select"){
+            html=`<div class="dynamicContentDropdownWrap">
+                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="selectedDynamicOption" data-toggle="dropdown" aria-expanded="false">Select the option</button>
+                <div class="dropdown-menu" aria-labelledby="inputTypeDropdown">`;
+            let index=-1;
+            for(let option of questionObj.options){
+              html+=`<button class="dropdown-item dynamicContentSelect" type="button" data-rel="`+(++index)+`">`+option.name+`</button>`;            
+            }
+            html+='</div></div>';
+          }else if(questionObj.inputType=="radio"){
+            let i=-1;
+            for(let option of questionObj.options){
+              html+=`<div class="form-check">
+                <input class="form-check-input dynamicContentOption" data-rel="`+index+`" type="radio" name="dynamicContentOption" id="dynamicContentOption`+(++i)+`" value="`+option.name+`"/>
+                <label class="form-check-label" for="dynamicContentOption`+i+`">`+option.name+`</label></div>`;
+            }
+          }else if(questionObj.inputType=="checkbox"){
+            html+=`<div class="form-group form-check">
+              <input type="checkbox" class="form-check-input singleOption" id="singleOption" checked>
+              <label class="form-check-label" for="singleOption">${questionObj.options[0].name}</label>
+            </div>`;
+          }
+          $("."+questionObj.section).addClass("active");
+          $("#inputSection").html(html);
+          const element=document.getElementsByClassName(questionObj.section)[0];
+          document.getElementById("docContainer").scrollTop = element.offsetTop;
+          updateDocWithDynamicOption(0);
+        }
+        else if(questionObj.dynamicType=="fields"){
+          html=`<div class="dynamicFieldDropdownWrap">
+            <button class="btn btn-info btn-sm dropdown-toggle mt-2" type="button" id="selectedDynamicFields" data-toggle="dropdown" aria-expanded="false">Select the number</button>
+          <div class="dropdown-menu" aria-labelledby="inputTypeDropdown">`;
+          for(let i=1;i<=10;i++){
+            html+=`<button class="dropdown-item dynamicFieldsSelect" type="button" data-rel="`+i+`">`+i+`</button>`;            
+          }
+          html+='</div><div class="df-qa-wrap"></div></div>';
+          $("#inputSection").html(html);
+          $('#question').html('Enter the number of fields');
+          $("#desc").attr("title",'Select the number of fields');
+        }
+        const target=document.getElementsByClassName(questionObj.section)[0];
+        document.getElementById("docContainer").scrollTop = target.offsetTop - 30;
+        $("."+questionObj.section).addClass("active");
+      }else{
+        let placeholder=questionObj.sampleAnswer==""?"":'Eg:'+questionObj.sampleAnswer;
+        if(questionObj.inputType=="Textarea")
+          html=`<textarea placeholder="`+placeholder+`" class="questionInput questionInput-textarea" id="questionInput"></textarea>`;
+        else if(questionObj.inputType=="Amount")
+          html='<input placeholder="'+placeholder+'" type="number" class="questionInput amount" id="questionInput"/>';  
+        else
+          html='<input placeholder="'+placeholder+'" type="'+questionObj.inputType+'" class="questionInput" id="questionInput"/>';  
+        $("#inputSection").html(html)
+        for(let input of questionObj.inputs){
+          $(input).addClass("active")
+        }
+        $("#questionInput").focus();
+        const className=questionObj.inputs[0].slice(1,questionObj.inputs[0].length);
+        let target=document.getElementsByClassName(className)[0];
+        document.getElementById("docContainer").scrollTop = target.offsetTop - 30;
+        $('.question-info').tooltip();
+        //$("#docContainer").animate({scrollTop: $(questionObj.inputs[0]).offset().top-100}, 500);
+        $(document).scrollTop(0);
+      } 
+      const alertText=questionObj.alertText;
+      if(alertText&&alertText!=""){
+        $("#alertText").html(alertText);
+        $("#alertNotification").modal('show');
+        questionObj.alertText="";
+      }      
+    }
+    document.addEventListener("DOMContentLoaded", initAndBindEvents);
+    includeHTML=()=> {
+      let z, i, elmnt, file, xhttp;
+      z = document.getElementsByClassName("section");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+    includeHTML()
+  </script>
+</body>
+</html>

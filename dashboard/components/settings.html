@@ -1,0 +1,105 @@
+<style>
+  .db-settings .heading {
+    height: 66px;
+    background: #0ABC8A;
+    border-radius: 20px 20px 0px 0px;
+    line-height: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    font-weight: bold;
+  }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    border: 1px dotted #EAEAEA;
+    margin-left: 1rem;
+  }
+
+  .settings-btns-wrap {
+    background: #fff;
+  }
+
+  .setting {
+    height: 58px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 4rem;
+  }
+
+  .setting.active {
+    color: #00AA7A;
+  }
+  .setting.info{
+    background: url(/assets/img/dashboard/icons/personal-info.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.account{
+    background: url(/assets/img/dashboard/icons/myaccount.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.branding{
+    background: url(/assets/img/dashboard/icons/branding.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.integration{
+    background: url(/assets/img/dashboard/icons/integration.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.teams{
+    background: url(/assets/img/dashboard/icons/teams.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.notification{
+    background: url(/assets/img/dashboard/icons/notifications.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.billing{
+    background: url(/assets/img/dashboard/icons/billing.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.feedback{
+    background: url(/assets/img/dashboard/icons/feedback.png) 1.8rem 1rem no-repeat;
+  }
+  .setting.referal{
+    background: url(/assets/img/dashboard/icons/referal.png) 1.8rem 1rem no-repeat;
+  }
+</style>
+<div class="db-settings">
+  <div class="row">
+    <div class="col-md-3 col-sm-12">
+      <div class="heading t25">Settings</div>
+      <div class="settings-btns-wrap">
+        <div class="category">
+          <div class="t18">Profile</div>
+          <div class="divider"></div>
+        </div>
+        <div class="setting info active" data-view="info.html">Personal info</div>
+        <div class="setting account" data-view="account.html">My Account</div>
+        <div class="category">
+          <div class="t18">Workshop</div>
+          <div class="divider"></div>
+        </div>
+        <div class="setting branding" data-view="branding.html">Branding</div>
+        <div class="setting integration" data-view="integration.html">Integration</div>
+        <div class="setting teams" data-view="teams.html">Teams</div>
+        <div class="setting notification" data-view="notification.html">Notification</div>
+        <div class="category">
+          <div class="t18">Organization</div>
+          <div class="divider"></div>
+        </div>
+        <div class="setting billing" data-view="billing.html">Billing</div>
+        <div class="setting feedback" data-view="feedback.html">Feedback</div>
+        <div class="setting referal" data-view="referrals.html">Referals</div>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-12" id="settingsContainer">
+
+    </div>
+  </div>
+</div>

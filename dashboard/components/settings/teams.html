@@ -1,0 +1,113 @@
+<style>
+  .teams-page .green-box {
+    background: #0ABC8A;
+    border-radius: 20px;
+    height: 140px;
+    padding: 1rem 1.5rem;
+  }
+
+  .teams-page .t20.cs1 {
+    margin-top: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .teams-page .t14.cs2 {
+    color: #6B6B6B;
+    margin-bottom: 2rem;
+  }
+
+  .teams-page .green-box .d-flex {
+    margin-top: 3rem;
+  }
+
+  .teams-page .row.table-preheader-row {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    align-items: center;
+  }
+
+  .teams-page .input-style-wrap button.btn.btn-secondary.dropdown-toggle {
+    width: 70%;
+    height: 40px;
+    margin-top: 0;
+    padding-left: 0%;
+    font-size: 16px;
+    justify-content: start;
+  }
+
+  .teams-page .ddn-item.input-style-wrap .dropdown-menu {
+    width: 70%;
+  }
+
+  #esignTeamsTbody td:first-child {
+    padding-top: 18px;
+  }
+
+  #esignTeamsTbody td.t16 {
+    padding-top: 24px;
+  }
+
+  .teams-page tbody tr {
+    height: 70px;
+    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 22px;
+  }
+
+  .teams-page .form-check.input-style-wrap label {
+    margin-left: 0;
+  }
+</style>
+<div class="tabs-wrap teams-page box">
+  <div class="t25 text-left black"><b>Teams</b></div>
+  <hr class="hr1" />
+  <nav>
+    <div class="nav nav-tabs" id="nav-teams-tabs" role="tablist">
+      <button class="nav-link active t20" id="nav-esign-tab" data-toggle="tab" data-target="#nav-esign" type="button"
+        role="tab" aria-controls="nav-esign" aria-selected="true">Esign package</button>
+      <button class="nav-link t20" id="nav-business-tab" data-toggle="tab" data-target="#nav-business" type="button"
+        role="tab" aria-controls="nav-business" aria-selected="false">Business package</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tab-contents">
+    <div class="tab-pane fade show active" id="nav-esign" role="tabpanel" aria-labelledby="nav-esign-tab">
+      <div class="t20 cs1"><b>Esign Package User Licenses</b></div>
+      <div class="t14 cs2">Here's how licenses are currently used in all workspaces across your account.</div>
+      <div class="col-sm-12 col-md-4">
+        <div class="green-box">
+          <div class="t20 white-text">Standard</div>
+          <div class="d-flex">
+            <div class="t18 white-text">1 of 1 Activated</div>
+            <div class="t18 ml-auto white-text">All in use</div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr1" />
+      <div class="row table-preheader-row">
+        <div class="t25 col-sm-6 col-md-4 black text-left"><b>Documents</b></div>
+        <div class="input-search-box col-md-5 col-sm-6">
+          <input class="input-style-text" placeholder="Search exercises..." />
+          <div class="search-box"></div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <button class="btn btn-green invite-btn w-100">Invite new user</button>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Users</th>
+            <th scope="col">Role</th>
+            <th scope="col">Lisence</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="esignTeamsTbody">
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade show" id="nav-business" role="tabpanel" aria-labelledby="nav-busines-tab">
+      <div class="t20">Esign Package User Licenses</div>
+      <div class="t14">Here's how licenses are currently used in all workspaces across your account.</div>
+    </div>
+  </div>
+</div>

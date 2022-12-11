@@ -1,0 +1,64 @@
+<style>
+  .storage-contents-wrap {
+    display: flex;
+    padding: 2rem;
+    background: #F8FAFB;
+  }
+
+  .storage-contents-wrap .box {
+    margin: 1rem;
+  }
+
+  .integration-page .box button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .integration-page .box .t20 {
+    margin: 10px 0 1rem 0;
+  }
+
+  .integration-page .box .t14 {
+    color: #6B6B6B;
+  }
+</style>
+<div class="tabs-wrap integration-page box">
+  <div class="t30 cs1"><b>Integration</b></div>
+  <hr class="hr1" />
+  <nav>
+    <div class="nav nav-tabs" id="nav-integration-tabs" role="tablist">
+      <button class="nav-link active t20" id="nav-storage-tab" data-toggle="tab" data-target="#nav-storage"
+        type="button" role="tab" aria-controls="nav-storage" aria-selected="true">Storage</button>
+      <button class="nav-link t20" id="nav-crm-tab" data-toggle="tab" data-target="#nav-crm" type="button" role="tab"
+        aria-controls="nav-crm" aria-selected="false">CRM</button>
+      <button class="nav-link t20" id="nav-api-tab" data-toggle="tab" data-target="#nav-api" type="button" role="tab"
+        aria-controls="nav-crm" aria-selected="false">API</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tab-contents">
+    <div class="tab-pane fade show active" id="nav-storage" role="tabpanel" aria-labelledby="nav-storage-tab">
+      <div class="storage-contents-wrap dfc-m">
+        <div class="box">
+          <div class="icon"><img src="../assets/img/dashboard/google-drive.png" class="em" alt="email"></div>
+          <div class="t20">Google workspace</div>
+          <div class="t14">A suite of free productivity and collaboration tools, developed by Google.</div>
+          <button class="btn btn-green">Activate</button>
+        </div>
+        <div class="box">
+          <div class="icon"><img src="../assets/img/dashboard/onedrive.png" class="em" alt="email"></div>
+          <div class="t20">Ondedrive workspace</div>
+          <div class="t14">A suite of free productivity and collaboration tools, developed by Onedrive.</div>
+          <button class="btn btn-green">Activate</button>
+        </div>
+        <div class="box">
+          <div class="icon"><img src="../assets/img/dashboard/box-text.png" class="em" alt="email"></div>
+          <div class="t20">Box workspace</div>
+          <div class="t14">A suite of free productivity and collaboration tools, developed by box.</div>
+          <button class="btn btn-green">Activate</button>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade show active" id="nav-crm" role="tabpanel" aria-labelledby="nav-crm-tab"></div>
+    <div class="tab-pane fade show active" id="nav-api" role="tabpanel" aria-labelledby="nav-api-tab"></div>
+  </div>
+</div>

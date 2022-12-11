@@ -1,0 +1,373 @@
+<style>
+  .upgrade-modal-body #businessBoxesWrap {
+    display: none;
+  }
+
+  /*switch styles*/
+
+  div.btn-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  div.btn-container i {
+    display: inline-block;
+    position: relative;
+    top: -9px;
+  }
+
+  .btn-color-mode-switch {
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+    margin: 0px;
+    width: 15.5rem;
+    height: 3.1rem;
+    background: #F0F3F2;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 500;
+    top: 8px;
+    right: 20px;
+    color: #5D5D5D;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 7.5rem;
+    height: 45px;
+    background: #FBC02D;
+    font-size: 1.2rem;
+    border-radius: 26px;
+    position: absolute;
+    left: 2px;
+    color: #fff;
+    top: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+  }
+
+  .btn-color-mode-switch>.alert {
+    display: none;
+    background: #FF9800;
+    border: none;
+    color: #fff;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
+  }
+
+  .toggle-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 3rem auto 1.5rem auto;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+    background: #F0F3F2;
+    color: #5D5D5D;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 128px;
+    background: #FBC02D;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 36px;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+    display: block;
+  }
+
+  /*planType switch*/
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType {
+    height: 72px;
+    width: 26rem;
+    border-radius: 40px;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:after {
+    background: #09BB8B;
+    width: 12rem;
+    height: 56px;
+    top: 9px;
+    left: 7px;
+    font-size: 25px;
+    padding-top: 7px;
+  }
+
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner.planType:before {
+    font-size: 24px;
+    top: 18px;
+    right: 32px;
+  }
+
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner.planType:after {
+    left: 218px;
+    background: #09BB8B;
+  }
+
+  .upgrade-modal-body .green-box {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 2.25rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  #upgradePlanModal .active .t16.plan {
+    color: #fff;
+  }
+
+  #upgradePlanModel .modal-content {
+    background: #F8FAFB;
+  }
+
+  .upgrade-modal-body .head {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5rem;
+    color: #3D3D3D;
+    text-align: center;
+  }
+
+  .upgrade-modal-body .amount {
+    font-size: 3.1rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .upgrade-modal-body .dot {
+    width: 20px;
+    height: 20px;
+    background: #19C194;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+
+  .upgrade-modal-body .points-wrap .rw {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .upgrade-modal-body .green-box.active {
+    background: #0ABC8A;
+    color: #fff;
+  }
+
+  .upgrade-modal-body .active .head {
+    color: #fff;
+  }
+
+  .upgrade-modal-body .active .dot {
+    background: #67DDBE;
+  }
+
+  #upgradePlanModal .modal-content {
+    background: #F8FAFB !important;
+  }
+
+  #upgradePlanModal .t16.plan {
+    text-align: center;
+    color: #808080;
+    margin-bottom: 2rem;
+  }
+
+  #upgradePlanModal .btn.btn-white {
+    background: #FFFFFF;
+    border: 2px solid #19C194;
+    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    margin-top: 3rem;
+  }
+
+  .upgrade-modal-body .main-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+</style>
+<div class="modal modal-80" tabindex="-1" id="upgradePlanModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="m-header">
+        <img src="../assets/img/dashboard/close.png" alt="close" class="ml-auto" data-dismiss="modal">
+      </div>
+      <div class="modal-body upgrade-modal-body">
+        <div class="t30 text-center black">Choose a plan that’s right for your business</div>
+        <div class="toggle-btn-container justify-content-center">
+          <div class="btn-container">
+            <label class="planType switch btn-color-mode-switch">
+              <input type="checkbox" name="planType" id="planType" value="1">
+              <label for="planType" data-on="For Business" data-off="E Signature"
+                class="planType btn-color-mode-switch-inner"></label>
+            </label>
+          </div>
+        </div>
+
+        <div class="pricing-chart-wrap page-content-wrap">
+          <div class="toggle-btn-container mt-4 pt-4" id="subscriptionTypeWrap">
+            <div class="btn-container">
+              <label class="switch btn-color-mode-switch">
+                <input type="checkbox" name="subscriptionType" id="subscriptionType" value="1">
+                <label for="subscriptionType" data-on="Monthly" data-off="Annual"
+                  class="btn-color-mode-switch-inner"></label>
+              </label>
+            </div>
+          </div>
+          <div class="row main-box" id="eSignatureBoxesWrap">
+            <div class="col-sm-6 col-md-4">
+              <div class="green-box box">
+                <div class="head">Individual</div>
+                <div class="box-content">
+                  <div class="c3">
+                    <div class="amount">₹99</div>
+                    <div class="t16 plan">Monthly</div>
+                    <div class="points-wrap">
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of
+                          all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of
+                          all documents</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn btn-white">Subscribe Now</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="green-box box active">
+                <div class="head">Corporate</div>
+                <div class="box-content">
+                  <div class="c3">
+                    <div class="amount">₹199</div>
+                    <div class="t16 plan">Monthly</div>
+                    <div class="points-wrap">
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn btn-white">Subscribe Now</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="green-box box">
+                <div class="head">Entrprises</div>
+                <div class="box-content">
+                  <div class="c3">
+                    <div class="amount">₹299</div>
+                    <div class="t16 plan">Monthly</div>
+                    <div class="points-wrap">
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                      <div class="rw">
+                        <div class="dot-wrap">
+                          <div class="dot"></div>
+                        </div>
+                        <div class="t16">Create unlimited versions of all documents</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn btn-white">Subscribe Now</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row main-box" id="businessBoxesWrap">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

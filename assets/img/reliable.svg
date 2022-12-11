@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="112.466" viewBox="0 0 118 112.466">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_76" data-name="Rectangle 76" width="93.667" height="93.667" fill="none" stroke="#a8fff1" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_76-2" data-name="Rectangle 76" width="102.747" height="102.747" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_357" data-name="Group 357" transform="translate(-605 -8209)">
+    <g id="Group_353" data-name="Group 353" transform="translate(629.333 8227.799)" opacity="0.14">
+      <g id="Group_328" data-name="Group 328">
+        <g id="Group_327" data-name="Group 327" clip-path="url(#clip-path)">
+          <path id="Path_1082" data-name="Path 1082" d="M112.957,45.3A45.3,45.3,0,1,1,67.655,0a45.3,45.3,0,0,1,45.3,45.3" transform="translate(-22.352 1)" fill="none" stroke="#a8fff1" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_352" data-name="Group 352" transform="translate(605 8209)" opacity="0.14">
+      <g id="Group_328-2" data-name="Group 328">
+        <g id="Group_327-2" data-name="Group 327" clip-path="url(#clip-path-2)">
+          <path id="Path_1082-2" data-name="Path 1082" d="M125.1,51.374A51.374,51.374,0,1,1,73.726,0,51.374,51.374,0,0,1,125.1,51.374" transform="translate(-22.352)" fill="#a8fff1"/>
+        </g>
+      </g>
+    </g>
+    <g id="vuesax_twotone_archive-book" data-name="vuesax/twotone/archive-book" transform="translate(-58 7914)">
+      <g id="archive-book" transform="translate(684 316)">
+        <path id="Vector" d="M45.908,12.752v25.5c0,7.651-3.826,12.752-12.752,12.752h-20.4C3.826,51.009,0,45.908,0,38.257v-25.5C0,5.1,3.826,0,12.752,0h20.4C42.083,0,45.908,5.1,45.908,12.752Z" transform="translate(7.651 5.101)" fill="none" stroke="#ecf3fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Vector-2" data-name="Vector" d="M17.853,0V20.047a1.28,1.28,0,0,1-2.142.944L9.794,15.532a1.264,1.264,0,0,0-1.734,0L2.142,20.99A1.28,1.28,0,0,1,0,20.047V0Z" transform="translate(21.679 5.101)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+        <path id="Vector-3" data-name="Vector" d="M0,0H10.839" transform="translate(33.794 35.706)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+        <path id="Vector-4" data-name="Vector" d="M0,0H21.679" transform="translate(22.954 45.908)" fill="none" stroke="#a8fff1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0.4"/>
+        <path id="Vector-5" data-name="Vector" d="M0,0H61.211V61.211H0Z" transform="translate(61.211 61.211) rotate(180)" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>
