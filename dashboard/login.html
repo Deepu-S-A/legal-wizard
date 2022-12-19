@@ -143,11 +143,14 @@ $('.error-input').removeClass('error-input');
         cache: false, contentType: false, processData: false, timeout: 60000,
         success: function (response) {
           console.log(response);
+          if(response.messageType === 0) {
+            alert("Invalid credentials");
+          }
           //location.href='dashboard.html'
           },
           error: function (error) {
             console.log(error);
-            alert('Registration failed');
+            alert('Login failed');
           }
         });
       }
