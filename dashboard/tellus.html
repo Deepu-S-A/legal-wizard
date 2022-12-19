@@ -78,10 +78,10 @@
                   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                     Human Resource
                   </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-menu areaOfwork-ddwn">
+                    <a class="dropdown-item" href="javascript:void(0)">HR</a>
+                    <a class="dropdown-item" href="javascript:void(0)">IT</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Sales</a>
                   </div>
                 </div>
               </div>
@@ -92,10 +92,10 @@
                     Linkedin
                   </button>
                   <div class="dropdown-menu informationSourceDdn">
-                    <a class="dropdown-item" href="#">Social Media</a>
-                    <a class="dropdown-item" href="#">Email</a>
-                    <a class="dropdown-item" href="#">Friends</a>
-                    <a class="dropdown-item" href="#">Other</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Social Media</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Email</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Friends</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Other</a>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 <small class="form-text text-muted hidden">Enter the source of information</small>
               </div>
               <div class="cs4">
-                <button type="button" class="btn btn-primary btn-green w-100" onclick="location.href='dashboard.html'">Submit</button>
+                <button type="button" class="btn btn-primary btn-green w-100" onclick="registerUser()">Submit</button>
               </div>
             </div>
           </div>
@@ -122,6 +122,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script>
+  let userInfo;
   $(document).ready(function () {
     $('.btn-nav').click(function () {
       $('.view').hide();
@@ -143,7 +144,78 @@
       const text = $(this).html();
       $(this).closest('.dropdown').find('.dropdown-toggle').html(text);
     });
-  })
+    $('.view1').find('.t25').click(function(){
+      userInfo.userQuestions.push({
+        "id": 0,
+        "userID": 0,
+        "question": "How will you mainly use Wizard Legal?",
+        "anwer": $(this).html()
+      });
+    });
+    $('.view2').find('.t25').click(function(){
+      userInfo.userQuestions.push({
+        "id": 1,
+        "userID": 0,
+        "question": "How will you mainly use Wizard Legal?",
+        "anwer": $(this).html()
+      });
+    });
+    $(document).on('click', '.areaOfwork-ddwn .dropdown-item',function(){
+      userInfo.userQuestions.push({
+        "id": 2,
+        "userID": 0,
+        "question": "Which profession/ Industry you work in?",
+        "anwer": $(this).html()
+      });
+    })
+    $(document).on('click', '.informationSourceDdn .dropdown-item',function(){
+      let value = $(this).html();
+      $('.sourceOtherWrap').hide();
+      if(value==='Other') {
+        $('.sourceOtherWrap').show();
+      } else {
+        userInfo.userQuestions.push({
+          "id": 2,
+          "userID": 0,
+          "question": "How did you hear about Wizard Legal?",
+          "anwer": $(this).html()
+        });
+      }
+    })
+    init();
+  });
+  
+  init = () => {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+      });
+    userInfo = JSON.parse(params.userInfo);
+  };
+
+  registerUser = () => {
+    console.log(userInfo);
+    userInfo = {"userID":0,"firstName":"Deepu","lastName":"A","email":"deepusa1988@gmail.com",
+    "phone":"9809178642","password":"wewewewewewe","userTypeID":0,"userQuestions":[{"id":0,"userID":0,"question":"How will you mainly use Wizard Legal?","anwer":"At work where I am employed"},{"id":2,"userID":0,"question":"How did you hear about Wizard Legal?","anwer":"Friends"},{"id":2,"userID":0,"question":"Which profession/ Industry you work in?","anwer":"IT"}]};
+    $.ajax({
+      type: "post",
+      headers: {  
+        'Accept': 'application/json',
+        'Content-Type': 'application/json' 
+    },
+      data: JSON.stringify(userInfo),
+        url: 'http://ezyhostings-001-site1.dtempurl.com/api/User/SaveUser/',
+        cache: false, contentType: false, processData: false, timeout: 60000,
+        success: function (response) {
+          console.log(response);
+          //location.href='dashboard.html'
+          },
+          error: function (error) {
+            console.log(error);
+            alert('Registration failed');
+          }
+        });
+  }
+
 </script>
 
 </html>

@@ -110,7 +110,50 @@
       }
 
       function validateUser() {
-        location.href="tellus.html"
+        const fname = $('#fname').val();
+        const lname = $('#lname').val();
+        const email = $('#email').val();
+        const phone = $('#phone').val();
+        const password = $('#password').val();
+        $('.error-input').removeClass('error-input');
+        let hasValidationError = false;
+        if(fname === "" || fname.length<3) {
+          $('#fname').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(lname === "") {
+          $('#lname').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(email === "" || email.length<3 === "" || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          $('#email').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(phone === "" || isNaN(phone) || phone.length != 10) {
+          $('#phone').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(password === "" || password.length<8) {
+          $('#password').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(!$('#tnc').is(":checked")) {
+          $('#tnc').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(!hasValidationError) {
+          const userInfo = {
+            userID: 0,
+            firstName: fname,
+            lastName: lname,
+            email,
+            phone,
+            password,
+            userTypeID: 0,
+            userQuestions: []
+          }
+          location.href=`tellus.html?userInfo=${JSON.stringify(userInfo)}`
+        }
       }
 
       function signIn() {

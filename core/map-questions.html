@@ -445,6 +445,7 @@ a.dropdown-item.docCategoryDdn {
         formData.append("categoryID",categoryId)
         $.ajax({
           type: "post",
+          contentType:'application/json',
           data: formData,
           url: url,
           cache: false, contentType: false, processData: false, timeout: 60000,

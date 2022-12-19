@@ -98,10 +98,6 @@
         }
       }
 
-      function validateUser() {
-        location.href="dashboard.html"
-      }
-
       function signIn() {
 
       }
@@ -118,7 +114,45 @@
       $( window ).resize(function() {
         fixResponsiveIssues();
       });
+      validateUser = () => {
+        const email = $('#email').val();
+        const password = $('#password').val();
+    userInfo = {
+  "userName": "deepusa1988@gmail.com",
+  "password": "wewewewewewe"
+};
+$('.error-input').removeClass('error-input');
+        let hasValidationError = false;
+        if(email === "" || email.length<3 === "" || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          $('#email').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(password === "" || password.length<8) {
+          $('#password').addClass('error-input');
+          hasValidationError = true;
+        }
+        if(!hasValidationError) {
+    $.ajax({
+      type: "post",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+      data: JSON.stringify(userInfo),
+        url: 'http://ezyhostings-001-site1.dtempurl.com/api/User/authenticate/',
+        cache: false, contentType: false, processData: false, timeout: 60000,
+        success: function (response) {
+          console.log(response);
+          //location.href='dashboard.html'
+          },
+          error: function (error) {
+            console.log(error);
+            alert('Registration failed');
+          }
+        });
+      }
+  }
     </script>
-    
+
 
 </html>
