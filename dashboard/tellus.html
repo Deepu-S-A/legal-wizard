@@ -132,41 +132,18 @@
       $('.cardItem').removeClass('active');
       $(this).toggleClass('active');
     });
-    $('.informationSourceDdn').find('.dropdown-item').click(function(){
-      const text = $(this).html();
-      $('.sourceOtherWrap').hide();
-      if(text === 'Other') {
-        $('.sourceOtherWrap').show();
-      }
-    });
-
     $('.dropdown-menu').find('.dropdown-item').click(function(){
       const text = $(this).html();
       $(this).closest('.dropdown').find('.dropdown-toggle').html(text);
     });
     $('.view1').find('.t25').click(function(){
-      userInfo.userQuestions.push({
-        "id": 0,
-        "userID": 0,
-        "question": "How will you mainly use Wizard Legal?",
-        "anwer": $(this).html()
-      });
+      userInfo.userQuestions[0].anwer = $(this).html();
     });
     $('.view2').find('.t25').click(function(){
-      userInfo.userQuestions.push({
-        "id": 1,
-        "userID": 0,
-        "question": "How will you mainly use Wizard Legal?",
-        "anwer": $(this).html()
-      });
+      userInfo.userQuestions[1].anwer = $(this).html();
     });
     $(document).on('click', '.areaOfwork-ddwn .dropdown-item',function(){
-      userInfo.userQuestions.push({
-        "id": 2,
-        "userID": 0,
-        "question": "Which profession/ Industry you work in?",
-        "anwer": $(this).html()
-      });
+      userInfo.userQuestions[2].anwer = $(this).html();
     })
     $(document).on('click', '.informationSourceDdn .dropdown-item',function(){
       let value = $(this).html();
@@ -174,17 +151,12 @@
       if(value==='Other') {
         $('.sourceOtherWrap').show();
       } else {
-        userInfo.userQuestions.push({
-          "id": 2,
-          "userID": 0,
-          "question": "How did you hear about Wizard Legal?",
-          "anwer": $(this).html()
-        });
+        userInfo.userQuestions[3].anwer = value;
       }
     })
     init();
   });
-  
+
   init = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
           get: (searchParams, prop) => searchParams.get(prop),
@@ -193,28 +165,41 @@
   };
 
   registerUser = () => {
-    console.log(userInfo);
-    userInfo = {"userID":0,"firstName":"Deepu","lastName":"A","email":"deepusa1988@gmail.com",
-    "phone":"9809178642","password":"wewewewewewe","userTypeID":0,"userQuestions":[{"id":0,"userID":0,"question":"How will you mainly use Wizard Legal?","anwer":"At work where I am employed"},{"id":2,"userID":0,"question":"How did you hear about Wizard Legal?","anwer":"Friends"},{"id":2,"userID":0,"question":"Which profession/ Industry you work in?","anwer":"IT"}]};
+    /*userInfo = {"userID":0,"firstName":"Deepu","lastName":"A","email":"deepusa1988@gmail.com",
+    "phone":"9809178642","password":"wewewewewewe","userTypeID":1,
+    "userQuestions":[{"id":0,"userID":0,"question":"How will you mainly use Wizard Legal?","anwer":"At work where I am employed"},
+    {"id":0,"userID":0,"question":"How did you hear about Wizard Legal?","anwer":"Friends"},
+    {"id":0,"userID":0,"question":"Which profession/ Industry you work in?","anwer":"IT"}]};*/
+    console.log();
+    if($('.sourceOtherWrap').css('display') === "block") {
+      let value = $('#sourceOther').val();
+      if( value === "") {
+        $('#sourceOther').addClass('error-input');return;
+      } else {
+        userInfo.userQuestions[3].anwer = value;
+      }
+    }
     $.ajax({
       type: "post",
-      headers: {  
+      headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json' 
+        'Content-Type': 'application/json'
     },
       data: JSON.stringify(userInfo),
         url: 'http://ezyhostings-001-site1.dtempurl.com/api/User/SaveUser/',
         cache: false, contentType: false, processData: false, timeout: 60000,
         success: function (response) {
-          console.log(response);
-          //location.href='dashboard.html'
-          },
-          error: function (error) {
+          if(response.messageType === 1) {
+            //location.href='dashboard.html'
+          }
+        },
+        error: function (error) {
             console.log(error);
             alert('Registration failed');
           }
-        });
-  }
+      });
+    }
+
 
 </script>
 

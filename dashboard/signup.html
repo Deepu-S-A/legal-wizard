@@ -90,8 +90,9 @@
     </div>
   </div>
 </body>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script>
   let passwordInput = document.getElementById('password'),
   toggle = document.getElementById('btnToggle'),
@@ -149,8 +150,12 @@
             email,
             phone,
             password,
-            userTypeID: 0,
-            userQuestions: []
+            userTypeID: 1,
+            userQuestions: [{ "id": 0, "userID": 0, "question": "How will you mainly use Wizard Legal?", "anwer": "At work where I am employed" },
+            { "id": 0, "userID": 0, "question": "How will you mainly use Wizard Legal?", "anwer": "E Signatures" },
+            { "id": 0, "userID": 0, "question": "Which profession/ Industry you work in?", "anwer": "HR" },
+            { "id": 0, "userID": 0, "question": "How did you hear about Wizard Legal?", "anwer": "Social Media" }
+            ]
           }
           location.href=`tellus.html?userInfo=${JSON.stringify(userInfo)}`
         }

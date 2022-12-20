@@ -143,7 +143,7 @@
       html += `<div class="user box">
         <div class="dp"><img src="${imgPath}${user.dp}"/></div>
         <div class="t16"><b>${user.name}</b></div>
-        <div class="t14">${user.email}</div>  
+        <div class="t14">${user.email}</div>
       </div>`;
     }
     $('.users-wrap').html(html);
@@ -196,10 +196,10 @@
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">${esignTable[i].role}</button>
             ${roleData}
-          </div>  
+          </div>
         </td>
-        <td class="t16">${esignTable[i].lisence}</td> 
-        <td></td> 
+        <td class="t16">${esignTable[i].lisence}</td>
+        <td></td>
       </tr>`;
     }
     console.log(html);
@@ -411,6 +411,8 @@
   });
 
   init = () => {
+    const userName = sessionStorage.getItem('__lw_user');
+    $('.user-name').html(userName);
     getFileContents(routeContainer, 'home.html');
     $("#planType").on("change", function () {
       planTypeChanged(this);
