@@ -152,8 +152,10 @@
             cache: false, contentType: false, processData: false, timeout: 60000,
             success: function (response) {
               if(response.messageType === 0) {
-                sessionStorage.setItem('__lw_token', response.data.token);
-                sessionStorage.setItem('__lw_user', response.data.name);
+                localStorage.setItem('__lw_token', response.data.token);
+                localStorage.setItem('__lw_user', response.data.name);
+                localStorage.setItem('__lw_user_id', response.data.id);
+                localStorage.setItem('__lw_user_type_id', response.data.userTypeID);
                 location.href='dashboard.html'
               }
             },

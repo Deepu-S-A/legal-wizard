@@ -76,6 +76,9 @@
 <script>
   const componentsPath = './components/';
   const routeContainer = document.getElementById('route-container');
+  let token = "";
+  let userID = 0;
+  let userTypeID = 0;
 
   const mydocumentsData = [
     { name: 'The Argon reseach Global 1111111 transaction', documentId: '124559766542', date: '9th May', time: '9:45 PM', signers: 1, status: 'Completed', type: 'esigned' },
@@ -151,8 +154,8 @@
 
   const renderSettingsHtml = () => {
     $(document).on('click', '.setting', function () {
-      let page = $(this).attr('data-view');
-      let settingsViewContainer = document.getElementById('settingsContainer');
+      const page = $(this).attr('data-view');
+      const settingsViewContainer = document.getElementById('settingsContainer');
       getFileContents(settingsViewContainer, 'settings/' + page);
       $('.setting').removeClass('active');
       $(this).addClass('active');
@@ -164,11 +167,125 @@
   }
 
   const renderSettingsPageData = (page) => {
+    const settingsContainer = $('#settingsContainer');
     switch (page) {
       case 'teams.html': renderSettingsTeamsTableData(); break;
+      case 'info.html': renderPersonalInfoSettings(settingsContainer);break;
     }
   }
 
+  renderPersonalInfoSettings = (Setingscontainer) => {
+    $.ajax({
+      type: "GET",
+      headers: {
+        'Authorization': 'Bearer '+ token
+      },
+      url: `http://ezyhostings-001-site1.dtempurl.com/api/User/GetProfileByID/${userID}`,
+      cache: false, contentType: false, processData: false, timeout: 60000,
+      success: function (response) {
+        console.log(response);
+        if (response.messageType === 0) {
+          const domRef = ['firstName', 'lastName','email','phone','address','zipCode','password'];
+          fillDomWithData(Setingscontainer, domRef, response.data);
+        }
+      },
+      error: function (error) {
+        console.log(error);
+        alert('Fetch failed');
+      }
+    });
+  }
+
+  const fillDomWithData = (container, domRef, data) => {
+    for(let input of domRef) {
+      $(container).find("."+input).val(data[input]);
+    }
+    $(container).find('.name-display').html(data.firstName+ " "+data.lastName);
+    $(container).find('.phone-display').html(data.phone);
+    $(container).find('.email-display').html(data.email);
+  }
+
+  updatePersonalInfoSettings = () => {
+    let infoSettings = {
+      "userID": userID,
+      "firstName": "string",
+      "lastName": "string",
+      "email": "string",
+      "phone": "string",
+      "password": "string",
+      "userTypeID": userTypeID,
+      "zipCode": "string",
+      "address": "string",
+      "userQuestions": [
+        {
+          "id": 0,
+          "userID": 0,
+          "question": "string",
+          "anwer": "string"
+        }
+      ]
+    };
+    const domRef = ['firstName', 'lastName', 'email', 'phone', 'address', 'zipCode', 'password'];
+    const container = $('#settingsContainer');
+    for (let input of domRef) {
+      infoSettings[input] = $(container).find("." + input).val();
+    }
+    $.ajax({
+      type: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+      data: JSON.stringify(infoSettings),
+      url: 'http://ezyhostings-001-site1.dtempurl.com/api/User/UpdateProfile/',
+      cache: false, contentType: false, processData: false, timeout: 60000,
+      success: function (response) {
+        console.log(response);
+        if (response.messageType === 0) {
+
+        }
+      },
+      error: function (error) {
+        console.log(error);
+        alert('Saving failed');
+      }
+    });
+  }
+
+  changePassWord = () => {
+    const container = $('#settingsContainer');
+    const password = $('#changePassword').val();
+    $('.error-input').removeClass('error-input');
+    if(password === $('#confirmChangePassword').val() && password.length >= 6) {
+       $.ajax({
+        type: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        data: JSON.stringify({
+          "userID": userID,
+          "password": password
+        }),
+        url: 'http://ezyhostings-001-site1.dtempurl.com/api/User/UpdatePassword/',
+        cache: false, contentType: false, processData: false, timeout: 60000,
+        success: function (response) {
+          console.log(response);
+          if (response.messageType === 0) {
+
+          }
+        },
+        error: function (error) {
+          console.log(error);
+          alert('Saving failed');
+        }
+      });
+    } else {
+      $('#confirmChangePassword').addClass('error-input');
+    }
+  }
   const addNewUser = () => {
     $('#upgradeNotificationModal').modal('show')
   }
@@ -411,8 +528,6 @@
   });
 
   init = () => {
-    const userName = sessionStorage.getItem('__lw_user');
-    $('.user-name').html(userName);
     getFileContents(routeContainer, 'home.html');
     $("#planType").on("change", function () {
       planTypeChanged(this);
@@ -423,6 +538,13 @@
     $(document).on("click", ".mydocuments-search-btn", function () {
       categorizeMydocumentsData(mydocumentsData.filter(el => el.name.includes($('.mydocuments-search-text').val())));
     });
+    setTimeout(()=>{
+      const userName = localStorage.getItem('__lw_user');
+      $('.user-name').html(userName);
+      token = localStorage.getItem("__lw_token");
+      userID = localStorage.getItem("__lw_user_id");
+      userTypeID = localStorage.getItem("__lw_user_type_id");
+    },1000);
   }
 </script>
 
