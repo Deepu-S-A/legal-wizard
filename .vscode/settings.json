@@ -1,5 +1,6 @@
 {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
