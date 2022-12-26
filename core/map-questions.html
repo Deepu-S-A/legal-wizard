@@ -52,8 +52,8 @@ div#pills-dynamic {
 }
     .txt-style {padding: 0 2rem;margin-bottom: 1rem;}
     span.blur-document {opacity: 0.4;}
-    .btn-style1 {padding: 5px 20px;}
-    .removeDynamicOption{border-radius: 20px;height: 28px;line-height: 0px;position: absolute;right: 6px;top: -14px;}
+    .btn-style1 {padding: 5px 1.25rem;}
+    .removeDynamicOption{border-radius: 1.25rem;height: 28px;line-height: 0px;position: absolute;right: 6px;top: -14px;}
     .static-configurations-wrap{min-height:43rem;}
     .option-wrap{padding: 1rem;border: 1px solid #ccc;padding-bottom: 0;position: relative;}
     .dynamic-options-wrap{max-height: 350px;overflow-y: auto;}
@@ -165,7 +165,7 @@ a.dropdown-item.docCategoryDdn {
                 <tbody id="documentsList">
                   <tr>
                     <td>
-                    <td>Please select a category to load documents</td> 
+                    <td>Please select a category to load documents</td>
                     </td>
                   </tr>
                 </tbody>
@@ -254,19 +254,19 @@ a.dropdown-item.docCategoryDdn {
                     <div class="form-check ml-4">
                       <input class="form-check-input" type="radio" name="dynamicQuestionType" id="dynamicQuestionTypeText" onchange="dynamicOptionChange(this)" value="text" checked>
                       <label class="form-check-label" for="dynamicQuestionTypeText">
-                        Text 
+                        Text
                       </label>
                     </div>
                     <div class="form-check ml-4">
                       <input class="form-check-input" type="radio" name="dynamicQuestionType" id="dynamicQuestionTypeFields" onchange="dynamicOptionChange(this)" value="fields">
                       <label class="form-check-label" for="dynamicQuestionTypeFields">
-                        Fields 
+                        Fields
                       </label>
                     </div>
                   </div>
 
                   <div class="dynamic-configurations-wrap w-100" id="dynamic-configurations-wrap">
-                    <div class="dynamic-config-wrap">        
+                    <div class="dynamic-config-wrap">
                       <div class="dynamic-options-wrap pl-1 pr-1" id="dynamic-text-config-wrap">
                         <div class="form-group mt-1">
                           <textarea placeholder="Enter question for the selection" class="form-control rounded-0" id="dynamicQuestionText" rows="2"></textarea>
@@ -523,7 +523,7 @@ a.dropdown-item.docCategoryDdn {
       $("#eSignatureEnabled").prop('checked', val);
       renderSavedQuestionsList();
       console.log("Loading new doc ======================>")
-      console.log(mappingJson);    
+      console.log(mappingJson);
     }
     renderPreview=()=>{
       let docConfig={
@@ -538,7 +538,7 @@ a.dropdown-item.docCategoryDdn {
       localStorage.setItem("docConfig",JSON.stringify(docConfig))
       $("#preview-container").attr("src",'document-create.html?mode=preview');
     }
-    
+
     saveDynamicConfig=()=>{
       let question = $("#dynamicQuestionText").val();
       let alertText = $("#alertTextForDynamicText").val();
@@ -599,14 +599,14 @@ a.dropdown-item.docCategoryDdn {
       renderEditQuestionsTable();
       renderSavedQuestionsList();
       alert("Question is deleted !")
-    } 
+    }
     resetDyamicSettings=()=>{
       if(dynamicFieldQuestion.section!=""){
         $("."+dynamicFieldQuestion.section).removeClass(dynamicFieldQuestion.section);
         --dynamicFieldCounter;
         resetDynamicFields();
-      } 
-      $(".overlay2").show(); 
+      }
+      $(".overlay2").show();
     }
     resetDynamicFields=()=>{
       dynamicFieldQuestion.fieldQuestions.length=0;
@@ -779,10 +779,10 @@ a.dropdown-item.docCategoryDdn {
           success: function (resposnse) {
             alert("Saved Succesfully !");$(".spinner").hide();
             location.reload();
-          }, 
+          },
           error: function (err) {
             alert("Error while saving data to DB");$(".spinner").hide();
-            location.reload(); 
+            location.reload();
           }
         });
     }
@@ -887,7 +887,7 @@ a.dropdown-item.docCategoryDdn {
           renderDocumentsTable(selectedCategoryId);
         }, error: function (err) { alert(err);$(".spinner").hide() }
       });
-      
+
     }
     renderCategoryList=()=>{
       $(".spinner").show()
@@ -948,7 +948,7 @@ a.dropdown-item.docCategoryDdn {
             <td>  <button class="btn btn-danger ml-2" onclick="deleteQuestion(${i})" type="button">Delete</button>
             </td>
           </tr>`;
-        }else{        
+        }else{
           tr += `<tr><th scope="row">` + (++i) + `</th>
             <td class="questionCol"><input type="text" class="questionTxt${i}" value="` + question.question + `"/></td>
             <td>`+ question.inputType + `</td>

@@ -88,7 +88,7 @@
     setTimeout(function () {
       switch (name) {
         case 'esign/esign-make-document.html':
-          $('.make-document-page').addClass('width-70'); 
+          $('.make-document-page').addClass('width-70');
           renderActivityLogs();
           break;
           case 'mydocument.html': categorizeMydocumentsData(mydocumentsData); break;
@@ -114,7 +114,7 @@
         <div class="log-img"><img src="${imgPath+img}"/></div>
         <div class="log-info">
           <div class="r1 t18"><b>${log.name}</b>&nbsp;&nbsp;${log.action}</div>
-          <div class="t14">${log.time}</div>  
+          <div class="t14">${log.time}</div>
         </div>
       </div>`;
     }
@@ -204,7 +204,7 @@
       } else {
         statusHtml += `Out for signature</div> <div class="t12">${row.signers - row.pending}/${row.signers} signed</div></div>`;
       }
-      statusHtml += `<div class="progress w-100" style="height: 10px;">
+      statusHtml += `<div class="progress w-100" style="height: 0.6rem;">
   <div class="progress-bar ${statusClass}" role="progressbar" style="width: ${percentage}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div></div>`;
       html += `<tr>

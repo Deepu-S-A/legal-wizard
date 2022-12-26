@@ -36,13 +36,13 @@ img.step-widget {
     background: url(/assets/img/dashboard/tellus/rhs.png) 0 0 no-repeat;
     background-size: cover;
 }
-.btn{height: 64px;}
+.btn{height: 4rem;}
 .view1 img,.view2 img,.view3 img {
     cursor: pointer;
 }
 .view2 .cardItem img.step-widget {
-    width: 35px;
-    height: 35px;
+    width:  2.2rem;
+    height:  2.2rem;
 }
 .view3 .ddn-item.input-style-wrap {
     margin-bottom: 4rem;
