@@ -163,7 +163,7 @@ body{overflow-x:hidden ;}
     float: right;
     background: url(../img/info-icon.png) 0 0 no-repeat;
     width: 16px;
-    height: 1.25rem;
+    height: 1.1rem;
     background-size: contain;
     cursor: pointer;
 }
@@ -239,14 +239,14 @@ img.spinner-img {margin-left: 44%;margin-top: 13%;}
         font-size: 1.2rem;
     }
     h2{
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         line-height: 1.25rem;
     }
     h4{
-        font-size: 16px;
+        font-size: 1rem;
     }
     p{
-        line-height: 1.25rem;
+        line-height: 1.1rem;
     }
     .btn-style {padding: 0rem 1rem;
         font-size: 12px;
