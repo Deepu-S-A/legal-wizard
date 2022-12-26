@@ -17,13 +17,13 @@
 }
 @media(max-width:991px){
     .contact-form .right-card{
-        border-top-left-radius: 1.1rem;
-        border-bottom-left-radius: 1.1rem;
+        border-top-left-radius: 1.25rem;
+        border-bottom-left-radius: 1.25rem;
         margin-top: 1.5rem;
     }
     .contact-form .left-card {
-        border-top-right-radius: 1.1rem;
-        border-bottom-right-radius: 1.1rem;
+        border-top-right-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     }
 }
@@ -312,7 +312,7 @@ img {
     background: #FFA200;
     color: white;
     padding: 9px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     text-align: center;
     position: relative;
     left: -8px;

@@ -40,7 +40,7 @@
     border: solid 2px #09BB8B;
     border-right: none;
     height: 52px;
-    padding-left: 1.1rem
+    padding-left: 1.25rem
 }
 .document-tab form button {
     padding-top: 3px;
@@ -53,14 +53,14 @@
     border-left: none;
 }
 .document-tab form img {
-    width: 1.1rem;
+    width: 1.25rem;
 }
 .document-tab .btn{
     margin-bottom: 16px;
     width: 100%;
     border: solid 2px #09BB8B;
     border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     text-align: left;
     height: 52px;
     font-family: 'gs';
@@ -106,7 +106,7 @@
 .document-tab .card{
     border: solid 1px #09BB8B26;
     /* padding: 0px 1rem; */
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .document-tab .doc{
     display: flex;
@@ -120,7 +120,7 @@
     display: block;
 }
 .document-tab .doc i{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #09BB8B;
     margin-right: 1rem;
 }
@@ -146,7 +146,7 @@
 .document-tab .doc-row{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 5% 6%;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .document-tab .right-container i{
     margin-right: 0.6rem;
@@ -203,7 +203,7 @@
     border: solid 2px #09BB8B;
     border-radius: 1.9rem;
     padding-top: 3.1rem;
-    padding-bottom: 1.1rem;
+    padding-bottom: 1.25rem;
     position: relative;
 }
 .bsns-toolbox h2{
@@ -273,9 +273,9 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .service-cards .cards{
-    padding: 1.1rem 1rem;
+    padding: 1.25rem 1rem;
     border: 0.6rem;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
     background-color: white;
 }
 .service-cards .cards .text-green{
@@ -285,7 +285,7 @@
     margin-bottom: 0.6rem;
 }
 .service-cards .service-card1{
-    margin-top: 1.1rem;
+    margin-top: 1.25rem;
 }
 .service-cards .service-card2{
     padding-top: 30%;
@@ -322,7 +322,7 @@
 }
 .dashboard-section .element-1 .text{
     text-align: left;
-    margin-left: 1.1rem;
+    margin-left: 1.25rem;
 }
 .dashboard-section .element-2{
     margin-left: 3.1rem;
@@ -411,7 +411,7 @@
 }
 .testimonials .owl-carousel .owl-item img{
     width: 20%;
-    margin-right: 1.1rem;
+    margin-right: 1.25rem;
 }
 .testimonials .rating{
     display: flex;
@@ -424,10 +424,10 @@
     text-align: center;
 }
 .testimonials .card{
-    padding:  2.2rem 1.1rem;
+    padding:  2.2rem 1.25rem;
     border: none;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin-right: 1.1rem;
+    margin-right: 1.25rem;
     margin-top: 30%;
     margin-bottom: 30%;
 
@@ -457,7 +457,7 @@
 .testimonials .quote-img p{
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     width: 20%;
     margin-top: 1.9rem;
     text-align: left;
@@ -467,7 +467,7 @@
 }
 .testimonials .owl-nav .fa-angle-left{
     color: #707070;
-    margin-right: 1.1rem;
+    margin-right: 1.25rem;
 }
 .testimonials .owl-nav .fa-angle-right{
     color: #0bbb8b;
@@ -577,7 +577,7 @@
     line-height: 40px;
 }
 .document-creation-container .document-sample-box h3{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 .document-creation-container .document-sample-box ul li{
     display: flex;
@@ -585,7 +585,7 @@
     margin-bottom: 0.6rem;
 }
 .document-creation-container .document-sample-box ul li span{
-    margin-right: 1.1rem;
+    margin-right: 1.25rem;
 }
 .document-creation-container .scroll-section ul li{
     margin-top: 0.6rem;
@@ -599,7 +599,7 @@ margin-bottom: 0.6rem;
 }
 .document-creation-container .doc-btn{
     text-align: center;
-    margin-top: 1.1rem;
+    margin-top: 1.25rem;
 }
 .document-grn-banner{
     padding-top: 0;
@@ -624,7 +624,7 @@ margin-bottom: 0.6rem;
     border-radius: 1rem;
 }
 .business-banner .business-cards .box-1{
-    padding: 14px 1.1rem;
+    padding: 14px 1.25rem;
     position: relative;
 }
 .business-banner .business-cards .box-1::before{
@@ -633,7 +633,7 @@ margin-bottom: 0.6rem;
     height: 49%;
     width: 1px;
     background-color: #ECF3FE;
-    top: 1.1rem;
+    top: 1.25rem;
     right: -25px;
 }
 .business-banner .business-cards .box-3::before{
@@ -763,7 +763,7 @@ user-select: none;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     padding: 5px 0.6rem;
     padding:  2.2rem 3.1rem;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
     background-color: white;
   }
   .sample-document .progress-container{
@@ -817,7 +817,7 @@ user-select: none;
 
 }
 .sample-document .scroll-section h5{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #09BB8B;
 }
 .sample-document .doc-inner{
@@ -861,7 +861,7 @@ user-select: none;
     background: #06AC80;
   }
 .sample-document .scroll-section p{
-    margin-top: 1.1rem;
+    margin-top: 1.25rem;
     line-height: 3;
 }
 .sample-document .scroll-section h5{
@@ -876,7 +876,7 @@ user-select: none;
     margin: 0 auto;
 }
 .sample-document .progress{
-    height: 1.1rem;
+    height: 1.25rem;
 
 }
 .sample-document-2{
@@ -934,7 +934,7 @@ user-select: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .profile-tab form img {
-    width: 1.1rem;
+    width: 1.25rem;
 }
 .profile-tab1 .profile-btn{
     text-align: right;
@@ -985,15 +985,15 @@ user-select: none;
 .profile-tab .card{
     border: solid 0 #09BB8B26;
     padding: 0px 1rem;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .profile-tab .doc{
 
     justify-content: space-between;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.25rem;
 }
 .profile-tab.doc i{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #09BB8B;
     margin-right: 1rem;
 }
@@ -1012,7 +1012,7 @@ user-select: none;
 }
 .profile-tab .doc-row{
     padding: 40px 1.9rem;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .profile-tab .right-container i{
     margin-right: 0.6rem;
@@ -1080,7 +1080,7 @@ user-select: none;
     width: 80px;
 }
 .profile-tab .right-container .img-profile h5{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 400;
 }
 
@@ -1105,16 +1105,16 @@ user-select: none;
 }
 .porfolio-tab .card-body{
     box-shadow: -1px 7px 13px 0px rgb(10 10 10 / 8%);
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
     padding: 29px 1.9rem;
 }
 .profile-tab #accordion .card-body{
     /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .profile-tab #accordion{
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 /* payment */
 .payment-banner{
@@ -1132,12 +1132,12 @@ user-select: none;
     border-top-right-radius: 0.6rem;
 }
 .payment-cards .green-section h3{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: white;
 }
 .payment-cards .payment-options2 .card-body{
-    border-bottom-right-radius: 1.1rem;
-    border-bottom-left-radius: 1.1rem;
+    border-bottom-right-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
 }
 .payment-cards{
     /* text-align: center;
@@ -1149,7 +1149,7 @@ user-select: none;
 }
 .payment-cards .card-body{
     background-color: white;
-    padding: 1.1rem;
+    padding: 1.25rem;
 }
 .payment-cards .payment-options h5 span{
     font-size: 1.9rem;
@@ -1182,7 +1182,7 @@ user-select: none;
 .payment-form .payment-box{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 6% 7%;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 .payment-form .fee{
     color: #CE867D;
@@ -1206,14 +1206,14 @@ user-select: none;
 .payment-form .payment-box .payment-btn{
     width: 100%;
     padding: 7px 0;
-    margin-top: 1.1rem;
+    margin-top: 1.25rem;
 }
 .payment-form .payment-form-col{
     margin-left: auto;
     margin-right: auto;
 }
 .payment-form .payment-box h5{
-    margin-left: 1.1rem;
+    margin-left: 1.25rem;
 }
 .payment-form .payment-box div{
     margin-top: 0.6rem;
@@ -1262,7 +1262,7 @@ input:focus{
 .login-container .input-group{
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.25rem;
 }
 .login-container .eye-btn{
     border: none;
@@ -1332,7 +1332,7 @@ input#uname{
     margin-bottom: 0.6rem;
 }
 .login-container .sm-icons img{
-    width: 1.1rem;
+    width: 1.25rem;
 }
 .login-container form input{
     display: block;
@@ -1379,12 +1379,12 @@ input#uname{
 }
 .document-banner ul li img{
     width: 1.9rem;
-    margin-left: 1.1rem;
+    margin-left: 1.25rem;
 }
 .document-banner p{
     color: white;
-    padding-top: 1.1rem;
-    padding-bottom: 1.1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
 }
 .document-banner .text-container ul li{
     margin-top: 1rem;
@@ -1453,8 +1453,8 @@ input#uname{
     padding-bottom:  2.2rem;
     border-top-right-radius: 1.9rem;
     border-bottom-right-radius: 1.9rem;
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 .contact-form .left-card input{
     border: solid 1px #EBEBEB;
@@ -1488,7 +1488,7 @@ input#uname{
     border-top-left-radius: 1.9rem;
     border-bottom-left-radius: 1.9rem;
     background-color: white;
-    padding: 0.6rem 1.1rem 0.6rem 1.1rem;
+    padding: 0.6rem 1.25rem 0.6rem 1.25rem;
 
 }
 .contact-form{
@@ -1521,10 +1521,10 @@ input#uname{
     font-weight: 700;
 }
 .contact-form .right-card h3{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 .contact-form .left-card h3{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     padding-top: 1rem;
 }
 .contact-form .right-btn{
@@ -1751,7 +1751,7 @@ input#uname{
         background-position: initial;
     }
     .legal-documents h5{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .document-section .text-container{
         position: initial;
@@ -1803,7 +1803,7 @@ input#uname{
 }
 
     .document-creation-container .image-container button{
-        margin-top: 1.1rem;
+        margin-top: 1.25rem;
     }
     .document-creation-container{
         position: relative;
@@ -1822,8 +1822,8 @@ input#uname{
         flex-direction: column;
     }
     .contact-form .left-card {
-        border-top-right-radius: 1.1rem;
-        border-bottom-right-radius: 1.1rem;
+        border-top-right-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
     .contact-form .right-btn button{
@@ -1846,8 +1846,8 @@ input#uname{
         background-position: initial;
     }
     .payment-cards .payment-options2 {
-        margin-top: 1.1rem;
-        margin-bottom: 1.1rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
     }
     .green-banner button {
         display: none;
@@ -1931,7 +1931,7 @@ input#uname{
     margin-bottom: 5px;
 }
 .profile-tab2 .card{
-    margin: 0.6rem 1.1rem;
+    margin: 0.6rem 1.25rem;
 }
 .profile-tab #accordion div {
     margin-top: 0;
@@ -1964,7 +1964,7 @@ input#uname{
 .document-tab2 .doc-row {
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     padding: 1.9rem 1rem;
-    border-radius: 1.1rem;
+    border-radius: 1.25rem;
 }
 }
 
@@ -2008,17 +2008,17 @@ input#uname{
         display: none;
     }
     .contact-form .right-card{
-        border-top-left-radius: 1.1rem;
-        border-bottom-left-radius: 1.1rem;
+        border-top-left-radius: 1.25rem;
+        border-bottom-left-radius: 1.25rem;
         margin-top: 1.5rem;
     }
     .contact-form .right-card {
-        border-top-left-radius: 1.1rem;
-        border-bottom-left-radius: 1.1rem;
+        border-top-left-radius: 1.25rem;
+        border-bottom-left-radius: 1.25rem;
         }
     .contact-form .left-card {
-        border-top-right-radius: 1.1rem;
-        border-bottom-right-radius: 1.1rem;
+        border-top-right-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     }
     .contact-form .right-col {
@@ -2068,7 +2068,7 @@ input#uname{
         flex-direction: column;
     }
     .document-ta .doc h4{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .document-tab .sub-accordion {
         padding: 0;
@@ -2083,16 +2083,16 @@ input#uname{
         font-size: 1rem;
     }
     .text-container h2{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .document-tab h2{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .bsns-toolbox h2{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .dashboard-section h3{
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     .counter-count{
         font-size:  2.2rem;
@@ -2123,8 +2123,8 @@ input#uname{
         margin-bottom: 5px;
 }
 .profile-tab2 .doc h5{
-    font-size: 1.1rem;
-    margin-top: 1.1rem;
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
 }
 .profile-tab label{
     margin-top: 5px;
@@ -2150,8 +2150,8 @@ input#uname{
     padding: 0;
 }
 .scroll-section h2{
-    font-size: 1.1rem;
-    padding: 9px 1.1rem;
+    font-size: 1.25rem;
+    padding: 9px 1.25rem;
 }
 .document-tab2 .accordion-btn a{
     display: block;
@@ -2160,7 +2160,7 @@ input#uname{
     padding-top: 20%;
 }
 .scroll-tab h4{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 }
@@ -2174,7 +2174,7 @@ input#uname{
     background: #FFA200;
     color: white;
     padding: 9px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     text-align: center;
     position: relative;
     left: -8px;
@@ -2237,7 +2237,7 @@ label > input[type="radio"] {
 
   /* basic layout */
   fieldset {
-    margin: 1.1rem;
+    margin: 1.25rem;
     max-width: 400px;
   }
   label > input[type="radio"] + * {
@@ -2360,8 +2360,8 @@ label > input[type="radio"] {
     background-color: #09BB8B;
     height: 3rem;
     color: white;
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     padding-top: 1px;
     padding-bottom: 1px;
     border-radius: 0.6rem;

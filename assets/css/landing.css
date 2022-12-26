@@ -12,7 +12,7 @@
     outline: none;
     padding-left: 60px;
     height: 5.5rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 .main_stats_wrapper {
     width: 90%;
@@ -25,7 +25,7 @@
 img.main_stats {max-width: 100%;}
 .form1{margin-top: 3.5rem;}
 .banner-container .btn-style2:hover{background-color: white;}
-.banner-container form img{width: 1.1rem;}
+.banner-container form img{width: 1.25rem;}
 .banner-container form{display: flex;justify-content: center;}
 .banner-container h1{font-weight: 700;}
 /*.banner-container:before{content: '';background-image: url(../img/path2.svg);}*/
@@ -162,7 +162,7 @@ div#headingOne {padding-left: 2.5rem;padding-top: 2rem;}
     margin-bottom: 1.5rem;
 }
 .lawyer-carouse-container{width:80%;margin: 0 auto;}
-.row.cs5 p{width: 60%;margin: 0 auto;font-size: 1.1rem;}
+.row.cs5 p{width: 60%;margin: 0 auto;font-size: 1.25rem;}
 .lawyers h5 {
     font-size: 1.9rem;
     font-family: 'Poppins', sans-serif;
@@ -241,7 +241,7 @@ button.bs1.btn-style1.br-l {
     .cs19 .t40{font-size: 1.9rem;}
     .cs19 .btn-white {
         height: 3.5rem;
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         padding: 0 2%;
     }.section-row .lhs span.green {
         font-size: 2.5rem;
@@ -500,7 +500,7 @@ button.btn-style.btn-white.mt-4.cs18 {
     }
     .section-row.section2 .txt1, .txt-s1 {
         line-height: 28px;
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin-top: 1rem;
         color: #5D5D5D;
     }
