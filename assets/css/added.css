@@ -3,7 +3,7 @@
     text-indent: -9999px;
     /* background-image: url("../img/lock.png"); */
     background-position: 0 50%;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
   }
   @media(max-width:350px){
     .login-container form input {
@@ -17,13 +17,13 @@
 }
 @media(max-width:991px){
     .contact-form .right-card{
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        margin-top: 25px;
+        border-top-left-radius: 1.1rem;
+        border-bottom-left-radius: 1.1rem;
+        margin-top: 1.5rem;
     }
     .contact-form .left-card {
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-top-right-radius: 1.1rem;
+        border-bottom-right-radius: 1.1rem;
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     }
 }
@@ -143,8 +143,8 @@ img {
 }
 
 .card__header-img {
-  width: 30px;
-  height: 30px;
+  width: 1.9rem;
+  height: 1.9rem;
 }
 
 .card__header-circle {
@@ -172,7 +172,7 @@ img {
 
 .card__pricing {
     position: absolute;
-    background: linear-gradient( 
+    background: linear-gradient(
 157deg, var(--first-color-light) -12%, var(--first-color) 109%);
     width: 60px;
     height: 88px;
@@ -202,12 +202,12 @@ img {
   font-size: var(--tiny-font-size);
 }
 
-.card__pricing-number, 
+.card__pricing-number,
 .card__pricing-month {
   color: var(--white-color);
 }
 
-.card__pricing::after, 
+.card__pricing::after,
 .card__pricing::before {
   content: '';
   position: absolute;
@@ -312,13 +312,13 @@ img {
     background: #FFA200;
     color: white;
     padding: 9px;
-    font-size: 20px;
+    font-size: 1.1rem;
     text-align: center;
     position: relative;
     left: -8px;
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .container .basic::before{
     content: "";
@@ -335,7 +335,7 @@ img {
     height: 22px;
     background-color: var(--white-color);
     right: -10px;
-    top: 10px;
+    top: 0.6rem;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     position: absolute;
     transform: rotate(

@@ -30,37 +30,37 @@
 input[type='email'],
 input[type='password'],
 input[type='number'] {
-    padding: 18px 24px 19px;
+    padding: 1rem 1.5rem 1.075rem;
     width: 100%;
-    height: 56px;
+    height: 3.5rem;
     background: #FFFFFF;
     border: 1px solid #1DD1A1;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     margin-top: 1rem;
 }
 
 .input-search-box {
-    height: 50px;
+    height: 3rem;
     background: #FFFFFF;
-    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
+    box-shadow: 0.525rem 1.5rem 3.5rem rgba(0, 0, 0, 0.03);
+    border-radius: 0.525rem;
     display: flex;
     cursor: pointer;
 }
 
 .search-box {
-    background: url(/assets/img/dashboard/db/search.png) 8px 14px no-repeat #0ABC8A;
-    width: 50px;
-    height: 50px;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
+    background: url(/assets/img/dashboard/db/search.png) 0.5rem 0.9rem no-repeat #0ABC8A;
+    width: 3rem;
+    height: 3rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .input-search-box input {
-    height: 50px;
-    border-radius: 8px;
-    font-size: 16px;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin-top: 0;
@@ -93,7 +93,7 @@ input[type='number'] {
 }
 
 .input-style-wrap label {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 120%;
     letter-spacing: 0.005em;
     color: #11142D;
@@ -105,10 +105,10 @@ input[type='number'] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 2rem;
-    height: 50px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 1.25rem 2rem;
+    height: 3.075rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
 }
 
 .btn-cancel {
@@ -129,10 +129,10 @@ input[type='number'] {
     border-radius: 1.8rem;
 }
 .btn-md {
-    height: 54px;
-    padding: 15px 30px;
+    height: 3.5rem;
+    padding: 1rem 1.9rem;
     width: auto;
-    border-radius: 16px;
+    border-radius: 1rem;
 }
 
 .hidden {
@@ -149,68 +149,67 @@ button#btnToggle {
 }
 
 .grey-text {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 120%;
     color: #9A9AB0;
 }
 
 .black-text {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 120%;
     letter-spacing: 0.005em;
     color: #000000;
 }
 
 .t25 {
-    font-size: 25px;
+    font-size: 1.5rem;
     line-height: 166%;
     color: #6B6B6B;
 }
 
 .t40 {
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 159%;
     color: #000;
-    ;
 }
 
 .t50 {
-    font-size: 50px;
+    font-size: 3.1rem;
     line-height: 159%;
     color: #000000;
 }
 
 .t20 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #000000;
 }
 
 .t30 {
-    font-size: 30px;
+    font-size: 1.9rem;
     line-height: 159%;
     color: #3D3D3D;
 }
 
 .t35 {
-    font-size: 35px;
+    font-size: 2.2rem;
     line-height: 159%;
     color: #000000;
 }
 
 .t14 {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 0.9rem;
+    line-height: 1rem;
     color: #6B6B6B;
 }
 
 .t12 {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
 .t18 {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
     color: #292D32;
 }
 
@@ -247,8 +246,8 @@ button#btnToggle {
 }
 
 .form-check.input-style-wrap label {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -268,8 +267,8 @@ input[type=checkbox]:checked+label {
 
 .form-check.input-style-wrap label:after {
     content: '';
-    width: 15px;
-    height: 8px;
+    width: 1rem;
+    height: 0.5rem;
     position: absolute;
     top: 7px;
     left: 5px;
@@ -310,22 +309,22 @@ input[type='checkbox'].error-input + label {
 .btn.btn-small {
     width: auto;
     padding: 0 2rem;
-    font-size: 14px;
-    height: 30px;
+    font-size: 0.9rem;
+    height: 1.9rem;
 }
 
 .input-style-wrap button.btn.btn-secondary.dropdown-toggle {
     background: #fff;
     color: #6b6b6b;
     width: 100%;
-    height: 64px;
+    height: 4rem;
     margin-top: 1.5rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     text-align: left;
     padding-left: 7%;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .ddn-item {
@@ -347,8 +346,8 @@ input[type='checkbox'].error-input + label {
 }
 
 .circular-progressbar {
-    width: 110px;
-    height: 110px;
+    width: 6.9rem;
+    height: 6.9rem;
     position: relative;
 }
 
@@ -362,8 +361,8 @@ input[type='checkbox'].error-input + label {
 
 .sort,
 .filter {
-    width: 50px;
-    height: 50px;
+    width: 3.1rem;
+    height: 3.1rem;
 }
 
 .nav-link {
@@ -385,16 +384,16 @@ input[type='checkbox'].error-input + label {
 
 
 .table-wrap {
-    min-height: 262px;
+    min-height: 16rem;
     background: #FFFFFF;
-    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    box-shadow: 0.6rem 24px 54px rgba(0, 0, 0, 0.03);
     border-radius: 22px;
 }
 
 tbody .desc,
 .tbody .desc {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 1rem;
     color: #AEAEAE;
     margin-top: 0.7rem;
 }
@@ -433,42 +432,42 @@ tbody tr {
 .threedots .option {
     width: 100%;
     height: 2.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     color: #000;
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 0.6rem;
     display: flex;
     align-items: center;
 }
 
 table thead tr {
-    height: 61px;
+    height: 3.8rem;
     background: #D4F3EA;
     border-radius: 22px;
 }
 
 tbody tr {
     height: 108px;
-    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
+    box-shadow: 0.6rem 24px 54px rgba(0, 0, 0, 0.03);
     border-radius: 22px;
 }
 
 .box {
     background: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     padding: 2rem;
 }
 
 .input-style-item label {
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 .input-style-item input,
 .input-text-style {
     background: #F8FAFB;
     border: 1px solid #F5F5F5;
-    border-radius: 20px;
-    height: 50px;
+    border-radius: 1.25rem;
+    height: 3.1rem;
     padding-left: 1rem;
 }
 
@@ -477,10 +476,10 @@ tbody tr {
 }
 
 .input-style-item textarea {
-    height: 103px;
+    height: 6.5rem;
     background: #F8FAFB;
     border: 1px solid #F5F5F5;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     width: 100%;
 }
 
@@ -489,7 +488,7 @@ tbody tr {
     font-size: 14px;
     line-height: 150.3%;
     color: #6B6B6B;
-    margin-bottom: 10px;
+    margin-bottom: 0.6rem;
 }
 
 .dfc {
@@ -503,11 +502,11 @@ tbody tr {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 16px 25px;
-    height: 50px;
+    padding: 16px 1.5rem;
+    height: 3.1rem;
     background: #ECAD81;
-    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
+    box-shadow: 0.6rem 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 0.6rem;
     color: #fff;
 }
 
@@ -517,11 +516,11 @@ tbody tr {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 16px 25px;
-    height: 50px;
+    padding: 1rem 1.5rem;
+    height: 3.1rem;
     background: #FD8280;
-    box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
+    box-shadow: 0.6rem 24px 54px rgba(0, 0, 0, 0.03);
+    border-radius: 0.6rem;
     color: #fff;
 }
 
@@ -530,8 +529,8 @@ tbody tr {
 }
 
 .modal-content {
-    box-shadow: 10px 24px 54px rgb(0 0 0 / 3%);
-    border-radius: 20px;
+    box-shadow: 0.6rem 24px 54px rgb(0 0 0 / 3%);
+    border-radius: 1.25rem;
     padding: 2rem 2rem 2rem 2rem;
 }
 
@@ -568,8 +567,8 @@ tbody tr {
 }
 
 .db-nav-icon {
-    margin-left: 2.4rem;
-    margin-right: 1.3rem;
+    margin-left: 2rem;
+    margin-right: 1.2rem;
 }
 
 .btn.btn-green.right-arrow {
@@ -613,15 +612,20 @@ tbody tr {
 }
 .upgrade-small-notification{
     padding: 1px 9px;
-    width: 65px;
-    height: 21px;
+    width: 4rem;
+    height: 1.25rem;
     background: #FFF2AE;
-    font-size: 13px;
+    font-size: 0.75rem;
     border-radius: 5px;
     margin-left: 0.5rem;
 }
 @media only screen and (max-width:600px) {
     .fdc {
         flex-direction: column;
+    }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+    html {
+        font-size: 0.8rem;
     }
 }

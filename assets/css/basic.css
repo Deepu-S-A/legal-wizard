@@ -35,9 +35,9 @@ h1 {
 }
 h2{
     color: #444444;
-    font-size: 25px;
-    line-height: 30px;
-    padding-bottom: 30px;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    padding-bottom: 1.9rem;
 }
 h4{
     color: #069C74;
@@ -53,7 +53,7 @@ p{
 .btn:focus {
 box-shadow: none;
 }
-.strike{color:#EB4D4B;text-decoration:line-through;font-size: 30px;text-align: center;}
+.strike{color:#EB4D4B;text-decoration:line-through;font-size: 1.9rem;text-align: center;}
 .br-l{border-radius: 36px !important;height: 4rem;font-size: 1.5rem !important;}
 .btn-style{
     padding: 0rem 2rem;
@@ -72,12 +72,12 @@ box-shadow: none;
 .btn-white{
     background-color: #fff;
     color: #09BB8B;
-    box-shadow: 5px 10px 40px #CECECE70;
+    box-shadow: 5px 0.6rem 40px #CECECE70;
 }
 .btn-white-black{
     background-color: #fff;
     color: #000;
-    box-shadow: 5px 10px 40px #CECECE70;
+    box-shadow: 5px 0.6rem 40px #CECECE70;
 }
 .btn-style a{ text-decoration: none;}
 .btn-green a{
@@ -141,7 +141,7 @@ body{overflow-x:hidden ;}
     line-height: 1.5rem;;
 }
 .green{color: #01BEA3;}
-  
+
   .tick {
     display: inline-block;
     transform: rotate(45deg);
@@ -151,7 +151,7 @@ body{overflow-x:hidden ;}
     border-right: 3px solid #08AD80;
   }
   img.signature {
-    width: 25px;
+    width: 1.5rem;
     height: 23px;
     margin-left: 1rem;
     cursor: pointer;
@@ -163,7 +163,7 @@ body{overflow-x:hidden ;}
     float: right;
     background: url(../img/info-icon.png) 0 0 no-repeat;
     width: 16px;
-    height: 18px;
+    height: 1.1rem;
     background-size: contain;
     cursor: pointer;
 }
@@ -217,7 +217,7 @@ img.spinner-img {margin-left: 44%;margin-top: 13%;}
     }
     .t24{font-size: 1.2rem;line-height: 1.5rem;}
     .t44{font-size: 38px;line-height: 40px;}
-    .t30{font-size: 25px;line-height: 25px;}
+    .t30{font-size: 1.5rem;line-height: 1.5rem;}
     .t40{font-size: 32px;line-height: 37px;}
 }
 @media only screen and (max-width: 700px){
@@ -230,7 +230,7 @@ img.spinner-img {margin-left: 44%;margin-top: 13%;}
     .heading3{font-size: 1.2rem;line-height: 1.5rem;}
     .t40 {font-size: 1.2rem;line-height: 1.5rem;}
     .t24,.t30{font-size: 1rem;line-height: 1.2rem;}
-    .t18{font-size: 12px;line-height: 15px;}
+    .t18{font-size: 12px;line-height: 1rem;}
     .t20{
         font-size: 14px;
         line-height: 17px;
@@ -239,14 +239,14 @@ img.spinner-img {margin-left: 44%;margin-top: 13%;}
         font-size: 1.2rem;
     }
     h2{
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 1.1rem;
+        line-height: 1.1rem;
     }
     h4{
         font-size: 16px;
     }
     p{
-        line-height: 18px;
+        line-height: 1.1rem;
     }
     .btn-style {padding: 0rem 1rem;
         font-size: 12px;
@@ -434,71 +434,71 @@ img.spinner-img {margin-left: 44%;margin-top: 13%;}
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
   }
-  
+
   .animations-disabled, .animations-disabled [data-animation] {
     -webkit-animation: none !important;
             animation: none !important;
     opacity: 1 !important;
   }
-  
+
   .slideInUp {
     -webkit-animation-name: slideInUp;
             animation-name: slideInUp;
   }
-  
+
   .slideInDown {
     -webkit-animation-name: slideInDown;
             animation-name: slideInDown;
   }
-  
+
   .slideInLeft {
     -webkit-animation-name: slideInleft;
             animation-name: slideInleft;
   }
-  
+
   .slideInRight {
     -webkit-animation-name: slideInRight;
             animation-name: slideInRight;
   }
-  
+
   .fadeIn {
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
   }
-  
+
   .fadeOut {
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
     animation-direction: reverse;
   }
-  
+
   .zoomIn {
     -webkit-animation-name: zoomIn;
             animation-name: zoomIn;
   }
-  
+
   .zoomOut {
     -webkit-animation-name: zoomIn;
             animation-name: zoomIn;
     animation-direction: reverse;
   }
-  
+
   .zoomReverseIn {
     -webkit-animation-name: zoomReverseIn;
             animation-name: zoomReverseIn;
   }
-  
+
   .zoomReverseOut {
     -webkit-animation-name: zoomReverseIn;
             animation-name: zoomReverseIn;
     animation-direction: reverse;
   }
-  
+
   .flipInY {
     -webkit-animation-name: flipInY;
             animation-name: flipInY;
   }
-  
+
   .flipOutY {
     -webkit-animation-name: flipInY;
             animation-name: flipInY;

@@ -35,7 +35,7 @@
 }
 .progress-container .btn-green {height: 2.8rem;
   color: #fff !important;
-    border-radius: 25px;
+    border-radius: 1.5rem;
     align-items: center;
     margin-top: 1rem;
     width: 100%;
@@ -45,13 +45,13 @@
 .questionInput,.subQuestionInput {
   border: 1px solid #0cbb8b;
   height: 2.8rem;
-  border-radius: 20px;
+  border-radius: 1.1rem;
   padding-left: 1rem;
   margin-top: 1rem;
   width: 100%;
 }
 div#question {
-  font-size: 18px;
+  font-size: 1.1rem;
   color: #444444;
   line-height: 22px;
 }
@@ -114,7 +114,7 @@ div#question {
       <div class="row view-container">
         <div class="col-lg-4 col-12">
           <div class="progress-container">
-            
+
             <div class="progress-det mt-2 mb-2">
               <div class="t24">Progress</div>
               <div class="t20 green" id="progressText">0%</div>
@@ -138,7 +138,7 @@ div#question {
                 <button type="button" class="btn-green btn-p" onclick="renderPreviousQuestion();">Previous</button>
                 <button type="button" class="btn-green ml-2 mr-0 btn-n"  onclick="renderNextQuestion();updateProgress('')">Next</button>
               </div>
-              
+
               <div class="mt-4 pt-4 hidden-in-preview extra-options">
                 <a href="javascript:void(0)" style="text-decoration: underline;text-align: center;margin-top: 8px;">Save and continue later</a>
                 <a href="javascript:void(0)" style="text-decoration: underline;text-align: center;margin-top: 8px;"  data-toggle="modal" data-target="#customiseInfoModal">Customize this template</a>
@@ -167,9 +167,9 @@ div#question {
 
           <p class="mt-4">
             The document is written according to your responses - clauses are added or removed, paragraphs are customised, words are changed, etc.</p>
-            
+
           <p class="mt-4">At the end, you will immediately receive the document in Word and PDF formats. You can then open the Word document to modify it and reuse it however you wish.</p>
-            
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -245,9 +245,9 @@ div#question {
           if(questionObj.inputType=="Textarea")
             html+=`<textarea placeholder="`+placeholder+`" input-ref="${questionObj.inputs[i]}" class="questionInput-textarea subQuestionInput"></textarea>`;
           else if(questionObj.inputType=="Amount")
-            html+='<input placeholder="'+placeholder+'" type="number" class="subQuestionInput amount" id="subQuestionInput"/>';  
+            html+='<input placeholder="'+placeholder+'" type="number" class="subQuestionInput amount" id="subQuestionInput"/>';
           else
-            html+='<input placeholder="'+placeholder+'" input-ref="'+questionObj.inputs[i]+'" type="'+questionObj.inputType+'" class="subQuestionInput"/>';  
+            html+='<input placeholder="'+placeholder+'" input-ref="'+questionObj.inputs[i]+'" type="'+questionObj.inputType+'" class="subQuestionInput"/>';
           $("#subQuestionSection").append(html)
           for(let input of questionObj.inputs){
             $(input).addClass("active")
@@ -290,14 +290,14 @@ div#question {
               html+=`<div class="desc-w">${dfQuestion.desc}</div>`;
             }
             html+=`<div class="input-w mt-2"><input data-rel="${dfQuestion.field}" data-index="${i}" placeholder="${dfQuestion.question}" type="text" class="questionDfInput"/></div>`;
-            
+
           }
           html+='</div>';
         }
         html+=`<div class="btn-w"><button type="button" class="btn btn-primary" onclick="saveDynamicfieldAnswers(${count})">Save Answers</button></div></div>`;
         $(".df-qa-wrap").html(html);
       });
-      
+
       $(document).on("keydown","#questionInput",function search(e) {
         if(e.keyCode == 13) updateDocumentWithAnswer($(this).hasClass("amount"))
       });
@@ -342,7 +342,7 @@ div#question {
       })
       updateProgress(qaFullSet)
     }
-    
+
     getDocAndQuestions=()=>{
       const params = new Proxy(new URLSearchParams(window.location.search), {
           get: (searchParams, prop) => searchParams.get(prop),
@@ -352,7 +352,7 @@ div#question {
       if(mode=="preview"){
         const docConfig=localStorage.getItem("docConfig");
         if(docConfig!=null)
-          initValues(JSON.parse(docConfig)); 
+          initValues(JSON.parse(docConfig));
       }else{
         const Url = baseUrl+"/DocumentMappingByDocumentID/"+params.docid;
         $(".spinner").show();
@@ -383,9 +383,9 @@ div#question {
       questionsList=mappingJson.questionsList;
       questionCount=questionsList.length;
       if(questionsList.length>0)
-        renderQuestion(quesionIndex); 
+        renderQuestion(quesionIndex);
       else
-        alert("Questions for this Document is not configured !");   
+        alert("Questions for this Document is not configured !");
       console.log(mappingJson.questionsList);
       $(".spinner").hide();
     }
@@ -409,7 +409,7 @@ div#question {
       if(isAmountInput)
         answer=isNaN(answer)?answer:`${answer} ( ${inWords(answer)})`;
       if(answer!=""){
-        let inputs=questionsList[quesionIndex].inputs;      
+        let inputs=questionsList[quesionIndex].inputs;
         for(let input of inputs){
           $(input).html(answer)
           $(input).css("text-decoration","none")
@@ -423,14 +423,14 @@ div#question {
         if(!obj.answered){
           obj.answered=true;
           ++answeredCount;
-        }   
+        }
         if(!obj.visted || quesionIndex == questionsList.length-1) {
           progress=parseInt(((++visitedCount)/questionCount)*100)
           $("#progressText").html(progress+"%")
           $("#progressBar").css("width",progress+"%")
           obj.visted = true;
-        } 
-      } 
+        }
+      }
     }
     renderNextQuestion=()=>{
       if(quesionIndex<questionCount-1){
@@ -466,7 +466,7 @@ div#question {
                 <div class="dropdown-menu" aria-labelledby="inputTypeDropdown">`;
             let index=-1;
             for(let option of questionObj.options){
-              html+=`<button class="dropdown-item dynamicContentSelect" type="button" data-rel="`+(++index)+`">`+option.name+`</button>`;            
+              html+=`<button class="dropdown-item dynamicContentSelect" type="button" data-rel="`+(++index)+`">`+option.name+`</button>`;
             }
             html+='</div></div>';
           }else if(questionObj.inputType=="radio"){
@@ -493,7 +493,7 @@ div#question {
             <button class="btn btn-info btn-sm dropdown-toggle mt-2" type="button" id="selectedDynamicFields" data-toggle="dropdown" aria-expanded="false">Select the number</button>
           <div class="dropdown-menu" aria-labelledby="inputTypeDropdown">`;
           for(let i=1;i<=10;i++){
-            html+=`<button class="dropdown-item dynamicFieldsSelect" type="button" data-rel="`+i+`">`+i+`</button>`;            
+            html+=`<button class="dropdown-item dynamicFieldsSelect" type="button" data-rel="`+i+`">`+i+`</button>`;
           }
           html+='</div><div class="df-qa-wrap"></div></div>';
           $("#inputSection").html(html);
@@ -508,9 +508,9 @@ div#question {
         if(questionObj.inputType=="Textarea")
           html=`<textarea placeholder="`+placeholder+`" class="questionInput questionInput-textarea" id="questionInput"></textarea>`;
         else if(questionObj.inputType=="Amount")
-          html='<input placeholder="'+placeholder+'" type="number" class="questionInput amount" id="questionInput"/>';  
+          html='<input placeholder="'+placeholder+'" type="number" class="questionInput amount" id="questionInput"/>';
         else
-          html='<input placeholder="'+placeholder+'" type="'+questionObj.inputType+'" class="questionInput" id="questionInput"/>';  
+          html='<input placeholder="'+placeholder+'" type="'+questionObj.inputType+'" class="questionInput" id="questionInput"/>';
         $("#inputSection").html(html)
         for(let input of questionObj.inputs){
           $(input).addClass("active")
@@ -522,13 +522,13 @@ div#question {
         $('.question-info').tooltip();
         //$("#docContainer").animate({scrollTop: $(questionObj.inputs[0]).offset().top-100}, 500);
         $(document).scrollTop(0);
-      } 
+      }
       const alertText=questionObj.alertText;
       if(alertText&&alertText!=""){
         $("#alertText").html(alertText);
         $("#alertNotification").modal('show');
         questionObj.alertText="";
-      }      
+      }
     }
     document.addEventListener("DOMContentLoaded", initAndBindEvents);
     includeHTML=()=> {
