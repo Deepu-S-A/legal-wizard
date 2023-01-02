@@ -142,11 +142,13 @@
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active t20" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button"
-          role="tab" aria-controls="nav-home" aria-selected="true">Esigned document</button>
+          role="tab" aria-controls="nav-home" aria-selected="true"
+           onclick="getMyDocsData(0, '#esignedDocTbody')"
+          >Esigned document</button>
         <button class="nav-link t20" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button"
-          role="tab" aria-controls="nav-profile" aria-selected="false">Drafted documents</button>
+          role="tab" aria-controls="nav-profile" aria-selected="false" onclick="getMyDocsData(1, '#draftedDocTbody')">Drafted documents</button>
         <button class="nav-link t20" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button"
-          role="tab" aria-controls="nav-contact" aria-selected="false">Uploaded documents</button>
+          role="tab" aria-controls="nav-contact" aria-selected="false" onclick="getMyDocsData(2, '#uploadedDocTbody')">Uploaded documents</button>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
