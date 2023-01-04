@@ -1,8 +1,8 @@
-let componentsPath = './components/';
-const routeContainer = document.getElementById('route-container');
+//let componentsPath = './components/';
+//const routeContainer = document.getElementById('route-container');
 let documentsList = [];
 
-    getFileContents = (element, name) => {
+getFileContents = (element, name) => {
       new Promise((resolve, reject) => {
         let file = componentsPath + name;
         xhttp = new XMLHttpRequest();

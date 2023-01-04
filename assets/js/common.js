@@ -1,4 +1,4 @@
-  const componentsPath = './components/';
+  let componentsPath = './components/';
   const routeContainer = document.getElementById('route-container');
 
   let mydocumentsData = [];
