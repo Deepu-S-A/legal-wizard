@@ -12,11 +12,16 @@
     $('.setting.info').trigger('click');
   }
 
+  const saveNotificationSettings = () => {
+
+  }
+
   const renderSettingsPageData = (page) => {
     const settingsContainer = $('#settingsContainer');
     switch (page) {
       case 'teams.html': renderSettingsTeamsTableData(); break;
-      case 'info.html': getApi(baseUrl+`User/GetProfileByID/${userID}/`).then(result => renderPersonalInfoSettings(result, settingsContainer)).catch(err=>console.log('error'));break;
+      case 'info.html': getApi(baseUrl+`User/GetProfileByID/${userID}/`).then(result => renderPersonalInfoSettings(result, settingsContainer)).catch(err=>console.log('error'));
+      break;
       case 'account.html': getApi(baseUrl+`DocManagement/GetMyAccount/`).then(result => {
         const accountInfo = result.data;
         $('.s_accountType').html(accountInfo.planName);
@@ -33,8 +38,12 @@
         $('.s_role').html(accountInfo.role);
         $('.s_email').html(accountInfo.email);
         $('.s_phone').html(accountInfo.phone);
-
-      }).catch(err=>console.log('error'));break;
+      }).catch(err=>console.log('error'));
+      break;
+      case 'notification.html': getApi(baseUrl+`Master/GetNotificationMasterList`).then(result =>{
+        console.log(result)
+      }).catch(err=>console.log('error'));
+      break;
     }
   }
 
