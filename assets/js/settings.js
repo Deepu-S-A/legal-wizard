@@ -1,3 +1,6 @@
+ let notificationsArray = [];
+ let notificationDataFromServer = [];
+
  const renderSettingsHtml = () => {
     $(document).on('click', '.setting', function () {
       const page = $(this).attr('data-view');
@@ -9,11 +12,27 @@
         renderSettingsPageData(page);
       }, 1000);
     });
+    $(document).on('change', '.main-checkbox', function(){
+      const current = $(this);
+      const value = $(current).is(':checked');
+      const childListRef = $(current).attr('data-childlistref');
+      console.log(childListRef);
+      $(childListRef).prop('checked', value);
+    });
     $('.setting.info').trigger('click');
   }
 
   const saveNotificationSettings = () => {
-
+    let checkedIds = "";
+    $('input.notf-checkbox:checked').each(function(){
+      checkedIds+=$(this).attr('data-id') + ",";
+    });
+    console.log(checkedIds)
+    postApi('User/SaveNotificationByUser', JSON.stringify({
+      "mapping": 0,
+      "userID": userID,
+      "notifications": checkedIds.slice(0, checkedIds.length-1)
+    }))
   }
 
   const renderSettingsPageData = (page) => {
@@ -23,6 +42,48 @@
       case 'info.html': getApi(baseUrl+`User/GetProfileByID/${userID}/`).then(result => renderPersonalInfoSettings(result, settingsContainer)).catch(err=>console.log('error'));
       break;
       case 'account.html': getApi(baseUrl+`DocManagement/GetMyAccount/`).then(result => {
+        setAccountsPage(result);
+      }).catch(err=>console.log('error'));
+      break;
+      case 'notification.html': getApi(baseUrl+`Master/GetNotificationMasterList`).then(result =>{
+         getApi(baseUrl+`User/GetNotificationByUser`).then(settings => {
+          setNotificationPage(result.data, settings.data.notifications.split(","));
+         });
+      }).catch(err=>console.log('error'));
+      break;
+    }
+  }
+
+  setNotificationPage = (result, settings) => {
+    notificationsArray.length = 0;
+    notificationsArray = result.filter(el => el.parentID === null);
+    let html = '',i=-1;
+    for(let item of notificationsArray) {
+      item['childList'] = result.filter(el=>el.parentID === item.id);
+      item['childListRef'] = item['childList'].map(el => '.notf_'+el.id);
+      html += `<div class="form-group form-check input-style-wrap">
+          <input type="checkbox" class="form-check-input main-checkbox notf-checkbox notf_${item.id}"
+          id="notf_${item.id}" data-childlistref="${item.childListRef}" data-id="${item.id}">
+            <label class="form-check-label" for="notf_${item.id}"></label>
+            <div class="label-text t16">${item.notificationName}</div>
+        </div>`;
+        for(let child of item.childList) {
+           html += `<div class="form-group form-check input-style-wrap child-notification">
+          <input type="checkbox" class="form-check-input child-checkbox notf-checkbox notf_${child.id}"
+          id="notf_${child.id}" data-id="${child.id}">
+            <label class="form-check-label" for="notf_${child.id}"></label>
+            <div class="label-text t16">${child.notificationName}</div>
+        </div>`;
+        }
+    }
+    console.log(notificationsArray)
+    $('.notification-settings-wrap').html(html);
+    for(let item of settings) {
+      $('#notf_'+item).prop('checked', true);
+    }
+  }
+
+  setAccountsPage = (result) => {
         const accountInfo = result.data;
         $('.s_accountType').html(accountInfo.planName);
         $('.s_planExpiryDate').html(accountInfo.expiryDate);
@@ -38,13 +99,6 @@
         $('.s_role').html(accountInfo.role);
         $('.s_email').html(accountInfo.email);
         $('.s_phone').html(accountInfo.phone);
-      }).catch(err=>console.log('error'));
-      break;
-      case 'notification.html': getApi(baseUrl+`Master/GetNotificationMasterList`).then(result =>{
-        console.log(result)
-      }).catch(err=>console.log('error'));
-      break;
-    }
   }
 
   renderPersonalInfoSettings = (response, setingscontainer) => {

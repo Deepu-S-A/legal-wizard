@@ -3,61 +3,21 @@
     margin-bottom: 1.5em;
     margin-top: 2rem;
   }
-
-  .notification-page .sub-selections {
+  .form-group.form-check.input-style-wrap.child-notification {
     margin-left: 3rem;
-  }
+}
+.form-check.input-style-wrap label:after {
+    width: 0.8rem;
+    height: 0.5rem;
+    top: 5px;
+    left: 3px;
+}
 </style>
 <div class="tabs-wrap notification-page box">
   <div class="t25 text-left black"><b>Notification</b></div>
   <hr class="hr1" />
   <div class="t20">Send me an email when:</div>
-  <div class="form-group form-check input-style-wrap">
-    <input type="checkbox" class="form-check-input" id="selectAllNotification">
-    <label class="form-check-label" for="selectAllNotification"></label>
-    <div class="label-text t16">Any message or notification for documents send for me</div>
-  </div>
-  <div class="sub-selections">
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="docDeliveryFailed">
-      <label class="form-check-label" for="docDeliveryFailed"></label>
-      <div class="label-text t16">Document delivery failed</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="docOpenedFirst">
-      <label class="form-check-label" for="docOpenedFirst"></label>
-      <div class="label-text t16">Document opened by a recipient for the first time</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="docOpenedAll">
-      <label class="form-check-label" for="docOpenedAll"></label>
-      <div class="label-text t16">Document opened by a recipient every time</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="docCompletedOne">
-      <label class="form-check-label" for="docCompletedOne"></label>
-      <div class="label-text t16">Document is completed by a recipient</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="docCompletedAll">
-      <label class="form-check-label" for="docCompletedAll"></label>
-      <div class="label-text t16">Document is completed by all recipient</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="commentPosted">
-      <label class="form-check-label" for="commentPosted"></label>
-      <div class="label-text t16">Comment is posted</div>
-    </div>
-    <div class="form-group form-check input-style-wrap">
-      <input type="checkbox" class="form-check-input" id="suggestionAdded">
-      <label class="form-check-label" for="suggestionAdded"></label>
-      <div class="label-text t16">Suggustion is added</div>
-    </div>
-  </div>
-  <div class="form-group form-check input-style-wrap">
-    <input type="checkbox" class="form-check-input" id="onBehalf">
-    <label class="form-check-label" for="onBehalf"></label>
-    <div class="label-text t16">Any message or notification for documents send on my behalf</div>
+  <div class="notification-settings-wrap">
   </div>
 </div>
 <button class="btn btn-green mt-4 saveNotificationSettings" onclick="saveNotificationSettings()">Update settings</button>

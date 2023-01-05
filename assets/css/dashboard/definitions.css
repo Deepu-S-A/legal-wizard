@@ -592,7 +592,7 @@ tbody tr {
 .mCSB_scrollTools .mCSB_draggerRail {
     background-color: #19C194;
 }
-.btn-primary:hover,.btn.btn-green:hover {
+.btn-primary:hover,.btn.btn-green:hover,.btn.btn-primary:focus,.btn.btn-green:focus {
     color: #fff;
     background-color: #2de5b0;
     border-color: #1dc897;
