@@ -134,7 +134,7 @@
     for (let input of domRef) {
       infoSettings[input] = $(container).find("." + input).val();
     }
-    postApi('/User/UpdateProfile/', JSON.stringify(infoSettings)).then(()=>showToastMsg('success', 'Settings updated !'));
+    postApi('User/UpdateProfile/', JSON.stringify(infoSettings)).then(()=>showToastMsg('success', 'Settings updated !')).catch(err=>showToastMsg('error', 'Settings updated !'));
   }
 
   changePassWord = () => {

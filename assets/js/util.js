@@ -13,7 +13,7 @@ showToastMsg = (type, message) => {
   $(selector).find('.toast-msg').html(message);
   $(selector).show().addClass('show');
   console.log($(selector).length)
-  setTimeout(()=> $(selector).hide(), 3000)
+  setTimeout(()=> $(selector).hide(), 5000)
 }
 
 const getApi = (url) => {
@@ -51,7 +51,7 @@ const postApi = (url, data) => {
         cache: false, contentType: false, processData: false, timeout: 60000,
         success: function (response) {
           console.log(response);
-          if (response.messageType === 0) {
+          if (response.messageType === 1) {
             resolve();
           }
         },
