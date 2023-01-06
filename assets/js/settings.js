@@ -32,7 +32,7 @@
       "mapping": 0,
       "userID": userID,
       "notifications": checkedIds.slice(0, checkedIds.length-1)
-    }))
+    })).then(()=>showToastMsg('success', 'Settings updated !'))
   }
 
   const renderSettingsPageData = (page) => {
@@ -134,7 +134,7 @@
     for (let input of domRef) {
       infoSettings[input] = $(container).find("." + input).val();
     }
-    postApi('/User/UpdateProfile/', JSON.stringify(infoSettings));
+    postApi('/User/UpdateProfile/', JSON.stringify(infoSettings)).then(()=>showToastMsg('success', 'Settings updated !'));
   }
 
   changePassWord = () => {
@@ -145,7 +145,7 @@
       postApi('User/UpdatePassword/', JSON.stringify({
         "userID": userID,
         "password": password
-      }));
+      })).then(()=>showToastMsg('success', 'Settings updated !'));
     } else {
       $('#confirmChangePassword').addClass('error-input');
     }

@@ -115,7 +115,6 @@ getFileContents = (element, name) => {
   }
 
   init = () => {
-    showToastMsg('success', 'This is a test message for success !');
     componentsPath = componentsPath += 'documentation/';
     getFileContents(routeContainer, 'overview.html');
     $('.link').click(function () {
