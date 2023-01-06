@@ -21,7 +21,7 @@ getFileContents = (element, name) => {
                 case 'make-document.html': renderMakeDocumentData();
                 $('.make-document-page').addClass('width-70'); break;
                 case 'my-documents.html': renderMyDocuments(); break
-                case 'doc-business.html': initDocBusinessPage();
+                case 'doc-business.html': getApi(baseUrl+`DocManagement/GetMyAccount/`).then(response => initDocBusinessPage(response.data));
                 break;
             }
         });
@@ -29,9 +29,10 @@ getFileContents = (element, name) => {
 
   let availableTemplatesMaxCount = 25;
 
-  const initDocBusinessPage = () => {
+  const initDocBusinessPage = (info) => {
+    availableTemplatesMaxCount = info.totalDoc;
     if(true) {
-      $('.doc-business-page').addClass('blur');
+      //$('.doc-business-page').addClass('blur');
     }
     getFileContents(document.getElementById('docsWrap'), 'make-document.html');
     setTimeout(() => {
@@ -82,7 +83,41 @@ getFileContents = (element, name) => {
   }
 
   $(document).ready(function () {
-    init();
+    setTimeout(()=>init(), 1000);
+  });
+
+  const renderDocuments = (data) => {
+    documentsList.length = 0;
+    documentsList = [...data];
+
+
+    let html = "", counter = 0;
+    for (let item of data) {
+      item.tag = item.tag.split('.')[0];
+      const dateModified = item.lastUpdatedDate != null ? item.lastUpdatedDate : "";
+      let btnElement = `<a href="../core/document-transit.html?docid=${item.id}&docname=${item.tag}&lastmodified=${item.lastUpdatedDate}">
+              <button type="button" class="btn btn-green right-arrow">Cancel</button></a>`;
+      if ($('.doc-business-page').length === 1) {
+        $('.make-document-page').removeClass('width-70');
+        btnElement = `<button type="button" data-docname="${item.tag}" data-docid="${item.id}" class="addToListB btn btn-green right-arrow">Select</button>`;
+      }
+      html += `<div class="doc">
+            <div class="doc-icon">
+              <img src="../assets/img/dashboard/icons/document.png" alt="" class="Document" />
+            </div>
+            <div class="left-container">
+              ${item.tag}
+            </div>
+            ${btnElement}
+            </div>`;
+    }
+    $("#docsList").html(html)
+  }
+
+  init = () => {
+    showToastMsg('success', 'This is a test message for success !');
+    componentsPath = componentsPath += 'documentation/';
+    getFileContents(routeContainer, 'overview.html');
     $('.link').click(function () {
       const pageTobeLoaded = $(this).attr('data-page');
       getFileContents(routeContainer, pageTobeLoaded);
@@ -132,39 +167,6 @@ getFileContents = (element, name) => {
     $(document).on('click', '.backToHelpLandingPage', function(){
       $('.link.active').trigger('click');
     });
-  });
-
-  const renderDocuments = (data) => {
-    documentsList.length = 0;
-    documentsList = [...data];
-
-
-    let html = "", counter = 0;
-    for (let item of data) {
-      item.tag = item.tag.split('.')[0];
-      const dateModified = item.lastUpdatedDate != null ? item.lastUpdatedDate : "";
-      let btnElement = `<a href="../core/document-transit.html?docid=${item.id}&docname=${item.tag}&lastmodified=${item.lastUpdatedDate}">
-              <button type="button" class="btn btn-green right-arrow">Cancel</button></a>`;
-      if ($('.doc-business-page').length === 1) {
-        $('.make-document-page').removeClass('width-70');
-        btnElement = `<button type="button" data-docname="${item.tag}" data-docid="${item.id}" class="addToListB btn btn-green right-arrow">Select</button>`;
-      }
-      html += `<div class="doc">
-            <div class="doc-icon">
-              <img src="../assets/img/dashboard/icons/document.png" alt="" class="Document" />
-            </div>
-            <div class="left-container">
-              ${item.tag}
-            </div>
-            ${btnElement}
-            </div>`;
-    }
-    $("#docsList").html(html)
-  }
-
-  init = () => {
-    componentsPath = componentsPath += 'documentation/';
-    getFileContents(routeContainer, 'doc-business.html');
   }
 
   const renderMakeDocumentData = async () => {

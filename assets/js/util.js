@@ -3,6 +3,19 @@ let token = "";
 let userID = 0;
 let userTypeID = 0;
 
+showToastMsg = (type, message) => {
+  let selector;
+  switch (type) {
+    case 'success':selector = '.toast-success-wrap';break;
+    case 'error':selector = '.toast-success-wrap';break;
+    case 'warning':selector = '.toast-success-wrap';break;
+  }
+  $(selector).find('.toast-msg').html(message);
+  $(selector).show().addClass('show');
+  console.log($(selector).length)
+  setTimeout(()=> $(selector).hide(), 3000)
+}
+
 const getApi = (url) => {
     return new Promise((resolve, reject) => {
       $.ajax({
